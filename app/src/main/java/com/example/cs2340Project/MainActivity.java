@@ -21,10 +21,28 @@ public class MainActivity extends AppCompatActivity {
                 openWordleStartScreen();
             }
         });
+
+        Button blackJackStartScreen = (Button) findViewById(R.id.blackJackStartScreen);
+        wordleScreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openBlackJackStartScreen();
+            }
+        });
     }
 
     public void openWordleStartScreen() {
         Intent intent = new Intent(this, wordleStartScreen.class);
         startActivity(intent);
+    }
+
+    public void openBlackJackStartScreen() {
+        Intent intent = new Intent(this, blackJackStartScreen.class);
+        startActivity(intent);
+    }
+
+    public void openCheckersStartScreen() {
+        //Intent intent = new Intent(this, wordleStartScreen.class);
+        //startActivity(intent);
     }
 }

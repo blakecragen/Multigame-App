@@ -19,8 +19,21 @@
         android:id="@+id/homeToWordleStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wordle start screen"
-        tools:layout_editor_absoluteX="18dp"
+        android:layout_marginStart="18dp"
+        android:text="Wordle Start Screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_editor_absoluteX="18dp"
+        app:layout_editor_absoluteY="17dp"
         tools:layout_editor_absoluteY="17dp" />
+
+    <Button
+        android:id="@+id/blackJackStartScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Black Jack Start Screen"
+        app:layout_editor_absoluteX="50dp"
+        app:layoud_editor_absoluteY="68dp"
+        tools:layout_editor_absoluteX="18dp"
+        tools:layout_editor_absoluteY="65dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
