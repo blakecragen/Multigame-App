@@ -26,8 +26,7 @@ public class MainActivity extends AppCompatActivity {
         blackJackScreenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, blackJackStartScreen.class);
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this, blackJackStartScreen.class));
             }
         });
 
