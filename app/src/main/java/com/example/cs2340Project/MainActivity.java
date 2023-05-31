@@ -13,8 +13,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Button wordleScreenButton = (Button) findViewById(R.id.homeToWordleStart);
+        wordleScreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, wordleStartScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        Button blackJackScreenButton = (Button) findViewById(R.id.blackJackStartScreen);
+        blackJackScreenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, blackJackStartScreen.class);
+                startActivity(intent);
+            }
+        });
+
+        /*
         wordleScreenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,5 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        */
     }
 }

@@ -6,12 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".wordleStartScreen">
 
-    <Button
-        android:id="@+id/wordleStartToHome"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginStart="181dp"
+        android:layout_marginTop="352dp"
+        android:text="Hello world!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/homeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="16dp"
         android:text="Home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

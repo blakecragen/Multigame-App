@@ -7,10 +7,12 @@
     tools:context=".blackJackStartScreen">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Button"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="17dp" />
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="18dp"
+        android:text="Home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
