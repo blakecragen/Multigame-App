@@ -10,8 +10,9 @@
         android:id="@+id/wordleStartToHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:text="Go to Home"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="96dp"
+        android:text="Home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         wordleScreenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openWordleStartScreen();
+                Intent intent = new Intent(MainActivity.this, wordleStartScreen.class);
+                startActivity(intent);
             }
         });
 
@@ -26,23 +27,9 @@ public class MainActivity extends AppCompatActivity {
         wordleScreenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openBlackJackStartScreen();
+                Intent intent = new Intent(MainActivity.this, blackJackStartScreen.class);
+                startActivity(intent);
             }
         });
-    }
-
-    public void openWordleStartScreen() {
-        Intent intent = new Intent(this, wordleStartScreen.class);
-        startActivity(intent);
-    }
-
-    public void openBlackJackStartScreen() {
-        Intent intent = new Intent(this, blackJackStartScreen.class);
-        startActivity(intent);
-    }
-
-    public void openCheckersStartScreen() {
-        //Intent intent = new Intent(this, wordleStartScreen.class);
-        //startActivity(intent);
     }
 }
