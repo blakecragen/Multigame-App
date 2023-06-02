@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="continue_to_game">CONTINUE TO GAME</string>
+    <string name="blackjack">BLACKJACK</string>
+    <string name="choose_a_character">Choose A Character</string>
+    <string name="go_back">GO BACK</string>
+    <string name="enter_player_name">Enter Player Name</string>
+    <string name="player_name">player_name</string>
+    <string name="restart">RESTART</string>
+    <string name="home">HOME</string>
 </resources>
