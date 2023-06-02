@@ -52,7 +52,6 @@
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,8 +80,8 @@
         android:fontFamily="@font/press_start_2p"
         android:paddingTop="15sp"
         android:text="@string/go_back"
-        android:textSize="14sp"
         android:textColor="@color/white"
+        android:textSize="14sp"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
