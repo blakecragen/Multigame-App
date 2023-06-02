@@ -97,6 +97,7 @@
         android:autofillHints="player name"
         android:background="@color/white"
         android:ems="10"
+        android:text="Enter Player Name"
         android:fontFamily="@font/press_start_2p"
         android:inputType="textPersonName"
         android:textColor="@color/black"
