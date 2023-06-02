@@ -17,7 +17,7 @@ public class blackJackStartScreen extends AppCompatActivity {
 
         Button initButton = findViewById(R.id.init);
         initButton.setOnClickListener(v -> {
-            Intent intent = new Intent(blackJackStartScreen.this, blackJackInitialScreen.class);
+            Intent intent = new Intent(blackJackStartScreen.this, blackJackConfigScreen.class);
             startActivity(intent);
             finish();
         });
