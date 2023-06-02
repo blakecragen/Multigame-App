@@ -22,10 +22,10 @@
             android:name=".checkersStartScreen"
             android:exported="false" />
         <activity
-            android:name=".blackJackGame"
+            android:name=".blackJackGameScreen"
             android:exported="false" />
         <activity
-            android:name=".blackJackInitialScreen"
+            android:name=".blackJackConfigScreen"
             android:exported="false" />
         <activity
             android:name=".wordleGame"
