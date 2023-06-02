@@ -13,8 +13,23 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".blackJackStartScreen"
+            android:name=".blackJackGame"
             android:exported="false" />
+        <activity
+            android:name=".blackJackInitialScreen"
+            android:exported="false" />
+        <activity
+            android:name=".wordleGame"
+            android:exported="false"
+            android:parentActivityName=".wordleInitialScreen" />
+        <activity
+            android:name=".wordleInitialScreen"
+            android:exported="false"
+            android:parentActivityName=".wordleStartScreen" />
+        <activity
+            android:name=".blackJackStartScreen"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".wordleStartScreen"
             android:exported="false"

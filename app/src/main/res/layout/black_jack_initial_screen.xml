@@ -4,25 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".blackJackStartScreen">
+    tools:context=".blackJackInitialScreen">
 
     <Button
-        android:id="@+id/homeButton"
+        android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="Home"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="59dp"
+        android:text="Back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/init"
+        android:id="@+id/startBlackJack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="97dp"
-        android:text="Black Jack Settings"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="123dp"
+        android:text="Start Game"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
