@@ -7,18 +7,6 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/wordleStartScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:text="Wordle Start Screen"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_editor_absoluteX="18dp"
-        app:layout_editor_absoluteY="17dp" />
-
-    <Button
         android:id="@+id/blackJackStartScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,5 +16,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_editor_absoluteX="50dp" />
+
+    <Button
+        android:id="@+id/checkersStartScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="172dp"
+        android:text="Checkers Start Screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/wordleStartScreen2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="236dp"
+        android:text="Wordle Start Screen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

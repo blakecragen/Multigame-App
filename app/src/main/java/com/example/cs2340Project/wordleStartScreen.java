@@ -13,14 +13,15 @@ public class wordleStartScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wordle_start_screen);
 
+        Button homeButton = findViewById(R.id.toHome);
+        homeButton.setOnClickListener(v -> finish());
 
-        Button initButton = findViewById(R.id.initializeButton);
+
+        Button initButton = findViewById(R.id.initButton);
         initButton.setOnClickListener(v -> {
             Intent intent = new Intent(wordleStartScreen.this, wordleInitialScreen.class);
             startActivity(intent);
             finish();
         });
-        Button homeButton = findViewById(R.id.toHome);
-        homeButton.setOnClickListener(v -> finish());
     }
 }

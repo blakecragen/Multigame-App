@@ -16,8 +16,15 @@ public class MainActivity extends AppCompatActivity {
         Button blackJackScreenButton = findViewById(R.id.blackJackStartScreen);
         blackJackScreenButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, blackJackStartScreen.class)));
 
-        Button wordleScreenButton = findViewById(R.id.wordleStartScreen);
-        wordleScreenButton.setOnClickListener(v -> {
+        Button checkersScreenButton = findViewById(R.id.checkersStartScreen);
+        checkersScreenButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, checkersStartScreen.class);
+            startActivity(intent);
+        });
+
+
+        Button wordleStScreen = findViewById(R.id.wordleStartScreen2);
+        wordleStScreen.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, wordleStartScreen.class);
             startActivity(intent);
         });
