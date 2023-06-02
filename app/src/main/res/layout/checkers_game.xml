@@ -4,15 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".checkersGame">
+    tools:context=".checkersGame"
+    android:background="@color/purple">
+
+    <TextView
+        android:id="@+id/checkersHeading"
+        android:layout_width="318dp"
+        android:layout_height="153dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="104dp"
+        android:ems="10"
+        android:fontFamily="@font/pressstart_2p"
+        android:inputType="text"
+        android:text="CHECKERS!"
+        android:textAlignment="center"
+        android:textColor="#FFEB3B"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/toHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="205dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/pressstart_2p"
         android:text="Finish Game"
+        app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

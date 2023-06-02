@@ -4,15 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".checkersStartScreen">
+    tools:context=".checkersStartScreen"
+    android:background="@color/purple">
+
+    <TextView
+        android:id="@+id/wordleHeading2"
+        android:layout_width="318dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:fontFamily="@font/pressstart_2p"
+        android:inputType="text"
+        android:text="CHECKERS!"
+        android:textAlignment="center"
+        android:textColor="#F8F3F3"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+    <TextView
+        android:id="@+id/areyouready"
+        android:layout_width="330dp"
+        android:layout_height="93dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="376dp"
+        android:ems="10"
+        android:fontFamily="@font/pressstart_2p"
+        android:inputType="text"
+        android:text="Are you ready?"
+        android:textAlignment="center"
+        android:textColor="#FFEB3B"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="203dp"
+        android:layout_height="198dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/checkers" />
+
+
 
     <Button
         android:id="@+id/toHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="528dp"
+        android:fontFamily="@font/pressstart_2p"
         android:text="Home"
+        app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +72,11 @@
         android:id="@+id/initializeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="148dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="600dp"
+        android:fontFamily="@font/pressstart_2p"
         android:text="Checkers Settings"
+        app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

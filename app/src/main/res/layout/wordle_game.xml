@@ -4,7 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".wordleGame">
+    tools:context=".wordleGame"
+    android:background="@color/yellow">
+
+    <TextView
+        android:id="@+id/wordleHeading"
+        android:layout_width="318dp"
+        android:layout_height="153dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:fontFamily="@font/pressstart_2p"
+        android:inputType="text"
+        android:text="WORDLE!"
+        android:textAlignment="center"
+        android:textColor="#150101"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/toMainActivity"
@@ -13,6 +30,8 @@
         android:layout_marginStart="14dp"
         android:layout_marginTop="21dp"
         android:text="Game selection"
+        app:backgroundTint="@color/red"
+        android:fontFamily="@font/pressstart_2p"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

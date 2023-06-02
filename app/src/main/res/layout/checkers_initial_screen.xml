@@ -4,15 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".checkersInitialScreen">
+    tools:context=".checkersInitialScreen"
+    android:background="@color/purple">
+
+    <EditText
+        android:id="@+id/checkersPLayerName"
+        android:layout_width="347dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="132dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:fontFamily="@font/pressstart_2p"
+        android:inputType="text"
+        android:text="Enter Player Name"
+        android:textAlignment="center"
+        android:textColor="#190101"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/characterselecttext"
+        android:layout_width="399dp"
+        android:layout_height="242dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="336dp"
+        android:ems="10"
+        android:fontFamily="@font/pressstart_2p"
+        android:inputType="text"
+        android:text="Choose A Character!"
+        android:textAlignment="center"
+        android:textColor="#F4F2F2"
+        android:textSize="21sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <RadioButton
+        android:id="@+id/foxButton"
+        android:layout_width="92dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/fox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/pandaButton"
+        android:layout_width="91dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="392dp"
+        android:background="@drawable/panda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/turtleButton"
+        android:layout_width="96dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="404dp"
+        android:background="@drawable/turtle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/checkersHeading"
+        android:layout_width="318dp"
+        android:layout_height="153dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:fontFamily="@font/pressstart_2p"
+        android:inputType="text"
+        android:text="CHECKERS!"
+        android:textAlignment="center"
+        android:textColor="#FFEB3B"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/toHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="121dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="564dp"
+        android:fontFamily="@font/pressstart_2p"
         android:text="Home"
+        app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +108,12 @@
         android:id="@+id/gameStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="210dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="644dp"
+        android:fontFamily="@font/pressstart_2p"
         android:text="Play Game"
+        app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
