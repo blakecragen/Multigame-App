@@ -29,24 +29,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, blackJackStartScreen.class));
             }
         });
-
-        /*
-        wordleScreenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, wordleStartScreen.class);
-                startActivity(intent);
-            }
-        });
-
-        Button blackJackStartScreen = (Button) findViewById(R.id.blackJackStartScreen);
-        wordleScreenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, blackJackStartScreen.class);
-                startActivity(intent);
-            }
-        });
-        */
     }
 }
