@@ -13,7 +13,8 @@ public class wordleStartScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wordle_start_screen);
-        Button homeButton = (Button) findViewById(R.id.homeButton);
+
+        Button homeButton = findViewById(R.id.toHome);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -22,12 +23,13 @@ public class wordleStartScreen extends AppCompatActivity {
         });
 
 
-        Button initButton = (Button) findViewById(R.id.initializeButton);
+        Button initButton = findViewById(R.id.initializeButton);
         initButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(wordleStartScreen.this, wordleInitialScreen.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

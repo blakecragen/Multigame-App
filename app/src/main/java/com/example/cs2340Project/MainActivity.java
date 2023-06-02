@@ -12,13 +12,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button wordleScreenButton = findViewById(R.id.homeToWordleStart);
+
+        Button blackJackScreenButton = findViewById(R.id.blackJackStartScreen);
+        blackJackScreenButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, blackJackStartScreen.class)));
+
+        Button wordleScreenButton = findViewById(R.id.wordleStartScreen);
         wordleScreenButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, wordleStartScreen.class);
             startActivity(intent);
         });
-
-        Button blackJackScreenButton = findViewById(R.id.blackJackStartScreen);
-        blackJackScreenButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, blackJackStartScreen.class)));
     }
 }

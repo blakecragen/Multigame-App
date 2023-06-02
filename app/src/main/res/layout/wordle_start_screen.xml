@@ -7,12 +7,12 @@
     tools:context=".wordleStartScreen">
 
     <Button
-        android:id="@+id/homeButton"
+        android:id="@+id/toHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="16dp"
-        android:text="Home"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
+        android:text="Go Home"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,9 +20,9 @@
         android:id="@+id/initializeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="108dp"
-        android:text="Button"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="120dp"
+        android:text="Game settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
