@@ -1,11 +1,10 @@
 package com.example.cs2340Project;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,21 +12,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button wordleScreenButton = (Button) findViewById(R.id.homeToWordleStart);
-        wordleScreenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, wordleStartScreen.class);
-                startActivity(intent);
-            }
+        Button wordleScreenButton = findViewById(R.id.homeToWordleStart);
+        wordleScreenButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, wordleStartScreen.class);
+            startActivity(intent);
         });
 
-        Button blackJackScreenButton = (Button) findViewById(R.id.blackJackStartScreen);
-        blackJackScreenButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, blackJackStartScreen.class));
-            }
-        });
+        Button blackJackScreenButton = findViewById(R.id.blackJackStartScreen);
+        blackJackScreenButton.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, blackJackStartScreen.class)));
     }
 }

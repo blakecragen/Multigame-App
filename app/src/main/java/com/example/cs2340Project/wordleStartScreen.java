@@ -20,5 +20,15 @@ public class wordleStartScreen extends AppCompatActivity {
                 finish();
             }
         });
+
+
+        Button initButton = (Button) findViewById(R.id.initializeButton);
+        initButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(wordleStartScreen.this, wordleInitialScreen.class);
+                startActivity(intent);
+            }
+        });
     }
 }
