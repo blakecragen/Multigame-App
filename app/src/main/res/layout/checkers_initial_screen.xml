@@ -38,7 +38,9 @@
         android:textColor="#F4F2F2"
         android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <RadioGroup
         android:layout_width="355dp"
@@ -59,6 +61,7 @@
             app:layout_constraintHorizontal_bias="0.122"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="400dp" />
+
 
         <RadioButton
             android:id="@+id/pandaButton"
@@ -118,9 +121,12 @@
         android:layout_marginStart="128dp"
         android:layout_marginTop="644dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="Play Game"
         app:backgroundTint="@color/red"
+        android:text="Play Game"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class blackJackGameScreen extends AppCompatActivity{
     private Button restartButton;
     private Button homeButton;
+    private TextView name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +19,9 @@ public class blackJackGameScreen extends AppCompatActivity{
         setContentView(R.layout.activity_black_jack_game_screen);
 
         restartButton = findViewById(R.id.bj_restart_button);
+        name = findViewById(R.id.blackJackConfigScreen);
+        String username = getIntent().getStringExtra("keyname");
+        name.setText(username);
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
