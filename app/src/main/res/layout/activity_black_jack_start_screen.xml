@@ -4,25 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".blackJackStartScreen">
+    tools:context=".blackJackStartScreen"
+    android:background="@color/purple">
+
+    <TextView
+        android:id="@+id/blackJackConfigScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/press_start_2p"
+        android:text="BlackJack!"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/homeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="500dp"
+        android:fontFamily="@font/pressstart_2p"
         android:text="@string/home"
+        app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/init"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="97dp"
+        android:layout_width="150dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="584dp"
+        android:fontFamily="@font/pressstart_2p"
         android:text="START"
+        app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="211dp"
+        android:layout_height="281dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="140dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cards" />
 </androidx.constraintlayout.widget.ConstraintLayout>

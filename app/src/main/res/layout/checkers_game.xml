@@ -30,8 +30,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="28dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="Finish Game"
         app:backgroundTint="@color/red"
+        android:text="Finish Game"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
