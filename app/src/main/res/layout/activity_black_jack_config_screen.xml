@@ -20,45 +20,54 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
-        android:id="@+id/foxButton"
-        android:layout_width="92dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="376dp"
-        android:background="@drawable/fox"
+    <RadioGroup
+        android:layout_width="358dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="22dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
 
-    <RadioButton
-        android:id="@+id/turtleButton"
-        android:layout_width="96dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="376dp"
-        android:background="@drawable/turtle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.453"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RadioButton
+            android:id="@+id/foxButton"
+            android:layout_width="92dp"
+            android:layout_height="107dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/fox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.122"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="400dp" />
 
-    <RadioButton
-        android:id="@+id/pandaButton"
-        android:layout_width="91dp"
-        android:layout_height="117dp"
-        android:layout_marginTop="376dp"
-        android:background="@drawable/panda"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.878"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RadioButton
+            android:id="@+id/pandaButton"
+            android:layout_width="91dp"
+            android:layout_height="117dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/panda"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="392dp" />
+
+        <RadioButton
+            android:id="@+id/turtleButton"
+            android:layout_width="96dp"
+            android:layout_height="106dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/turtle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.898"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="404dp" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/blackJackConfigScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/press_start_2p"
         android:text="@string/blackjack"
         android:textColor="@color/black"
