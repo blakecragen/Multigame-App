@@ -41,18 +41,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
-    <RadioButton
-        android:id="@+id/foxButton"
-        android:layout_width="92dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="400dp"
-        android:background="@drawable/fox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <RadioButton
         android:id="@+id/pandaButton"
         android:layout_width="91dp"
@@ -60,17 +48,7 @@
         android:layout_marginTop="392dp"
         android:background="@drawable/panda"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioButton
-        android:id="@+id/turtleButton"
-        android:layout_width="96dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="404dp"
-        android:background="@drawable/turtle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
+        app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -115,5 +93,28 @@
         app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/foxButton"
+        android:layout_width="92dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/fox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioButton
+        android:id="@+id/turtleButton"
+        android:layout_width="96dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="396dp"
+        android:background="@drawable/turtle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
