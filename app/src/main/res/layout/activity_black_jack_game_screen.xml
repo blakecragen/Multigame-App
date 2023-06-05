@@ -83,7 +83,7 @@
         android:fontFamily="@font/press_start_2p"
         android:text="BlackJack!"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
