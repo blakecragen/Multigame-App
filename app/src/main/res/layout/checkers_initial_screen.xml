@@ -26,8 +26,8 @@
 
     <TextView
         android:id="@+id/characterselecttext"
-        android:layout_width="399dp"
-        android:layout_height="242dp"
+        android:layout_width="374dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="336dp"
         android:ems="10"
@@ -38,42 +38,49 @@
         android:textColor="#F4F2F2"
         android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <RadioButton
-        android:id="@+id/foxButton"
-        android:layout_width="92dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="400dp"
-        android:background="@drawable/fox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
-        android:id="@+id/pandaButton"
-        android:layout_width="91dp"
-        android:layout_height="117dp"
-        android:layout_marginTop="392dp"
-        android:background="@drawable/panda"
+    <RadioGroup
+        android:layout_width="355dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="23dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/characterselecttext">
 
-    <RadioButton
-        android:id="@+id/turtleButton"
-        android:layout_width="96dp"
-        android:layout_height="106dp"
-        android:layout_marginTop="404dp"
-        android:background="@drawable/turtle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <RadioButton
+            android:id="@+id/foxButton"
+            android:layout_marginRight="20dp"
+            android:layout_width="92dp"
+            android:layout_height="107dp"
+            android:background="@drawable/fox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.122"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="400dp" />
 
+        <RadioButton
+            android:id="@+id/pandaButton"
+            android:layout_width="91dp"
+            android:layout_height="117dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/panda"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="392dp" />
+
+        <RadioButton
+            android:id="@+id/turtleButton"
+            android:layout_marginLeft="10dp"
+            android:layout_width="96dp"
+            android:layout_height="106dp"
+            android:background="@drawable/turtle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.898"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="404dp" />
+    </RadioGroup>
 
     <TextView
         android:id="@+id/checkersHeading"
