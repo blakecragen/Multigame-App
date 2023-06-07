@@ -7,11 +7,42 @@
     tools:context=".wordleInitialScreen"
     android:background="@color/yellow">
 
+    <Button
+        android:id="@+id/startGame"
+        android:layout_width="320dp"
+        android:layout_height="62dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="96dp"
+        android:fontFamily="@font/pressstart_2p"
+        android:paddingTop="15sp"
+        android:text="@string/continue_to_game"
+        android:textSize="16sp"
+        app:backgroundTint="@color/red"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/BackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/pressstart_2p"
+        android:paddingTop="15sp"
+        android:text="@string/home"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:backgroundTint="@color/red"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/wordleHeading2"
         android:layout_width="330dp"
         android:layout_height="54dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:fontFamily="@font/pressstart_2p"
         android:inputType="text"
@@ -19,18 +50,16 @@
         android:textAlignment="center"
         android:textColor="#040000"
         android:textSize="34sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/wordlePLayerName"
-        android:layout_width="347dp"
-        android:layout_height="158dp"
-        android:layout_marginTop="132dp"
+        android:layout_width="326dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="148dp"
         android:background="@color/white"
         android:ems="10"
         android:fontFamily="@font/pressstart_2p"
@@ -40,6 +69,7 @@
         android:textColor="#190101"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,7 +78,7 @@
         android:layout_width="380dp"
         android:layout_height="54dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="328dp"
         android:ems="10"
         android:fontFamily="@font/pressstart_2p"
         android:inputType="text"
@@ -63,16 +93,18 @@
         android:layout_width="355dp"
         android:layout_height="122dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="23dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/startGame"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/characterselecttext">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterselecttext"
+        app:layout_constraintVertical_bias="0.243">
 
         <RadioButton
             android:id="@+id/foxButton"
-            android:layout_marginRight="20dp"
             android:layout_width="92dp"
             android:layout_height="107dp"
+            android:layout_marginRight="25dp"
             android:background="@drawable/fox"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.122"
@@ -100,30 +132,6 @@
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="404dp" />
     </RadioGroup>
-
-    <Button
-        android:id="@+id/BackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="556dp"
-        android:fontFamily="@font/pressstart_2p"
-        android:text="Back"
-        app:backgroundTint="@color/red"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/startGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="96dp"
-        android:layout_marginBottom="64dp"
-        android:fontFamily="@font/pressstart_2p"
-        android:text="Start Wordle"
-        app:backgroundTint="@color/red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
