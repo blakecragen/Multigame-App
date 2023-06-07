@@ -22,11 +22,15 @@
             android:name=".checkersStartScreen"
             android:exported="false" />
         <activity
-            android:name=".blackJackGameScreen"
+            android:name=".blackJackGame"
             android:exported="false" />
         <activity
-            android:name=".blackJackConfigScreen"
+            android:name=".blackJackInitialScreen"
             android:exported="false" />
+        <activity
+            android:name=".wordleStartScreen"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".wordleGame"
             android:exported="false"
@@ -37,10 +41,6 @@
             android:parentActivityName=".wordleStartScreen" />
         <activity
             android:name=".blackJackStartScreen"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".wordleStartScreen"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity

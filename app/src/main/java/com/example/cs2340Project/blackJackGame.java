@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class blackJackGameScreen extends AppCompatActivity{
+public class blackJackGame extends AppCompatActivity{
     private Button restartButton;
     private Button homeButton;
     private TextView name;
@@ -16,7 +16,7 @@ public class blackJackGameScreen extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_black_jack_game_screen);
+        setContentView(R.layout.black_jack_game);
 
         restartButton = findViewById(R.id.bj_restart_button);
         name = findViewById(R.id.blackJackConfigScreen);
@@ -25,8 +25,7 @@ public class blackJackGameScreen extends AppCompatActivity{
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(blackJackGameScreen.this, blackJackGameScreen.class);
-                startActivity(intent);
+                recreate();
             }
         });
 
@@ -34,7 +33,7 @@ public class blackJackGameScreen extends AppCompatActivity{
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(blackJackGameScreen.this, MainActivity.class);
+                Intent intent = new Intent(blackJackGame.this, MainActivity.class);
                 startActivity(intent);
             }
         });

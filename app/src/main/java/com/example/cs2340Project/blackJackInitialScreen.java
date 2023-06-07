@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class blackJackConfigScreen extends AppCompatActivity{
+public class blackJackInitialScreen extends AppCompatActivity{
     private Button prevButton;
     private Button continueButton;
 
@@ -18,7 +18,7 @@ public class blackJackConfigScreen extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_black_jack_config_screen);
+        setContentView(R.layout.black_jack_initial_screen);
         name = findViewById(R.id.player_name);
         add = findViewById(R.id.bj_continue_button);
 
@@ -27,7 +27,7 @@ public class blackJackConfigScreen extends AppCompatActivity{
         continueButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(blackJackConfigScreen.this, blackJackGameScreen.class);
+                Intent intent = new Intent(blackJackInitialScreen.this, blackJackGame.class);
                 String username = name.getText().toString();
                 intent.putExtra("keyname", username);
                 startActivity(intent);
@@ -38,7 +38,7 @@ public class blackJackConfigScreen extends AppCompatActivity{
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(blackJackConfigScreen.this, blackJackStartScreen.class);
+                Intent intent = new Intent(blackJackInitialScreen.this, blackJackStartScreen.class);
                 startActivity(intent);
                 finish();
             }
