@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/wordleHeading"
-        android:layout_width="318dp"
-        android:layout_height="153dp"
+        android:layout_width="324dp"
+        android:layout_height="82dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="84dp"
         android:ems="10"
@@ -26,12 +26,26 @@
     <Button
         android:id="@+id/toMainActivity"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="21dp"
-        android:text="Game selection"
-        app:backgroundTint="@color/red"
+        android:layout_height="50dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginBottom="80dp"
         android:fontFamily="@font/pressstart_2p"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="HOME"
+        app:backgroundTint="@color/red"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/wd_restart_button"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/pressstart_2p"
+        android:text="RESTART"
+        app:backgroundTint="@color/red"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

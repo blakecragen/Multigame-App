@@ -20,5 +20,8 @@ public class checkersGame extends AppCompatActivity {
 
         Button homeButton = findViewById(R.id.toHome);
         homeButton.setOnClickListener(v -> finish());
+
+        Button restart = findViewById(R.id.ck_restart_button);
+        restart.setOnClickListener(v -> recreate());
     }
 }

@@ -17,5 +17,9 @@ public class wordleGame extends AppCompatActivity {
         name.setText(username);
         Button toHome = findViewById(R.id.toMainActivity);
         toHome.setOnClickListener(v -> finish());
+
+        Button restart = findViewById(R.id.wd_restart_button);
+        restart.setOnClickListener(v -> recreate());
+
     }
 }

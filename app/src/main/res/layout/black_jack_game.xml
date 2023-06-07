@@ -10,13 +10,13 @@
     <Button
         android:id="@+id/bj_restart_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="68dp"
-        android:fontFamily="@font/press_start_2p"
-        android:text="@string/restart"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="@color/red"
+        android:fontFamily="@font/press_start_2p"
         android:paddingTop="13dp"
+        android:text="@string/restart"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -40,7 +40,7 @@
     <Button
         android:id="@+id/bj_game_home_button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/red"
@@ -48,7 +48,7 @@
         android:paddingTop="13dp"
         android:text="@string/home"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bj_restart_button"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
