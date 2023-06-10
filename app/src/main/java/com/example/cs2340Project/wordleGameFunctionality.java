@@ -1,3 +1,8 @@
+/**
+ * Class to help manage the functionality of the wordle game.
+ * 
+ * @version 1.0
+ */
 public class wordleGameFunctionality {
 
     /** LinkedList-backed/Stack-backed hashmap for finding positions of words. */
@@ -9,6 +14,8 @@ public class wordleGameFunctionality {
     
     /**
      * Private node class to create a LinkedList-backed stack.
+     *
+     * @version 1.0
      */
     private class Node {
         private Node next;
@@ -44,12 +51,12 @@ public class wordleGameFunctionality {
     }
     
     /**
-     * Method to add the letters of a word to the hashmap.
+     * Method to push the letters of a word and position of letter to the hashmap.
      *
      * @param let Letter getting added.
      * @param pos Indice/position of the letter in the original String.
      */
-    public void add(char let, int pos) {
+    public void push(int pos, char let) {
         int ind = this.hashcode(let);
         if (wordHashmap[ind] == null) {
             wordHashmap[ind] = new Node(pos, let);
@@ -61,4 +68,28 @@ public class wordleGameFunctionality {
             last.next = new Node(pos, let);
         }
     }
+    
+    /**
+     * Method to push the letters of a word and position of letter to the hashmap.
+     * 
+     * @param node Node to add to the hashmap.
+     */
+    public void push(Node node) {
+        this.push(node.pos, node.let);
+    }
+    
+    /**
+     * Method to pop the Node containing a letter.
+     *
+     * @param let Letter key beinglooked for
+     * @return Node value associated with the key.
+     */
+    public Node pop(char let) {
+        int pos = this.hashcode(let);
+        Node out = wordHashmap[pos];
+        wordHashmap[pos] = out.next;
+        return out;
+    }
+    
+    
 }
