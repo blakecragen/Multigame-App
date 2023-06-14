@@ -53,6 +53,178 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
+        android:layout_width="390dp"
+        android:layout_height="238dp"
+        android:layout_marginTop="16dp"
+        app:columnCount="6"
+        app:layout_constraintBottom_toTopOf="@id/toMainActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wordleHeading"
+        app:layout_constraintVertical_bias="0.911"
+        app:rowCount="7">
+
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="A"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="B"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="C"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="D"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="E"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="F"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="G"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="H"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="I"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="J"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="K"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="L"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="M"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="N"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="O"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="P"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Q"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="R"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="S"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="T"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="U"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="V"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="W"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="X"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Y"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Z"
+            app:backgroundTint="@color/black" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+    <androidx.gridlayout.widget.GridLayout
         android:layout_width="366dp"
         android:layout_height="234dp"
         android:layout_marginTop="16dp"
