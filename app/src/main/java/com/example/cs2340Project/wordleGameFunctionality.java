@@ -152,16 +152,32 @@ public class wordleGameFunctionality {
     }
 
     /**
-     * Method to clear the current word.
+     * Getter to check if the indice, letter pair exists in the map.
+     *
+     * @param indInWords Indice of the letter in the player's guess
+     * @param let Letter getting checked.
+     * @return True or false on if correct letter in correct position.
      */
-    public void clear() {
-        wordHashmap = new Node[5];
-        playerCorrectNess = new int[5];
+    public boolean get(int indInWords, char let) {
+        int pos = this.hashcode(let);
+        Node out = wordHashmap[pos];
+        while (out != null) {
+            if (out.equals(indInWords, let)) {
+                return true;
+            }
+            out = out.next;
+        }
+        return false;
+
     }
 
     /**
      * Method to remove a letter given its position and return whether
      * it was found or not.
+     *
+     * @param pos Position of the letter in the word.
+     * @param let Letter being looked for.
+     * @return boolean representing if Combination exists/was removed.
      */
     public boolean remove(int pos, char let) {
         int ind = this.hashcode(let);
@@ -190,6 +206,14 @@ public class wordleGameFunctionality {
                 return false;
             }
         }
+    }
+
+    /**
+     * Method to clear the current word.
+     */
+    public void clear() {
+        wordHashmap = new Node[5];
+        playerCorrectNess = new int[5];
     }
 
     /**
@@ -233,9 +257,27 @@ public class wordleGameFunctionality {
         }
     }
 
-
-
-    public int[] checkGuess(String guess) {
+    /**
+     * Method to check and update player's correctness.
+     * Logic:
+     *  We need to check if a letter is in the correct word at the correct position.
+     *  The first pass:
+     *      Check if the letter is in the correct spot/in the correct word.
+     *      This implements checkGuessCorrLets.
+     *      However, we don't want to "permanently" remove something in the event that a
+     *      user use a completely different word (regardless of correct letters already being found).
+     *      As such, we need to recheck the entire word each time.
+     *      To do this, make a copy of the word hash that we can save for the end of the function.
+     *      In the meantime, freely remove data through the first pass. This will leave only:
+     *          1.) Completely incorrect Letters
+     *          2.) Letters that are correct in the wrong spot.
+     *  Second pass:
+     *
+     * @param guess The player's guess
+     */
+    public void checkGuess(String guess) {
+        Node[] temp = wordHashmap;
+        playerCorrectNess = new int[5];
         // First pass: check for correct letters in the whole word.
         boolean[] correctLetters = checkGuessCorrLets(guess);
         for (int i = 0; i < 5; ++i) {
@@ -243,9 +285,16 @@ public class wordleGameFunctionality {
                 playerCorrectNess[i] = 2;
             }
         }
-        return null;
+        wordHashmap = temp;
     }
 
+    /**
+     * Helper method to simply go through the word and see which letters are
+     * in the correct positions.
+     *
+     * @param guess
+     * @return
+     */
     private boolean[] checkGuessCorrLets(String guess) {
         boolean[] match = new boolean[5];
         for (int c = 0; c < guess.length(); c++) {
@@ -253,5 +302,15 @@ public class wordleGameFunctionality {
             // set UI with index c to green
         }
         return match;
+    }
+
+    /**
+     * Getter method to update the UI.
+     *
+     * @return int[] representing the correctness of the
+     * player's guess.
+     */
+    public int[] getPlayerCorrectNess() {
+        return playerCorrectNess;
     }
 }
