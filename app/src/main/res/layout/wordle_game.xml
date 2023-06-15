@@ -40,6 +40,7 @@
 
     <Button     android:id="@+id/wd_restart_button"
         android:layout_width="wrap_content"
+        android:layout_weight="1"
         android:layout_height="50dp"
         android:layout_marginEnd="204dp"
         android:layout_marginBottom="12dp"
@@ -75,61 +76,71 @@
         app:layout_constraintBottom_toBottomOf="parent" >
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Q"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="W"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="E"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="R"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="T"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Y"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="U"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="I"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="O"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="P"
             app:backgroundTint="@color/black" />
@@ -146,55 +157,64 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="A"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="S"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="D"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="F"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="G"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="H"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="J"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="K"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="L"
             app:backgroundTint="@color/black" />
@@ -212,55 +232,64 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="ENTER"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="Z"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="X"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="C"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="V"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="B"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="N"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="M"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:layout_width="65dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:text="DELETE"
             app:backgroundTint="@color/black" />
