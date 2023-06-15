@@ -22,12 +22,11 @@
         android:text="WORDLE!"
         android:textAlignment="center"
         android:textColor="#150101"
-        android:textSize="15sp"
+        android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/toMainActivity"
+    <Button     android:id="@+id/toMainActivity"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginStart="248dp"
@@ -39,8 +38,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/wd_restart_button"
+    <Button     android:id="@+id/wd_restart_button"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginEnd="204dp"
@@ -52,20 +50,101 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <androidx.gridlayout.widget.GridLayout
-        android:layout_width="390dp"
-        android:layout_height="238dp"
-        android:layout_marginTop="16dp"
-        app:columnCount="6"
-        app:layout_constraintBottom_toTopOf="@id/toMainActivity"
+<!--    <androidx.gridlayout.widget.GridLayout-->
+<!--        android:layout_width="390dp"-->
+<!--        android:layout_height="238dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        app:columnCount="6"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/toMainActivity"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.476"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/wordleHeading"-->
+<!--        app:layout_constraintVertical_bias="0.911"-->
+<!--        app:rowCount="7">-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="480dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/wordleHeading"
-        app:layout_constraintVertical_bias="0.911"
-        app:rowCount="7">
+        app:layout_constraintBottom_toBottomOf="parent" >
 
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Q"
+            app:backgroundTint="@color/black" />
 
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="W"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="E"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="R"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="T"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="Y"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="U"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="I"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="O"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="P"
+            app:backgroundTint="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="530dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
         <Button
             android:layout_width="65dp"
             android:layout_height="wrap_content"
@@ -75,25 +154,13 @@
         <Button
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="B"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="C"
+            android:text="S"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
             android:layout_height="wrap_content"
             android:text="D"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="E"
             app:backgroundTint="@color/black" />
 
         <Button
@@ -117,12 +184,6 @@
         <Button
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="I"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
             android:text="J"
             app:backgroundTint="@color/black" />
 
@@ -137,71 +198,29 @@
             android:layout_height="wrap_content"
             android:text="L"
             app:backgroundTint="@color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="580dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="M"
+            android:text="ENTER"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="N"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="O"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="P"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="Q"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="R"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="S"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="T"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="U"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="V"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="W"
+            android:text="Z"
             app:backgroundTint="@color/black" />
 
         <Button
@@ -213,16 +232,40 @@
         <Button
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="Y"
+            android:text="C"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="Z"
+            android:text="V"
             app:backgroundTint="@color/black" />
 
-    </androidx.gridlayout.widget.GridLayout>
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="B"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="N"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="M"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="DELETE"
+            app:backgroundTint="@color/black" />
+    </LinearLayout>
+<!--    </androidx.gridlayout.widget.GridLayout>-->
 
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="366dp"
@@ -235,7 +278,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wordleHeading"
         app:layout_constraintVertical_bias="0.032"
-        app:rowCount="6">
+        app:rowCount="6"
+        tools:visibility="visible">
 
         <EditText
             android:id="@+id/editText1"
