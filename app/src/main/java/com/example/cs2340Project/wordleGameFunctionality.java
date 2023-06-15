@@ -1,3 +1,5 @@
+package com.example.cs2340Project;
+
 /**
  * Class to help manage the functionality of the wordle game.
  * 
