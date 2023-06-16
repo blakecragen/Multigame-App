@@ -1,4 +1,4 @@
-package com.example.cs2340Project;
+package com.example.cs2340Project.wordle.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cs2340Project.R;
 
 public class wordleInitialScreen extends AppCompatActivity {
     private EditText name;

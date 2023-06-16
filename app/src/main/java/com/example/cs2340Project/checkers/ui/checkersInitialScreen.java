@@ -1,4 +1,4 @@
-package com.example.cs2340Project;
+package com.example.cs2340Project.checkers.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.example.cs2340Project.R;
 
 public class checkersInitialScreen extends AppCompatActivity {
     private EditText name;

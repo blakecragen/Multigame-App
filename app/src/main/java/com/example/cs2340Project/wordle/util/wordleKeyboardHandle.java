@@ -1,4 +1,4 @@
-package com.example.cs2340Project;
+package com.example.cs2340Project.wordle.util;
 
 public class wordleKeyboardHandle {
 

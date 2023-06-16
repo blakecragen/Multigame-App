@@ -1,4 +1,4 @@
-package com.example.cs2340Project;
+package com.example.cs2340Project.blackjack.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.cs2340Project.R;
 
 public class blackJackInitialScreen extends AppCompatActivity{
     private Button prevButton;

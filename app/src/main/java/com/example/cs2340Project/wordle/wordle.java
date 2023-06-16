@@ -1,4 +1,4 @@
-package com.example.cs2340Project;
+package com.example.cs2340Project.wordle;
 import java.util.Random;
 import java.util.Scanner;
 import java.io.File;
@@ -9,7 +9,7 @@ import java.io.FileNotFoundException;
  *
  * @version 1.0
  */
-public class wordleGameFunctionality {
+public class wordle {
 
     /** LinkedList-backed/Stack-backed hashmap for finding positions of words. */
     private Node[] wordHashmap;
@@ -28,7 +28,7 @@ public class wordleGameFunctionality {
      * Constructor for the class to opperate the correct word/
      * player correctness on guesses.
      */
-    public wordleGameFunctionality() {
+    public wordle() {
         wordHashmap = new Node[5];
         playerCorrectNess = new int[5];
     }

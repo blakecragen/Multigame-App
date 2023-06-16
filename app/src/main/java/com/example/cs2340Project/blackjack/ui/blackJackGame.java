@@ -1,4 +1,4 @@
-package com.example.cs2340Project;
+package com.example.cs2340Project.blackjack.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.cs2340Project.R;
 
 public class blackJackGame extends AppCompatActivity{
     private Button restartButton;
@@ -33,7 +35,7 @@ public class blackJackGame extends AppCompatActivity{
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(blackJackGame.this, MainActivity.class);
+                Intent intent = new Intent(blackJackGame.this, com.example.cs2340Project.MainActivity.class);
                 startActivity(intent);
             }
         });

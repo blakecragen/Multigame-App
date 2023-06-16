@@ -1,10 +1,12 @@
-package com.example.cs2340Project;
+package com.example.cs2340Project.blackjack.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cs2340Project.R;
 
 public class blackJackStartScreen extends AppCompatActivity {
 

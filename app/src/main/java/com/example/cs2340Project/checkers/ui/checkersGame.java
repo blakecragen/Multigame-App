@@ -1,10 +1,12 @@
-package com.example.cs2340Project;
+package com.example.cs2340Project.checkers.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.cs2340Project.R;
 
 public class checkersGame extends AppCompatActivity {
     private TextView name;
