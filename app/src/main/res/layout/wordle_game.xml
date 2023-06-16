@@ -68,156 +68,182 @@
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonA"
             android:layout_height="wrap_content"
             android:text="A"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonB"
             android:layout_height="wrap_content"
             android:text="B"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonC"
             android:layout_height="wrap_content"
             android:text="C"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonD"
             android:layout_height="wrap_content"
             android:text="D"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonE"
             android:layout_height="wrap_content"
             android:text="E"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonF"
             android:layout_height="wrap_content"
             android:text="F"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonG"
             android:layout_height="wrap_content"
             android:text="G"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonH"
             android:layout_height="wrap_content"
             android:text="H"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonI"
             android:layout_height="wrap_content"
             android:text="I"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonJ"
             android:layout_height="wrap_content"
             android:text="J"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonK"
             android:layout_height="wrap_content"
             android:text="K"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonL"
             android:layout_height="wrap_content"
             android:text="L"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonM"
             android:layout_height="wrap_content"
             android:text="M"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonN"
             android:layout_height="wrap_content"
             android:text="N"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonO"
             android:layout_height="wrap_content"
             android:text="O"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonP"
             android:layout_height="wrap_content"
             android:text="P"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonQ"
             android:layout_height="wrap_content"
             android:text="Q"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonR"
             android:layout_height="wrap_content"
             android:text="R"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonS"
             android:layout_height="wrap_content"
             android:text="S"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonT"
             android:layout_height="wrap_content"
             android:text="T"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonU"
             android:layout_height="wrap_content"
             android:text="U"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonV"
             android:layout_height="wrap_content"
             android:text="V"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonW"
             android:layout_height="wrap_content"
             android:text="W"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonX"
             android:layout_height="wrap_content"
             android:text="X"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonY"
             android:layout_height="wrap_content"
             android:text="Y"
             app:backgroundTint="@color/black" />
 
         <Button
             android:layout_width="65dp"
+            android:id="@+id/buttonZ"
             android:layout_height="wrap_content"
             android:text="Z"
             app:backgroundTint="@color/black" />
@@ -240,159 +266,190 @@
         <EditText
             android:id="@+id/editText1"
             android:layout_width="65dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:maxLength="1"
+            android:hint="A"/>
 
         <EditText
             android:id="@+id/editText2"
             android:layout_width="65dp"
+            android:hint="A"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText3"
             android:layout_width="65dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="A"/>
 
         <!-- Row 2 -->
         <EditText
             android:id="@+id/editText4"
             android:layout_width="65dp"
+            android:hint="A"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText5"
             android:layout_width="65dp"
+            android:hint="A"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText6"
             android:layout_width="65dp"
+            android:hint="B"
             android:layout_height="wrap_content" />
 
         <!-- Row 3 -->
         <EditText
             android:id="@+id/editText7"
             android:layout_width="65dp"
+            android:hint="B"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText8"
             android:layout_width="65dp"
+            android:hint="B"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText9"
             android:layout_width="65dp"
+            android:hint="B"
             android:layout_height="wrap_content" />
 
         <!-- Row 4 -->
         <EditText
             android:id="@+id/editText10"
             android:layout_width="65dp"
+            android:hint="B"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText11"
             android:layout_width="65dp"
+            android:hint="C"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText12"
             android:layout_width="65dp"
+            android:hint="C"
             android:layout_height="wrap_content" />
 
         <!-- Row 5 -->
         <EditText
             android:id="@+id/editText13"
             android:layout_width="65dp"
+            android:hint="C"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText14"
             android:layout_width="65dp"
+            android:hint="C"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText15"
             android:layout_width="65dp"
+            android:hint="C"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText16"
             android:layout_width="65dp"
+            android:hint="D"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText17"
             android:layout_width="65dp"
+            android:hint="D"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText18"
             android:layout_width="65dp"
+            android:hint="D"
             android:layout_height="wrap_content" />
 
         <!-- Row 2 -->
         <EditText
             android:id="@+id/editText19"
+            android:hint="D"
             android:layout_width="65dp"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText20"
             android:layout_width="65dp"
+            android:hint="D"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText21"
             android:layout_width="65dp"
+            android:hint="E"
             android:layout_height="wrap_content" />
 
         <!-- Row 3 -->
         <EditText
             android:id="@+id/editText22"
             android:layout_width="65dp"
+            android:hint="E"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText23"
             android:layout_width="65dp"
+            android:hint="E"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText24"
             android:layout_width="65dp"
+            android:hint="E"
             android:layout_height="wrap_content" />
 
         <!-- Row 4 -->
         <EditText
             android:id="@+id/editText25"
             android:layout_width="65dp"
+            android:hint="E"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText26"
             android:layout_width="65dp"
+            android:hint="F"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText27"
             android:layout_width="65dp"
+            android:hint="F"
             android:layout_height="wrap_content" />
 
         <!-- Row 5 -->
         <EditText
             android:id="@+id/editText28"
             android:layout_width="65dp"
+            android:hint="F"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText29"
             android:layout_width="65dp"
+            android:hint="F"
             android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/editText30"
             android:layout_width="65dp"
+            android:hint="F"
             android:layout_height="wrap_content" />
 
     </androidx.gridlayout.widget.GridLayout>
