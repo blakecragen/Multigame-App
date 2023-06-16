@@ -1,0 +1,11 @@
+Index: app/src/main/java/com/example/cs2340Project/wordleGameFunctionality.java
+===================================================================
+diff --git a/app/src/main/java/com/example/cs2340Project/wordleGameFunctionality.java b/app/src/main/java/com/example/cs2340Project/wordleGameFunctionality.java
+--- a/app/src/main/java/com/example/cs2340Project/wordleGameFunctionality.java	
++++ b/app/src/main/java/com/example/cs2340Project/wordleGameFunctionality.java	
+@@ -1,3 +1,5 @@
++package com.example.cs2340Project;
++
+ /**
+  * Class to help manage the functionality of the wordle game.
+  * 
