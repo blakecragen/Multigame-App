@@ -21,7 +21,6 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         Button restart = findViewById(R.id.wd_restart_button);
         restart.setOnClickListener(v -> recreate());
 
-        // Initialize the array of EditText fields
         editTextFields = new EditText[30];
         editTextFields[0] = findViewById(R.id.editText1);
         editTextFields[1] = findViewById(R.id.editText2);
@@ -53,9 +52,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         editTextFields[27] = findViewById(R.id.editText28);
         editTextFields[28] = findViewById(R.id.editText29);
         editTextFields[29] = findViewById(R.id.editText30);
-        // Add the rest of the EditText fields in a similar way...
 
-        // Set click listeners for all the buttons in the GridLayout
         int[] buttonIds = {
                 R.id.buttonA, R.id.buttonB, R.id.buttonC, R.id.buttonD, R.id.buttonE,
                 R.id.buttonF, R.id.buttonG, R.id.buttonH, R.id.buttonI, R.id.buttonJ,
@@ -77,7 +74,6 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
             EditText editText = editTextFields[i];
             if (editText.getText().toString().isEmpty()) {
                 editText.setText(buttonText);
-                // Move focus to the next EditText field if available
                 if (i + 1 < editTextFields.length) {
                     editTextFields[i + 1].requestFocus();
                 }
