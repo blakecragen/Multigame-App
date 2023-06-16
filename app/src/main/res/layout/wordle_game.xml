@@ -64,6 +64,8 @@
 <!--        app:layout_constraintVertical_bias="0.911"-->
 <!--        app:rowCount="7">-->
 
+
+<!--    Row 1 of Keys-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -74,6 +76,7 @@
         android:layout_marginTop="480dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" >
+
 
         <Button
             android:layout_width="0dp"
@@ -145,8 +148,153 @@
             android:text="P"
             app:backgroundTint="@color/black" />
     </LinearLayout>
+<!--Row 1 of Letters-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="495dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <TextView
+            android:id="@+id/qKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="Z"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/wKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="W"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/eKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="E"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/rKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="R"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/tKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="T"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/yKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="Y"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/uKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="U"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/iKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="I"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/oKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="O"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/pKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="P"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+
+    </LinearLayout>
+<!--    Row 2 of Keys-->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
@@ -219,9 +367,140 @@
             android:text="L"
             app:backgroundTint="@color/black" />
     </LinearLayout>
-
+<!--    Row 2 of Letters-->
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="545dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <TextView
+            android:id="@+id/aKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="A"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/sKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="S"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/dKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="D"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/fKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="F"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/gKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="G"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/hKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="H"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/jKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="J"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/kKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="K"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/lKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="L"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+
+    </LinearLayout>
+<!--    Row 3 of Keys-->
+    <LinearLayout
+        android:layout_width="410dp"
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:paddingLeft="16dp"
@@ -233,9 +512,8 @@
 
         <Button
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="ENTER"
             app:backgroundTint="@color/black" />
 
         <Button
@@ -289,10 +567,140 @@
 
         <Button
             android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:layout_height="wrap_content"
-            android:text="DELETE"
             app:backgroundTint="@color/black" />
+    </LinearLayout>
+<!--    Row 3 of Letters-->
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="595dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" >
+
+        <TextView
+            android:id="@+id/enterKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="ENTER"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp"
+            android:layout_weight="2"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/zKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="Z"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/xKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="X"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/cKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="C"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/vKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="V"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/bKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="B"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/nKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="N"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/mKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="M"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            app:backgroundTint="@color/black"
+            />
+        <TextView
+            android:id="@+id/deleteKey"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pressstart_2p"
+            android:inputType="text"
+            android:text="DELETE"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="9sp"
+            android:layout_weight="2"
+            app:backgroundTint="@color/black"
+            />
+
     </LinearLayout>
 <!--    </androidx.gridlayout.widget.GridLayout>-->
 

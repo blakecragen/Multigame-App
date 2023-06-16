@@ -42,9 +42,9 @@ public class wordleGameFunctionality {
         /** Next node being pointed to. */
         private Node next;
         /** The letter being held in the node. */
-        private char let;
+        private final char let;
         /** Indice of the letter held in the ndoe. */
-        private int pos;
+        private final int pos;
 
         /** Constructore for the node.
          *
@@ -73,10 +73,7 @@ public class wordleGameFunctionality {
          * are equivalent to this node's pos and let.
          */
         public boolean equals(int pos, char let) {
-            if (pos == this.pos && this.let == let) {
-                return true;
-            }
-            return false;
+            return pos == this.pos && this.let == let;
         }
     }
 
