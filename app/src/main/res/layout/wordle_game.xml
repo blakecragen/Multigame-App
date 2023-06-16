@@ -66,88 +66,88 @@
 
 
 <!--    Row 1 of Keys-->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="480dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" >
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="16dp"-->
+<!--        android:paddingRight="16dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="480dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent" >-->
 
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Q"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Q"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="W"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="W"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="E"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="E"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="R"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="R"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="T"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="T"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Y"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Y"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="U"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="U"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="I"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="I"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="O"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="O"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="P"
-            app:backgroundTint="@color/black" />
-    </LinearLayout>
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="P"-->
+<!--            app:backgroundTint="@color/black" />-->
+<!--    </LinearLayout>-->
 <!--Row 1 of Letters-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -161,19 +161,25 @@
         app:layout_constraintBottom_toBottomOf="parent" >
 
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:background="#000000"
             android:id="@+id/qKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="2dp"
             android:fontFamily="@font/pressstart_2p"
             android:inputType="text"
-            android:text="Z"
+            android:text="Q"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:layout_weight="1"
-            app:backgroundTint="@color/black"
+
             />
         <TextView
+            android:layout_marginHorizontal="2dp"
+            android:firstBaselineToTopHeight="35dp"
+            android:background="#000000"
             android:id="@+id/wKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -187,6 +193,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/eKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -200,6 +209,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/rKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -213,6 +225,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/tKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -226,6 +241,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/yKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -239,6 +257,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/uKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -252,6 +273,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/iKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -265,6 +289,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/oKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -278,6 +305,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/pKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -292,81 +322,82 @@
             />
 
     </LinearLayout>
+    android:layout_marginHorizontal="2dp"
 <!--    Row 2 of Keys-->
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="530dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="A"
-            app:backgroundTint="@color/black" />
+<!--    <LinearLayout-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="16dp"-->
+<!--        android:paddingRight="16dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="530dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="A"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="S"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="S"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="D"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="D"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="F"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="F"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="G"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="G"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="H"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="H"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="J"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="J"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="K"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="K"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="L"
-            app:backgroundTint="@color/black" />
-    </LinearLayout>
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="L"-->
+<!--            app:backgroundTint="@color/black" />-->
+<!--    </LinearLayout>-->
 <!--    Row 2 of Letters-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -380,6 +411,8 @@
         app:layout_constraintBottom_toBottomOf="parent" >
 
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:background="#000000"
             android:id="@+id/aKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -393,6 +426,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/sKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -406,6 +442,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/dKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -419,6 +458,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/fKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -432,6 +474,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/gKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -445,6 +490,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/hKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -458,6 +506,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/jKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -471,6 +522,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/kKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -484,6 +538,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/lKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -498,79 +555,80 @@
             />
 
     </LinearLayout>
+    android:layout_marginHorizontal="2dp"
 <!--    Row 3 of Keys-->
-    <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="580dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+<!--    <LinearLayout-->
+<!--        android:layout_width="410dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:paddingLeft="16dp"-->
+<!--        android:paddingRight="16dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:layout_marginTop="580dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent">-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="2"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Z"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Z"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="X"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="X"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="C"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="C"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="V"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="V"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="B"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="B"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="N"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="N"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="M"
-            app:backgroundTint="@color/black" />
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="M"-->
+<!--            app:backgroundTint="@color/black" />-->
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            app:backgroundTint="@color/black" />
-    </LinearLayout>
+<!--        <Button-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_weight="2"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:backgroundTint="@color/black" />-->
+<!--    </LinearLayout>-->
 <!--    Row 3 of Letters-->
     <LinearLayout
         android:layout_width="410dp"
@@ -584,6 +642,8 @@
         app:layout_constraintBottom_toBottomOf="parent" >
 
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:background="#000000"
             android:id="@+id/enterKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -597,6 +657,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/zKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -610,6 +673,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/xKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -623,6 +689,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/cKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -636,6 +705,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/vKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -649,6 +721,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/bKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -662,6 +737,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/nKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -675,6 +753,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/mKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -688,6 +769,9 @@
             app:backgroundTint="@color/black"
             />
         <TextView
+            android:firstBaselineToTopHeight="35dp"
+            android:layout_marginHorizontal="2dp"
+            android:background="#000000"
             android:id="@+id/deleteKey"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -699,6 +783,7 @@
             android:textSize="9sp"
             android:layout_weight="2"
             app:backgroundTint="@color/black"
+            android:layout_marginHorizontal="2dp"
             />
 
     </LinearLayout>
