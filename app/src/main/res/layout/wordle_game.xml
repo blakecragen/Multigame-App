@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".wordleGame"
-    android:background="@color/yellow">
+    android:background="@color/yellow"
+    tools:context=".wordleGame">
 
     <!-- Keyboard GridLayout -->
 
@@ -55,6 +54,7 @@
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="390dp"
         android:layout_height="238dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         app:columnCount="6"
         app:layout_constraintBottom_toTopOf="@id/toMainActivity"
@@ -257,10 +257,10 @@
         app:columnCount="5"
         app:layout_constraintBottom_toTopOf="@id/toMainActivity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wordleHeading"
-        app:layout_constraintVertical_bias="0.032"
+        app:layout_constraintVertical_bias="0.035"
         app:rowCount="6">
 
         <EditText
@@ -287,7 +287,8 @@
             android:id="@+id/editText4"
             android:layout_width="65dp"
             android:hint="A"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText5"
@@ -299,7 +300,8 @@
             android:id="@+id/editText6"
             android:layout_width="65dp"
             android:hint="B"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Row 3 -->
         <EditText
@@ -356,7 +358,8 @@
             android:id="@+id/editText15"
             android:layout_width="65dp"
             android:hint="C"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText16"
@@ -381,7 +384,8 @@
             android:id="@+id/editText19"
             android:hint="D"
             android:layout_width="65dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText20"
@@ -431,7 +435,8 @@
             android:id="@+id/editText27"
             android:layout_width="65dp"
             android:hint="F"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Row 5 -->
         <EditText
