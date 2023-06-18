@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -140,8 +141,26 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                         counter++;
                     }
 
-                    //keep this code in the if statement
-                    //determines whether or not it should go to next row
+
+                    // Check if the player guess matches all characters in the right position of the solution
+                    boolean isCorrectGuess = true;
+                    for (int i = 0; i < guess.length; i++) {
+                        if (guess[i] != solution[i]) {
+                            isCorrectGuess = false;
+                            if(currentRow == 4) {
+                                Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
+                            }
+                            break;
+                        }
+                    }
+
+                    // Show toast message if the guess is correct
+                    if (isCorrectGuess) {
+                        Toast.makeText(this, "Congratulations! You got the right answer!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    // Keep this code in the if statement
+                    // Determines whether or not it should go to the next row
                     currentRow++;
                     if (currentRow < 5) {
                         editTextFields[currentRow][0].requestFocus();
