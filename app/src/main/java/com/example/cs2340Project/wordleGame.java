@@ -80,6 +80,11 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
             Button button = findViewById(buttonIds[i]);
             button.setOnClickListener(this);
         }
+        
+        for (EditText toBeDisabled : editTextFields) {
+            toBeDisabled.setFocusable(false);
+            toBeDisabled.setFocusableInTouchMode(false);
+        }
 
         deleteButton = findViewById(R.id.delete);
         deleteButton.setOnClickListener(this);
