@@ -29,6 +29,8 @@ public class wordleGameFunctionality {
     /** String of the correct word. */
     private static String solution;
 
+    private boolean gameWon = false;
+
     /**
      * Constructor for the class to opperate the correct word/
      * player correctness on guesses.

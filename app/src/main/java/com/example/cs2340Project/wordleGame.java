@@ -17,8 +17,9 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
     private EditText[][] editTextFields;
     private Button enterButton;
     private Button deleteButton;
-
     private int currentRow;
+
+    private String answer;
     private wordleGameFunctionality wordle;
 
     @Override
@@ -29,6 +30,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         currentRow = 0;
         wordle = new wordleGameFunctionality();
         wordle.selectNewWord();
+        answer = wordle.getSolution();
 
         Button toHome = findViewById(R.id.toMainActivity);
         toHome.setOnClickListener(v -> finish());
@@ -121,7 +123,6 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                 // Store as lowercase
                 playerGuess = playerGuess.toLowerCase();
                 char[] guess = playerGuess.toCharArray();
-                String answer = "mocha";
                 char[] solution = answer.toCharArray();
                 int counter = 0;
                 // Check if string playerGuess is found in guessList
@@ -138,6 +139,9 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                         }
                         counter++;
                     }
+
+                    //keep this code in the if statement
+                    //determines whether or not it should go to next row
                     currentRow++;
                     if (currentRow < 5) {
                         editTextFields[currentRow][0].requestFocus();
