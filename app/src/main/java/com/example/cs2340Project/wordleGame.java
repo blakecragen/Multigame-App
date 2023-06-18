@@ -1,6 +1,7 @@
 package com.example.cs2340Project;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -107,19 +108,30 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
             if (enterButtonText.equals("Enter")) {
                 if (letsInRow == 5) {
                     String playerGuess = getRowCharacters();
+                    //store as lowercase
+                    playerGuess = playerGuess.toLowerCase();
                     char[] guess = playerGuess.toCharArray();
-                    String answer = "MOCHA";
+                    String answer = "mocha";
                     char[] solution = answer.toCharArray();
                     int counter = 0;
-                    for (int i = 0; i < guess.length; i++) {
-                        if (guess[i] == solution[i]) {
-                            editTextFields[counter].setBackgroundResource(R.color.green);
-                        } else if (answer.contains(String.valueOf(guess[i]))) {
-                            editTextFields[counter].setBackgroundResource(R.color.purple);
-                        } else {
-                            editTextFields[counter].setBackgroundResource(R.color.red);
+                    //check if string playerGuess is found in guessList
+                    int valid = wordle.checkGuessValid(playerGuess);
+                    if(valid != -1) {
+                        // should we add this for loop in the functionality file?
+                        for (int i = 0; i < guess.length; i++) {
+                            if (guess[i] == solution[i]) {
+                                editTextFields[counter].setBackgroundResource(R.color.green);
+                            } else if (answer.contains(String.valueOf(guess[i]))) {
+                                editTextFields[counter].setBackgroundResource(R.color.purple);
+                            } else {
+                                editTextFields[counter].setBackgroundResource(R.color.red);
+                            }
+                            counter++;
                         }
-                        counter++;
+                    }
+                    else{
+                        //add animation
+
                     }
                     letsInRow = 0;
                 }

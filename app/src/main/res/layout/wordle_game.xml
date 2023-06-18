@@ -261,6 +261,7 @@
     </androidx.gridlayout.widget.GridLayout>
 
     <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/letterGrid"
         android:layout_width="366dp"
         android:layout_height="234dp"
         android:layout_marginTop="16dp"
