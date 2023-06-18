@@ -1,5 +1,4 @@
 package com.example.cs2340Project;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -7,10 +6,14 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 public class wordleGame extends AppCompatActivity implements View.OnClickListener {
     private EditText[] editTextFields;
-    private wordleGameFunctionality wordle = new wordleGameFunctionality();
+    private Button enterButton;
+    private Button deleteButton;
+
     private int letsInRow;
+    private wordleGameFunctionality wordle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +21,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.wordle_game);
 
         letsInRow = 0;
+        wordle = new wordleGameFunctionality();
         wordle.selectNewWord();
 
         Button toHome = findViewById(R.id.toMainActivity);
@@ -58,6 +62,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         editTextFields[28] = findViewById(R.id.editText29);
         editTextFields[29] = findViewById(R.id.editText30);
 
+
         int[] buttonIds = {
                 R.id.buttonA, R.id.buttonB, R.id.buttonC, R.id.buttonD, R.id.buttonE,
                 R.id.buttonF, R.id.buttonG, R.id.buttonH, R.id.buttonI, R.id.buttonJ,
@@ -69,23 +74,85 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
             Button button = findViewById(buttonIds[i]);
             button.setOnClickListener(this);
         }
+
+        deleteButton = findViewById(R.id.delete);
+        deleteButton.setOnClickListener(this);
+
+        enterButton = findViewById(R.id.enter);
+        enterButton.setOnClickListener(this);
     }
 
-    @Override
     public void onClick(View v) {
+        if (v.getId() == R.id.delete) {
+            Button deleteButton = (Button) v;
+            String deleteButtonText = deleteButton.getText().toString();
+            if (deleteButtonText.equals("Delete") && letsInRow > 0) {
+                editTextFields[--letsInRow].setText("");
+            } else {
+                for (int i = 0; i < editTextFields.length; i++) {
+                    EditText editText = editTextFields[i];
+                    if (editText.getText().toString().isEmpty() && letsInRow < 5) {
+                        editText.setText(deleteButtonText);
+                        if (i + 1 < editTextFields.length) {
+                            editTextFields[i + 1].requestFocus();
+                        }
+                        letsInRow++;
+                        break;
+                    }
+                }
+            }
+        } else if (v.getId() == R.id.enter) {
+            Button enterButton = (Button) v;
+            String enterButtonText = enterButton.getText().toString();
+            if (enterButtonText.equals("Enter")) {
+                if (letsInRow == 5) {
+                    String playerGuess = getRowCharacters();
+                    char[] guess = playerGuess.toCharArray();
+                    String answer = "MOCHA";
+                    char[] solution = answer.toCharArray();
+                    int counter = 0;
+                    for (int i = 0; i < guess.length; i++) {
+                        if (guess[i] == solution[i]) {
+                            editTextFields[counter].setBackgroundResource(R.color.green);
+                        } else if (answer.contains(String.valueOf(guess[i]))) {
+                            editTextFields[counter].setBackgroundResource(R.color.purple);
+                        } else {
+                            editTextFields[counter].setBackgroundResource(R.color.red);
+                        }
+                        counter++;
+                    }
+                    letsInRow = 0;
+                }
+            }
+        } else {
+            keyboard(v);
+        }
+    }
+
+    private void keyboard(View v) {
         Button button = (Button) v;
         String buttonText = button.getText().toString();
-        for (int i = 0; i < editTextFields.length; i++) {
-            EditText editText = editTextFields[i];
-            if (editText.getText().toString().isEmpty() && letsInRow < 5) {
-                editText.setText(buttonText);
-                if (i + 1 < editTextFields.length) {
-                    editTextFields[i + 1].requestFocus();
+        if (!buttonText.isEmpty()) {
+            for (int i = 0; i < editTextFields.length; i++) {
+                EditText editText = editTextFields[i];
+                if (editText.getText().toString().isEmpty() && letsInRow < 5) {
+                    editText.setText(buttonText);
+                    if (i + 1 < editTextFields.length) {
+                        editTextFields[i + 1].requestFocus();
+                    }
+                    letsInRow++;
+                    break;
                 }
-                letsInRow++;
-                break;
             }
         }
     }
 
+    private String getRowCharacters() {
+        StringBuilder rowCharacters = new StringBuilder();
+        for (int i = 0; i < letsInRow; i++) {
+            rowCharacters.append(editTextFields[i].getText().toString());
+        }
+        return rowCharacters.toString();
+    }
 }
+

@@ -46,7 +46,7 @@ public class wordleGameFunctionality {
     private int[] playerCorrectNess;
 
     /** String of the correct word. */
-    private String solution;
+    private static String solution;
 
     /**
      * Constructor for the class to opperate the correct word/
@@ -267,7 +267,7 @@ public class wordleGameFunctionality {
      *
      * @return Returns the solution (String).
      */
-    public String getSolution() {
+    public static String getSolution() {
         return solution;
     }
 
