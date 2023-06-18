@@ -9,11 +9,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class wordleGame extends AppCompatActivity implements View.OnClickListener {
     private EditText[] editTextFields;
+    private wordleGameFunctionality wordle = new wordleGameFunctionality();
+    private int letsInRow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wordle_game);
+
+        letsInRow = 0;
+        wordle.selectNewWord();
 
         Button toHome = findViewById(R.id.toMainActivity);
         toHome.setOnClickListener(v -> finish());
@@ -72,11 +77,12 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         String buttonText = button.getText().toString();
         for (int i = 0; i < editTextFields.length; i++) {
             EditText editText = editTextFields[i];
-            if (editText.getText().toString().isEmpty()) {
+            if (editText.getText().toString().isEmpty() && letsInRow < 5) {
                 editText.setText(buttonText);
                 if (i + 1 < editTextFields.length) {
                     editTextFields[i + 1].requestFocus();
                 }
+                letsInRow++;
                 break;
             }
         }
