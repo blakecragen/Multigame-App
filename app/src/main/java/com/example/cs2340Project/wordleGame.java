@@ -124,6 +124,8 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                     letsInRow = 0;
                 }
             }
+        } else if (v.getId() == R.id.wd_restart_button) {
+            setContentView(R.layout.wordle_initial_screen);
         } else {
             keyboard(v);
         }
