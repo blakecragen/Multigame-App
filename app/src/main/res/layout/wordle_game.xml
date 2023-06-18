@@ -51,103 +51,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-<!--    <androidx.gridlayout.widget.GridLayout-->
-<!--        android:layout_width="390dp"-->
-<!--        android:layout_height="238dp"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        app:columnCount="6"-->
-<!--        app:layout_constraintBottom_toTopOf="@id/toMainActivity"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.476"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/wordleHeading"-->
-<!--        app:layout_constraintVertical_bias="0.911"-->
-<!--        app:rowCount="7">-->
-
-
-<!--    Row 1 of Keys-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:paddingLeft="16dp"-->
-<!--        android:paddingRight="16dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="480dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent" >-->
-
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Q"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="W"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="E"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="R"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="T"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Y"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="U"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="I"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="O"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="P"-->
-<!--            app:backgroundTint="@color/black" />-->
-<!--    </LinearLayout>-->
 <!--Row 1 of Letters-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -322,82 +225,7 @@
             />
 
     </LinearLayout>
-    android:layout_marginHorizontal="2dp"
-<!--    Row 2 of Keys-->
-<!--    <LinearLayout-->
-<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:paddingLeft="16dp"-->
-<!--        android:paddingRight="16dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="530dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent">-->
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="A"-->
-<!--            app:backgroundTint="@color/black" />-->
 
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="S"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="D"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="F"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="G"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="H"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="J"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="K"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="L"-->
-<!--            app:backgroundTint="@color/black" />-->
-<!--    </LinearLayout>-->
 <!--    Row 2 of Letters-->
     <LinearLayout
         android:layout_width="match_parent"
@@ -555,80 +383,7 @@
             />
 
     </LinearLayout>
-    android:layout_marginHorizontal="2dp"
-<!--    Row 3 of Keys-->
-<!--    <LinearLayout-->
-<!--        android:layout_width="410dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:paddingLeft="16dp"-->
-<!--        android:paddingRight="16dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginTop="580dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent">-->
 
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="2"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="Z"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="X"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="C"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="V"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="B"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="N"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="1"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="M"-->
-<!--            app:backgroundTint="@color/black" />-->
-
-<!--        <Button-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_weight="2"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:backgroundTint="@color/black" />-->
-<!--    </LinearLayout>-->
 <!--    Row 3 of Letters-->
     <LinearLayout
         android:layout_width="410dp"
@@ -783,7 +538,6 @@
             android:textSize="9sp"
             android:layout_weight="2"
             app:backgroundTint="@color/black"
-            android:layout_marginHorizontal="2dp"
             />
 
     </LinearLayout>
