@@ -1,0 +1,30 @@
+Index: app/src/main/res/anim/shake.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/anim/shake.xml b/app/src/main/res/anim/shake.xml
+new file mode 100644
+--- /dev/null	(date 1687110797181)
++++ b/app/src/main/res/anim/shake.xml	(date 1687110797181)
+@@ -0,0 +1,19 @@
++<?xml version="1.0" encoding="utf-8"?>
++<set xmlns:android="http://schemas.android.com/apk/res/android">
++    <rotate
++        android:duration="70"
++        android:fromDegrees="-5"
++        android:interpolator="@android:anim/linear_interpolator"
++        android:pivotX="50%"
++        android:pivotY="50%"
++        android:repeatCount="5"
++        android:repeatMode="reverse"
++        android:toDegrees="5" />
++    <translate
++        android:duration="70"
++        android:fromXDelta="-10"
++        android:interpolator="@android:anim/linear_interpolator"
++        android:repeatCount="5"
++        android:repeatMode="reverse"
++        android:toXDelta="10" />
++</set>
+\ No newline at end of file

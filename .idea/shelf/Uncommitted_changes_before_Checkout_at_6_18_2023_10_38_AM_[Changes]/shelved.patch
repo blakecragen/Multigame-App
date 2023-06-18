@@ -1,0 +1,16 @@
+Index: app/src/main/res/layout/wordle_game.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/res/layout/wordle_game.xml b/app/src/main/res/layout/wordle_game.xml
+--- a/app/src/main/res/layout/wordle_game.xml	
++++ b/app/src/main/res/layout/wordle_game.xml	
+@@ -240,6 +240,7 @@
+ 
+         <TextView
+             android:firstBaselineToTopHeight="35dp"
++            android:onClick="onClick"
+             android:background="#000000"
+             android:id="@+id/aKey"
+             android:layout_width="0dp"
