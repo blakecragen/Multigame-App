@@ -138,6 +138,10 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                         }
                         counter++;
                     }
+                    currentRow++;
+                    if (currentRow < 5) {
+                        editTextFields[currentRow][0].requestFocus();
+                    }
                 } else {
                     // Add animation
                     TextView tv = findViewById(R.id.wordleHeading);
@@ -145,10 +149,6 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                     tv.startAnimation(animation);
                 }
 
-                currentRow++;
-                if (currentRow < 5) {
-                    editTextFields[currentRow][0].requestFocus();
-                }
             }
         } else if (v.getId() == R.id.wd_restart_button) {
             recreate();
