@@ -5,12 +5,28 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
-public class wordleFuntionalityTests {
+public class WordleFunctionalityTests {
+    private wordleGameFunctionality wordle;
+
+    @Before
+    public void init() {
+        wordle = new wordleGameFunctionality();
+    }
+
+    @Test
+    public void testHash() {
+        int aHash = wordle.hashcode('a');
+        int zHash = wordle.hashcode('z');
+        assertEquals(0, aHash);
+        assertEquals(wordle.hashcode('a'), aHash);
+        assertEquals(aHash, zHash);
+        assertNotEquals(5, aHash);
+    }
+
+    @Test
+    public void rejectInvalidSolution() {
+        assertThrows(IllegalArgumentException.class, () -> wordle.setNewWord("code"));
+    }
 
     @Test
     public void testInitialization() {
