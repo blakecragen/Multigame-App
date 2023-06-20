@@ -1,6 +1,7 @@
 package com.example.cs2340Project;
 import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -37,7 +38,11 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         toHome.setOnClickListener(v -> finish());
 
         Button restart = findViewById(R.id.wd_restart_button);
-        restart.setOnClickListener(v -> recreate());
+        restart.setOnClickListener(v -> {
+            Intent intent = new Intent(wordleGame.this, wordleInitialScreen.class);
+            startActivity(intent);
+            finish();
+        });
 
         editTextFields = new EditText[5][5];
         editTextFields[0][0] = findViewById(R.id.editText1);
