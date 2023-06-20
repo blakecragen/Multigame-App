@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
  */
 public class wordleFuntionalityTests {
 
+
     @Test
     public void testInitialization() {
         wordleGameFunctionality correctWord = new wordleGameFunctionality();
@@ -137,6 +138,45 @@ public class wordleFuntionalityTests {
         game.push(2,'c');
         assertTrue(game.get(0,'a'));
         assertFalse(game.get(1,'g'));
+    }
+
+    @Test
+    public void testNodeClass() {
+        Node newNode = new Node(1, 'a');
+        assertNull(newNode.next);
+        Node node2 = new Node(1, 'b');
+        newNode.next = node2;
+        assertNull(newNode.next.next);
+    }
+
+    @Test
+    public void  testPush() {
+        wordleGameFunctionality wordle = new wordleGameFunctionality();
+        wordle.push(new Node(0,'a'));
+        wordle.push(new Node(6,'b'));
+        wordle.push(new Node(11,'c'));
+        Node[] map1 = wordle.getWordHashmap();
+        Node[] map2 = wordle.mapDeepCopy();
+        assertNotEquals(map2, map1);
+        assertEquals(true, map2[0].equals(map1[0].pos, map1[0].let));
+    }
+
+    @Test
+    public void testRemove() {
+        wordleGameFunctionality wordle = new wordleGameFunctionality();
+        wordle.push(0, 'a');
+        wordle.push(1, 'b');
+        wordle.push(2, 'c');
+        wordle.push(3, 'd');
+        wordle.push(4, 'e');
+        wordle.remove(0,'a');
+        Node[] map = wordle.getWordHashmap();
+        assertNull(map[0]);
+        assertEquals(1,map[1].pos);
+        assertEquals('b',map[1].let);
+        wordle.remove(1,'b');
+        map = wordle.getWordHashmap();
+        assertNull(map[1]);
     }
 
     @Test
