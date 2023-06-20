@@ -12,13 +12,14 @@ import static org.junit.Assert.*;
  */
 public class wordleFuntionalityTests {
 
-
+    // By Chris
     @Test
     public void testInitialization() {
         wordleGameFunctionality correctWord = new wordleGameFunctionality();
         assertNull(correctWord.getSolution());
     }
 
+    // By Chris
     @Test
     public void testSelectNewWord() {
         wordleGameFunctionality correctWord = new wordleGameFunctionality();
@@ -38,6 +39,7 @@ public class wordleFuntionalityTests {
         assertNotEquals(temp, correctWord.getSolution());
     }
 
+    // By Christeena
     @Test
     public void testCheckGuessCorrLets() {
         wordleGameFunctionality correctWord = new wordleGameFunctionality();
@@ -70,6 +72,7 @@ public class wordleFuntionalityTests {
         assertArrayEquals(expected, correctWord.getPlayerCorrectness());
     }
 
+    // By Christeena
     @Test
     public void checkGuessValid() {
         wordleGameFunctionality wordle = new wordleGameFunctionality();
@@ -85,6 +88,7 @@ public class wordleFuntionalityTests {
         assertEquals(true, wordle.checkGuessValid(word) >= 0);
     }
 
+    // By Scott
     @Test
     public void testHashcode() {
         int ascii = (int) 'a';
@@ -100,6 +104,7 @@ public class wordleFuntionalityTests {
 
     }
 
+    // By Scott
     @Test
     public void testClear() {
         wordleGameFunctionality game = new wordleGameFunctionality();
@@ -110,6 +115,7 @@ public class wordleFuntionalityTests {
         assertFalse(game.get(0,'a'));
     }
 
+    // By Joey
     @Test
     public void testCheckGuessCorrLetsWrongSpot() {
         wordleGameFunctionality correctWord = new wordleGameFunctionality();
@@ -130,6 +136,7 @@ public class wordleFuntionalityTests {
         assertArrayEquals(expected, correctWord.getPlayerCorrectness());
     }
 
+    // By Joey
     @Test
     public void testGet() {
         wordleGameFunctionality game = new wordleGameFunctionality();
@@ -140,6 +147,7 @@ public class wordleFuntionalityTests {
         assertFalse(game.get(1,'g'));
     }
 
+    // By Arden
     @Test
     public void testNodeClass() {
         Node newNode = new Node(1, 'a');
@@ -149,6 +157,7 @@ public class wordleFuntionalityTests {
         assertNull(newNode.next.next);
     }
 
+    // By Arden
     @Test
     public void  testPush() {
         wordleGameFunctionality wordle = new wordleGameFunctionality();
@@ -161,6 +170,7 @@ public class wordleFuntionalityTests {
         assertEquals(true, map2[0].equals(map1[0].pos, map1[0].let));
     }
 
+    // By Blake
     @Test
     public void testRemove() {
         wordleGameFunctionality wordle = new wordleGameFunctionality();
@@ -179,6 +189,7 @@ public class wordleFuntionalityTests {
         assertNull(map[1]);
     }
 
+    // By Blake
     @Test
     public void testCheckGuess() {
         wordleGameFunctionality correctWord = new wordleGameFunctionality();
