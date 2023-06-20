@@ -117,7 +117,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                         break;
                     }
                 }
-    }
+            }
         }  else if (v.getId() == R.id.enter) {
             if (currentRow < 5 && isRowFilled(currentRow)) {
                 String playerGuess = getRowCharacters(currentRow);
@@ -178,6 +178,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         } else {
             keyboard(v);
         }
+
     }
 
     private boolean isRowFilled(int row) {
