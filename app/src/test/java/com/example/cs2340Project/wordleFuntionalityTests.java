@@ -12,14 +12,14 @@ import static org.junit.Assert.*;
  */
 public class wordleFuntionalityTests {
 
-    // By Chris
+    // By Charlie
     @Test
     public void testInitialization() {
         wordleGameFunctionality correctWord = new wordleGameFunctionality();
         assertNull(correctWord.getSolution());
     }
 
-    // By Chris
+    // By Charlie
     @Test
     public void testSelectNewWord() {
         wordleGameFunctionality correctWord = new wordleGameFunctionality();
