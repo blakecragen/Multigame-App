@@ -1,6 +1,4 @@
 package com.example.cs2340Project;
-import android.animation.AnimatorInflater;
-import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +6,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -154,6 +151,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                             isCorrectGuess = false;
                             if(currentRow == 4) {
                                 Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
+                                //remove life
                             }
                             break;
                         }

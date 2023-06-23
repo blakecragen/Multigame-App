@@ -11,10 +11,10 @@
 
     <TextView
         android:id="@+id/wordleHeading"
-        android:layout_width="324dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:fontFamily="@font/pressstart_2p"
         android:inputType="text"
@@ -27,10 +27,10 @@
 
     <Button
         android:id="@+id/toMainActivity"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="248dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/pressstart_2p"
         android:text="HOME"
         app:backgroundTint="@color/red"
@@ -40,10 +40,10 @@
 
     <Button
         android:id="@+id/wd_restart_button"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="204dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="84dp"
         android:fontFamily="@font/pressstart_2p"
         android:text="RESTART"
         app:backgroundTint="@color/red"
@@ -52,16 +52,16 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/gridLayout3"
         android:layout_width="390dp"
         android:layout_height="238dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         app:columnCount="6"
-        app:layout_constraintBottom_toTopOf="@id/toMainActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/wordleHeading"
+        app:layout_constraintTop_toBottomOf="@id/letterGrid"
         app:layout_constraintVertical_bias="0.828"
         app:rowCount="7">
 
@@ -262,13 +262,12 @@
 
     <androidx.gridlayout.widget.GridLayout
         android:id="@+id/letterGrid"
-        android:layout_width="366dp"
-        android:layout_height="234dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="224dp"
         app:columnCount="5"
         app:layout_constraintBottom_toTopOf="@id/toMainActivity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/wordleHeading"
         app:layout_constraintVertical_bias="0.035"
@@ -278,195 +277,195 @@
             android:id="@+id/editText1"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:maxLength="1"
-            android:hint="A"/>
+            android:hint="A"
+            android:maxLength="1" />
 
         <EditText
             android:id="@+id/editText2"
             android:layout_width="65dp"
-            android:hint="A"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="A" />
 
         <EditText
             android:id="@+id/editText3"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="A"/>
+            android:hint="A" />
 
         <!-- Row 2 -->
         <EditText
             android:id="@+id/editText4"
             android:layout_width="65dp"
-            android:hint="A"
             android:layout_height="wrap_content"
+            android:hint="A"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText5"
             android:layout_width="65dp"
-            android:hint="A"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="A" />
 
         <EditText
             android:id="@+id/editText6"
             android:layout_width="65dp"
-            android:hint="B"
             android:layout_height="wrap_content"
+            android:hint="B"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Row 3 -->
         <EditText
             android:id="@+id/editText7"
             android:layout_width="65dp"
-            android:hint="B"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="B" />
 
         <EditText
             android:id="@+id/editText8"
             android:layout_width="65dp"
-            android:hint="B"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="B" />
 
         <EditText
             android:id="@+id/editText9"
             android:layout_width="65dp"
-            android:hint="B"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="B" />
 
         <!-- Row 4 -->
         <EditText
             android:id="@+id/editText10"
             android:layout_width="65dp"
-            android:hint="B"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="B" />
 
         <EditText
             android:id="@+id/editText11"
             android:layout_width="65dp"
-            android:hint="C"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="C" />
 
         <EditText
             android:id="@+id/editText12"
             android:layout_width="65dp"
-            android:hint="C"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="C" />
 
         <!-- Row 5 -->
         <EditText
             android:id="@+id/editText13"
             android:layout_width="65dp"
-            android:hint="C"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="C" />
 
         <EditText
             android:id="@+id/editText14"
             android:layout_width="65dp"
-            android:hint="C"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="C" />
 
         <EditText
             android:id="@+id/editText15"
             android:layout_width="65dp"
-            android:hint="C"
             android:layout_height="wrap_content"
+            android:hint="C"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText16"
             android:layout_width="65dp"
-            android:hint="D"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="D" />
 
         <EditText
             android:id="@+id/editText17"
             android:layout_width="65dp"
-            android:hint="D"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="D" />
 
         <EditText
             android:id="@+id/editText18"
             android:layout_width="65dp"
-            android:hint="D"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="D" />
 
         <!-- Row 2 -->
         <EditText
             android:id="@+id/editText19"
-            android:hint="D"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
+            android:hint="D"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText20"
             android:layout_width="65dp"
-            android:hint="D"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="D" />
 
         <EditText
             android:id="@+id/editText21"
             android:layout_width="65dp"
-            android:hint="E"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="E" />
 
         <!-- Row 3 -->
         <EditText
             android:id="@+id/editText22"
             android:layout_width="65dp"
-            android:hint="E"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="E" />
 
         <EditText
             android:id="@+id/editText23"
             android:layout_width="65dp"
-            android:hint="E"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="E" />
 
         <EditText
             android:id="@+id/editText24"
             android:layout_width="65dp"
-            android:hint="E"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="E" />
 
         <!-- Row 4 -->
         <EditText
             android:id="@+id/editText25"
             android:layout_width="65dp"
-            android:hint="E"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="E" />
 
         <EditText
             android:id="@+id/editText26"
             android:layout_width="65dp"
-            android:hint="F"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="F" />
 
         <EditText
             android:id="@+id/editText27"
             android:layout_width="65dp"
-            android:hint="F"
             android:layout_height="wrap_content"
+            android:hint="F"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Row 5 -->
         <EditText
             android:id="@+id/editText28"
             android:layout_width="65dp"
-            android:hint="F"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="F" />
 
         <EditText
             android:id="@+id/editText29"
             android:layout_width="65dp"
-            android:hint="F"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="F" />
 
         <EditText
             android:id="@+id/editText30"
             android:layout_width="65dp"
-            android:hint="F"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:hint="F" />
 
     </androidx.gridlayout.widget.GridLayout>
 
@@ -474,8 +473,8 @@
         android:id="@+id/enter"
         android:layout_width="120dp"
         android:layout_height="45dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="596dp"
+        android:layout_marginStart="286dp"
+        android:layout_marginTop="510dp"
         android:text="Enter"
         android:textSize="20dp"
         app:backgroundTint="@color/black"
@@ -484,14 +483,32 @@
 
     <Button
         android:id="@+id/delete"
-        android:layout_width="117dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="596dp"
+        android:layout_width="120dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="510dp"
         android:text="Delete"
         android:textSize="20dp"
         app:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="29dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/delete">
+
+        <include
+            android:id="@+id/cell1"
+            layout="@layout/player_data" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
