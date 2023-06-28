@@ -13,11 +13,7 @@ public class Player {
     private Player(){}
     public static Player getInstance(){
         if (myPlayer == null) {
-            synchronized (Player.class){
-                if (myPlayer == null) {
-                    myPlayer = new Player();
-                }
-            }
+            myPlayer = new Player();
         }
         return myPlayer;
     }
