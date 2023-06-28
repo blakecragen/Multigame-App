@@ -10,29 +10,17 @@ public class Player {
 
     //singleton design pattern
     private static Player myPlayer;
+    private static int playerLives = 3;
+    private static char playerSprite = 'f';
+    private static int score = 0;
+    private static String playerName = "Anon";
     private Player(){}
-    public static Player getInstance(){
+    public static synchronized Player getInstance(){
         if (myPlayer == null) {
             myPlayer = new Player();
         }
         return myPlayer;
     }
-    private int playerLives;
-    private int playerSprite;
-    private int score;
-    private String playerName;
-
-    public Player(int playerSprite, String playerName) {
-        this.playerLives = 3;
-        this.playerSprite = playerSprite;
-        this.score = 0;
-        this.playerName = playerName;
-
-//        TextView name = findViewByID(R.id.playerDataName);
-//        name.setText(playerName);
-    }
-
-
     public int getPlayerLives() {
         return playerLives;
     }
@@ -57,10 +45,12 @@ public class Player {
         }
     }
 
-    public int getPlayerSprite() {
+    public char getPlayerSprite() {
         return playerSprite;
     }
-
+    public void setPlayerSprite( char playerSprite){
+        myPlayer.playerSprite = playerSprite;
+    }
     public int getScore() {
         return score;
     }
@@ -71,5 +61,8 @@ public class Player {
 
     public String getPlayerName() {
         return playerName;
+    }
+    public void setPlayerName(String playerName){
+        myPlayer.playerName = playerName;
     }
 }

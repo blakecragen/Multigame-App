@@ -21,6 +21,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
     private String answer;
     private wordleGameFunctionality wordle;
 
+    private Player player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,9 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         wordle = new wordleGameFunctionality();
         wordle.selectNewWord();
         answer = wordle.getSolution();
+        player = Player.getInstance();
+        TextView name = findViewById(R.id.playerDataName);
+        name.setText(player.getPlayerName());
 
         Button toHome = findViewById(R.id.toMainActivity);
         toHome.setOnClickListener(v -> finish());
