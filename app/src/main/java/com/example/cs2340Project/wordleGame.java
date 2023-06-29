@@ -6,6 +6,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,6 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
 
     private String answer;
     private wordleGameFunctionality wordle;
-
     private Player player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,9 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         player = Player.getInstance();
         TextView name = findViewById(R.id.playerDataName);
         name.setText(player.getPlayerName());
+        //update the sprite image
+        ImageView sprite = findViewById(R.id.sprite);
+        player.setSpriteImage(sprite);
 
         Button toHome = findViewById(R.id.toMainActivity);
         toHome.setOnClickListener(v -> finish());
@@ -155,6 +158,15 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                             isCorrectGuess = false;
                             if(currentRow == 4) {
                                 Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
+                                if(player.getPlayerLives() == 3) {
+                                    player.removeLife(findViewById(R.id.life1));
+                                }
+                                else if(player.getPlayerLives() == 2) {
+                                    player.removeLife(findViewById(R.id.life2));
+                                }
+                                else {
+                                    player.removeLife(findViewById(R.id.life3));
+                                }
                                 //remove life
                             }
                             break;
