@@ -18,7 +18,6 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
     private Button enterButton;
     private Button deleteButton;
     private int currentRow;
-
     private String answer;
     private wordleGameFunctionality wordle;
     private Player player;
@@ -32,11 +31,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         wordle.selectNewWord();
         answer = wordle.getSolution();
         player = Player.getInstance();
-        TextView name = findViewById(R.id.playerDataName);
-        name.setText(player.getPlayerName());
-        //update the sprite image
-        ImageView sprite = findViewById(R.id.sprite);
-        player.setSpriteImage(sprite);
+        selectLives();
 
         Button toHome = findViewById(R.id.toMainActivity);
         toHome.setOnClickListener(v -> finish());
@@ -158,20 +153,14 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                             isCorrectGuess = false;
                             if(currentRow == 4) {
                                 Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
-                                if(player.getPlayerLives() == 3) {
-                                    player.removeLife(findViewById(R.id.life1));
+                                    player.setPlayerLives((player.getPlayerLives())-1);
+                                    Intent intent = new Intent(wordleGame.this, wordleGame.class);
+                                    startActivity(intent);
+                                    finish();
                                 }
-                                else if(player.getPlayerLives() == 2) {
-                                    player.removeLife(findViewById(R.id.life2));
-                                }
-                                else {
-                                    player.removeLife(findViewById(R.id.life3));
-                                }
-                                //remove life
                             }
                             break;
                         }
-                    }
 
                     // Show toast message if the guess is correct
                     if (isCorrectGuess) {
@@ -232,6 +221,23 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                 }
             }
         }
+    }
+
+    private void selectLives() {
+        if(player.getPlayerLives() == 0){
+            Intent intent = new Intent(wordleGame.this, gameOverScreen.class);
+            startActivity(intent);
+            finish();
+        }
+        TextView name = findViewById(R.id.playerDataName);
+        name.setText(player.getPlayerName());
+        //update the sprite image
+        ImageView sprite = findViewById(R.id.sprite);
+        player.setSpriteImage(sprite);
+        ImageView i1 = findViewById(R.id.life1);
+        ImageView i2 = findViewById(R.id.life2);
+        ImageView i3 = findViewById(R.id.life3);
+        player.setLives(i1,i2,i3);
     }
 }
 

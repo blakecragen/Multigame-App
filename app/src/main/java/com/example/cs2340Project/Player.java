@@ -17,6 +17,7 @@ public class Player {
     private static int playerLives = 3;
     private static char playerSprite = 'f';
     private static int score = 0;
+    private static int highScore = 0;
     private static String playerName = "Anon";
     private Player(){}
     public static synchronized Player getInstance(){
@@ -26,15 +27,24 @@ public class Player {
         return myPlayer;
     }
     public int getPlayerLives() {
-        return playerLives;
+        return myPlayer.playerLives;
+    }
+    public void setPlayerLives(int playerLives){
+        myPlayer.playerLives = playerLives;
     }
 
-    public void removeLife(ImageView imgView) {
-           imgView.setVisibility(View.INVISIBLE);
-                myPlayer.playerLives--;
-
-        if(myPlayer.playerLives == 0){
-            //signal game over
+    public void setLives(ImageView imgView1, ImageView imgView2, ImageView imgView3) {
+        if (myPlayer.getPlayerLives() == 2) {
+            imgView1.setVisibility(View.INVISIBLE);
+        }
+        else if (myPlayer.getPlayerLives() == 1) {
+            imgView1.setVisibility(View.INVISIBLE);
+            imgView2.setVisibility(View.INVISIBLE);
+        }
+        else if (myPlayer.getPlayerLives() == 0){
+            imgView1.setVisibility(View.INVISIBLE);
+            imgView2.setVisibility(View.INVISIBLE);
+            imgView3.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -67,7 +77,10 @@ public class Player {
     }
 
     public void setScore(int score) {
-        this.score = score;
+        myPlayer.score = score;
+        if(score>myPlayer.highScore){
+            myPlayer.highScore = score;
+        }
     }
 
     public String getPlayerName() {
