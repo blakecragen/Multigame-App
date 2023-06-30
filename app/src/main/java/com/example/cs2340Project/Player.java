@@ -1,11 +1,8 @@
 package com.example.cs2340Project;
 
-import android.media.Image;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 import android.view.View;
 
@@ -13,63 +10,59 @@ public class Player {
 
     //singleton design pattern
     private static Player myPlayer;
-
-    private static int playerLives = 3;
-    private static char playerSprite = 'f';
-    private static int score = 0;
-    private static int highScore = 0;
-    private static String playerName = "Anon";
     private Player(){}
-    public static synchronized Player getInstance(){
+    public static Player getInstance(){
         if (myPlayer == null) {
-            myPlayer = new Player();
+            synchronized (Player.class){
+                if (myPlayer == null) {
+                    myPlayer = new Player();
+                }
+            }
         }
         return myPlayer;
     }
+    private int playerLives;
+    private int playerSprite;
+    private int score;
+    private String playerName;
+
+    public Player(int playerSprite, String playerName) {
+        this.playerLives = 3;
+        this.playerSprite = playerSprite;
+        this.score = 0;
+        this.playerName = playerName;
+
+//        TextView name = findViewByID(R.id.playerDataName);
+//        name.setText(playerName);
+    }
+
+
     public int getPlayerLives() {
-        return myPlayer.playerLives;
-    }
-    public void setPlayerLives(int playerLives){
-        myPlayer.playerLives = playerLives;
+        return playerLives;
     }
 
-    public void setLives(ImageView imgView1, ImageView imgView2, ImageView imgView3) {
-        if (myPlayer.getPlayerLives() == 2) {
-            imgView1.setVisibility(View.INVISIBLE);
-        }
-        else if (myPlayer.getPlayerLives() == 1) {
-            imgView1.setVisibility(View.INVISIBLE);
-            imgView2.setVisibility(View.INVISIBLE);
-        }
-        else if (myPlayer.getPlayerLives() == 0){
-            imgView1.setVisibility(View.INVISIBLE);
-            imgView2.setVisibility(View.INVISIBLE);
-            imgView3.setVisibility(View.INVISIBLE);
+    public void removeLife() {
+//        if(playerLives == 3){
+//            ImageView imgView = (ImageView) findViewById(R.id.life3);
+//            imgView.setVisibility(View.VISIBLE);
+//        }
+//        else if(playerLives == 2){
+//            ImageView imgView = (ImageView)findViewById(R.id.life2);
+//            imgView.setVisibility(View.VISIBLE);
+//        }
+//        else if(playerLives == 1){
+//            ImageView imgView = (ImageView)findViewById(R.id.life1);
+//            imgView.setVisibility(View.VISIBLE);
+//        }
+                this.playerLives--;
+
+        if(this.playerLives == 0){
+            //signal game over
         }
     }
 
-    public void addLife(ImageView imgView) {
-        imgView.setVisibility(View.VISIBLE);
-        myPlayer.playerLives++;
-    }
-
-    public char getPlayerSprite() {
+    public int getPlayerSprite() {
         return playerSprite;
-    }
-    public void setPlayerSprite(char playerSprite){
-        myPlayer.playerSprite = playerSprite;
-    }
-
-    public void setSpriteImage(ImageView sprite){
-            if(myPlayer.playerSprite == ('p')){
-                sprite.setImageResource(R.drawable.panda);
-            }
-            else if(myPlayer.playerSprite == ('t')){
-                sprite.setImageResource(R.drawable.turtle);
-            }
-            else {
-                sprite.setImageResource(R.drawable.fox);
-            }
     }
 
     public int getScore() {
@@ -77,16 +70,10 @@ public class Player {
     }
 
     public void setScore(int score) {
-        myPlayer.score = score;
-        if(score>myPlayer.highScore){
-            myPlayer.highScore = score;
-        }
+        this.score = score;
     }
 
     public String getPlayerName() {
         return playerName;
     }
-    public void setPlayerName(String playerName){
-        myPlayer.playerName = playerName;
-    }
-    }
+}
