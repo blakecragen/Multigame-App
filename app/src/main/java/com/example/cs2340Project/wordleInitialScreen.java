@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,21 +18,39 @@ public class wordleInitialScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wordle_initial_screen);
         name = findViewById(R.id.wordlePLayerName);
-        String username = name.getText().toString();
         add = findViewById(R.id.startGame);
-
-        player = new Player(1, username);
 
         Button wordleStartScreen = findViewById(R.id.BackButton);
         wordleStartScreen.setOnClickListener(v -> finish());
 
         Button startGame = findViewById(R.id.startGame);
         startGame.setOnClickListener(v -> {
+            player = Player.getInstance();
+            //player.setPlayerName(name.getText().toString());
+            setSprite();
             Intent intent = new Intent(wordleInitialScreen.this, wordleGame.class);
-            intent.putExtra("keyname", player.getPlayerName());
             startActivity(intent);
             finish();
             //startActivityForResult(intent, 1);
         });
+    }
+
+    private void setSprite(){
+        RadioButton pandaButton = findViewById(R.id.pandaButton);
+        RadioButton foxButton = findViewById(R.id.foxButton);
+        RadioButton turtleButton = findViewById(R.id.turtleButton);
+        ImageView sprite = findViewById(R.id.sprite);
+        if(pandaButton.isChecked()){
+            //player.setPlayerSprite('p');
+            //sprite.setImageResource(R.drawable.panda);
+        }
+        else if(turtleButton.isChecked()){
+            //player.setPlayerSprite('t');
+            //sprite.setImageResource(R.drawable.turtle);
+        }
+        else {
+            //player.setPlayerSprite('f');
+            //sprite.setImageResource(R.drawable.fox);
+        }
     }
 }

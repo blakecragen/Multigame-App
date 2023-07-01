@@ -1,0 +1,525 @@
+Index: .idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_rebase_[Changes]" date="1687111730728" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_19_23,_10_15_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_23,_10_15_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_23,_10_15_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_23,_10_15_PM_[Changes]/shelved.patch	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,52 +0,0 @@
+-Index: app/src/main/java/com/example/cs2340Project/wordleGame.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.cs2340Project;\nimport android.animation.AnimatorInflater;\nimport android.animation.ObjectAnimator;\nimport android.os.Bundle;\nimport android.view.View;\nimport android.view.animation.Animation;\nimport android.view.animation.AnimationUtils;\nimport android.widget.Button;\nimport android.widget.EditText;\nimport android.widget.GridLayout;\nimport android.widget.TextView;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\n\npublic class wordleGame extends AppCompatActivity implements View.OnClickListener {\n    private EditText[][] editTextFields;\n    private Button enterButton;\n    private Button deleteButton;\n    private int currentRow;\n\n    private String answer;\n    private wordleGameFunctionality wordle;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.wordle_game);\n\n        currentRow = 0;\n        wordle = new wordleGameFunctionality();\n        wordle.selectNewWord();\n        answer = wordle.getSolution();\n\n        Button toHome = findViewById(R.id.toMainActivity);\n        toHome.setOnClickListener(v -> finish());\n\n        Button restart = findViewById(R.id.wd_restart_button);\n        restart.setOnClickListener(v -> recreate());\n\n        editTextFields = new EditText[5][5];\n        editTextFields[0][0] = findViewById(R.id.editText1);\n        editTextFields[0][1] = findViewById(R.id.editText2);\n        editTextFields[0][2] = findViewById(R.id.editText3);\n        editTextFields[0][3] = findViewById(R.id.editText4);\n        editTextFields[0][4] = findViewById(R.id.editText5);\n        editTextFields[1][0] = findViewById(R.id.editText6);\n        editTextFields[1][1] = findViewById(R.id.editText7);\n        editTextFields[1][2] = findViewById(R.id.editText8);\n        editTextFields[1][3] = findViewById(R.id.editText9);\n        editTextFields[1][4] = findViewById(R.id.editText10);\n        editTextFields[2][0] = findViewById(R.id.editText11);\n        editTextFields[2][1] = findViewById(R.id.editText12);\n        editTextFields[2][2] = findViewById(R.id.editText13);\n        editTextFields[2][3] = findViewById(R.id.editText14);\n        editTextFields[2][4] = findViewById(R.id.editText15);\n        editTextFields[3][0] = findViewById(R.id.editText16);\n        editTextFields[3][1] = findViewById(R.id.editText17);\n        editTextFields[3][2] = findViewById(R.id.editText18);\n        editTextFields[3][3] = findViewById(R.id.editText19);\n        editTextFields[3][4] = findViewById(R.id.editText20);\n        editTextFields[4][0] = findViewById(R.id.editText21);\n        editTextFields[4][1] = findViewById(R.id.editText22);\n        editTextFields[4][2] = findViewById(R.id.editText23);\n        editTextFields[4][3] = findViewById(R.id.editText24);\n        editTextFields[4][4] = findViewById(R.id.editText25);\n\n        int[] buttonIds = {\n                R.id.buttonA, R.id.buttonB, R.id.buttonC, R.id.buttonD, R.id.buttonE,\n                R.id.buttonF, R.id.buttonG, R.id.buttonH, R.id.buttonI, R.id.buttonJ,\n                R.id.buttonK, R.id.buttonL, R.id.buttonM, R.id.buttonN, R.id.buttonO,\n                R.id.buttonP, R.id.buttonQ, R.id.buttonR, R.id.buttonS, R.id.buttonT,\n                R.id.buttonU, R.id.buttonV, R.id.buttonW, R.id.buttonX, R.id.buttonY, R.id.buttonZ\n        };\n        for (int i = 0; i < buttonIds.length; i++) {\n            Button button = findViewById(buttonIds[i]);\n            button.setOnClickListener(this);\n        }\n\n        for (int row = 0; row < 5; row++) {\n            for (int col = 0; col < 5; col++) {\n                EditText toBeDisabled = editTextFields[row][col];\n                toBeDisabled.setFocusable(false);\n                toBeDisabled.setFocusableInTouchMode(false);\n            }\n        }\n\n        deleteButton = findViewById(R.id.delete);\n        deleteButton.setOnClickListener(this);\n\n        enterButton = findViewById(R.id.enter);\n        enterButton.setOnClickListener(this);\n    }\n\n    public void onClick(View v) {\n        if (v.getId() == R.id.delete) {\n            Button deleteButton = (Button) v;\n            String deleteButtonText = deleteButton.getText().toString();\n            if (deleteButtonText.equals(\"Delete\")) {\n                for (int col = 4; col >= 0; col--) {\n                    EditText editText = editTextFields[currentRow][col];\n                    if (!editText.getText().toString().isEmpty()) {\n                        editText.setText(\"\");\n                        editText.requestFocus();\n                        break;\n                    }\n                }\n            } else {\n                for (int col = 0; col < 5; col++) {\n                    EditText editText = editTextFields[currentRow][col];\n                    if (editText.getText().toString().isEmpty()) {\n                        editText.setText(deleteButtonText);\n                        if (col + 1 < 5) {\n                            editTextFields[currentRow][col + 1].requestFocus();\n                        }\n                        break;\n                    }\n                }\n    }\n        }  else if (v.getId() == R.id.enter) {\n            if (currentRow < 5 && isRowFilled(currentRow)) {\n                String playerGuess = getRowCharacters(currentRow);\n                // Store as lowercase\n                playerGuess = playerGuess.toLowerCase();\n                char[] guess = playerGuess.toCharArray();\n                char[] solution = answer.toCharArray();\n                int counter = 0;\n                // Check if string playerGuess is found in guessList\n                int valid = wordle.checkGuessValid(playerGuess);\n                if (valid != -1) {\n                    // Perform the desired function for the current row\n                    for (int i = 0; i < guess.length; i++) {\n                        if (guess[i] == solution[i]) {\n                            editTextFields[currentRow][counter].setBackgroundResource(R.color.green);\n                        } else if (answer.contains(String.valueOf(guess[i]))) {\n                            editTextFields[currentRow][counter].setBackgroundResource(R.color.purple);\n                        } else {\n                            editTextFields[currentRow][counter].setBackgroundResource(R.color.red);\n                        }\n                        counter++;\n                    }\n\n                    //keep this code in the if statement\n                    //determines whether or not it should go to next row\n                    currentRow++;\n                    if (currentRow < 5) {\n                        editTextFields[currentRow][0].requestFocus();\n                    }\n                } else {\n                    // Add animation\n                    TextView tv = findViewById(R.id.wordleHeading);\n                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);\n                    tv.startAnimation(animation);\n                }\n\n            }\n        } else if (v.getId() == R.id.wd_restart_button) {\n            recreate();\n        } else {\n            keyboard(v);\n        }\n    }\n\n    private boolean isRowFilled(int row) {\n        for (int col = 0; col < 5; col++) {\n            if (editTextFields[row][col].getText().toString().isEmpty()) {\n                return false;\n            }\n        }\n        return true;\n    }\n\n    private String getRowCharacters(int row) {\n        StringBuilder rowCharacters = new StringBuilder();\n        for (int col = 0; col < 5; col++) {\n            rowCharacters.append(editTextFields[row][col].getText().toString());\n        }\n        return rowCharacters.toString();\n    }\n\n    private void keyboard(View v) {\n        Button button = (Button) v;\n        String buttonText = button.getText().toString();\n        if (!buttonText.isEmpty()) {\n            for (int col = 0; col < 5; col++) {\n                EditText editText = editTextFields[currentRow][col];\n                if (editText.getText().toString().isEmpty()) {\n                    editText.setText(buttonText);\n                    if (col + 1 < 5) {\n                        editTextFields[currentRow][col + 1].requestFocus();\n                    }\n                    break;\n                }\n            }\n        }\n    }\n}\n\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/cs2340Project/wordleGame.java b/app/src/main/java/com/example/cs2340Project/wordleGame.java
+---- a/app/src/main/java/com/example/cs2340Project/wordleGame.java	(revision 343139f36afdbb6e63dbd9c44228269aff752c50)
+-+++ b/app/src/main/java/com/example/cs2340Project/wordleGame.java	(date 1687130530835)
+-@@ -116,7 +116,7 @@
+-                         break;
+-                     }
+-                 }
+--    }
+-+            }
+-         }  else if (v.getId() == R.id.enter) {
+-             if (currentRow < 5 && isRowFilled(currentRow)) {
+-                 String playerGuess = getRowCharacters(currentRow);
+-@@ -159,6 +159,7 @@
+-         } else {
+-             keyboard(v);
+-         }
+-+
+-     }
+- 
+-     private boolean isRowFilled(int row) {
+-Index: .idea/deploymentTargetDropDown.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"deploymentTargetDropDown\">\n    <targetSelectedWithDropDown>\n      <Target>\n        <type value=\"QUICK_BOOT_TARGET\" />\n        <deviceKey>\n          <Key>\n            <type value=\"VIRTUAL_DEVICE_PATH\" />\n            <value value=\"$USER_HOME$/.android/avd/Pixel_3a_API_33_x86_64.avd\" />\n          </Key>\n        </deviceKey>\n      </Target>\n    </targetSelectedWithDropDown>\n    <timeTargetWasSelectedWithDropDown value=\"2023-06-15T20:07:56.347888Z\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+---- a/.idea/deploymentTargetDropDown.xml	(revision 343139f36afdbb6e63dbd9c44228269aff752c50)
+-+++ b/.idea/deploymentTargetDropDown.xml	(date 1687129167131)
+-@@ -7,11 +7,11 @@
+-         <deviceKey>
+-           <Key>
+-             <type value="VIRTUAL_DEVICE_PATH" />
+--            <value value="$USER_HOME$/.android/avd/Pixel_3a_API_33_x86_64.avd" />
+-+            <value value="$USER_HOME$/.android/avd/Pixel_5_API_33.avd" />
+-           </Key>
+-         </deviceKey>
+-       </Target>
+-     </targetSelectedWithDropDown>
+--    <timeTargetWasSelectedWithDropDown value="2023-06-15T20:07:56.347888Z" />
+-+    <timeTargetWasSelectedWithDropDown value="2023-06-18T22:59:18.416138Z" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_34_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_34_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_34_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_34_PM__Changes_.xml	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_6_17_2023_7_34_PM_[Changes]" date="1687044903444" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_34_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 6/17/2023 7:34 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_19_23__10_15_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_23__10_15_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_23__10_15_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_23__10_15_PM__Changes_.xml	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_6_19_23,_10_15_PM_[Changes]" date="1687227320997" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_19_23,_10_15_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/19/23, 10:15 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_18_23__6_59_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_23__6_59_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_23__6_59_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_23__6_59_PM__Changes_.xml	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_6_18_23,_6_59_PM_[Changes]" date="1687129145399" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_23,_6_59_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/18/23, 6:59 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml b/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_rebase_[Changes]1" date="1687111906786" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before rebase [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_16_23__9_54_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_23__9_54_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_23__9_54_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_23__9_54_PM__Changes_.xml	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_6_16_23,_9_54_PM_[Changes]" date="1686966893504" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_23,_9_54_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/16/23, 9:54 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_18_23,_6_59_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_23,_6_59_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_23,_6_59_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_23,_6_59_PM_[Changes]/shelved.patch	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,18 +0,0 @@
+-Index: app/src/main/java/com/example/cs2340Project/wordleGame.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>package com.example.cs2340Project;\n\nimport android.os.Bundle;\nimport android.view.View;\nimport android.widget.Button;\nimport android.widget.EditText;\n\nimport androidx.appcompat.app.AppCompatActivity;\n\npublic class wordleGame extends AppCompatActivity implements View.OnClickListener {\n    private EditText[] editTextFields;\n    private wordleGameFunctionality wordle = new wordleGameFunctionality();\n    private int letsInRow;\n\n    @Override\n    protected void onCreate(Bundle savedInstanceState) {\n        super.onCreate(savedInstanceState);\n        setContentView(R.layout.wordle_game);\n\n        letsInRow = 0;\n        wordle.selectNewWord();\n\n        Button toHome = findViewById(R.id.toMainActivity);\n        toHome.setOnClickListener(v -> finish());\n\n        Button restart = findViewById(R.id.wd_restart_button);\n        restart.setOnClickListener(v -> recreate());\n\n        // Initialize the array of EditText fields\n        editTextFields = new EditText[30];\n        editTextFields[0] = findViewById(R.id.editText1);\n        editTextFields[1] = findViewById(R.id.editText2);\n        editTextFields[2] = findViewById(R.id.editText3);\n        editTextFields[3] = findViewById(R.id.editText4);\n        editTextFields[4] = findViewById(R.id.editText5);\n        editTextFields[5] = findViewById(R.id.editText6);\n        editTextFields[6] = findViewById(R.id.editText7);\n        editTextFields[7] = findViewById(R.id.editText8);\n        editTextFields[8] = findViewById(R.id.editText9);\n        editTextFields[9] = findViewById(R.id.editText10);\n        editTextFields[10] = findViewById(R.id.editText11);\n        editTextFields[11] = findViewById(R.id.editText12);\n        editTextFields[12] = findViewById(R.id.editText13);\n        editTextFields[13] = findViewById(R.id.editText14);\n        editTextFields[14] = findViewById(R.id.editText15);\n        editTextFields[15] = findViewById(R.id.editText16);\n        editTextFields[16] = findViewById(R.id.editText17);\n        editTextFields[17] = findViewById(R.id.editText18);\n        editTextFields[18] = findViewById(R.id.editText19);\n        editTextFields[19] = findViewById(R.id.editText20);\n        editTextFields[20] = findViewById(R.id.editText21);\n        editTextFields[21] = findViewById(R.id.editText22);\n        editTextFields[22] = findViewById(R.id.editText23);\n        editTextFields[23] = findViewById(R.id.editText24);\n        editTextFields[24] = findViewById(R.id.editText25);\n        editTextFields[25] = findViewById(R.id.editText26);\n        editTextFields[26] = findViewById(R.id.editText27);\n        editTextFields[27] = findViewById(R.id.editText28);\n        editTextFields[28] = findViewById(R.id.editText29);\n        editTextFields[29] = findViewById(R.id.editText30);\n        // Add the rest of the EditText fields in a similar way...\n\n        // Set click listeners for all the buttons in the GridLayout\n        int[] buttonIds = {\n                R.id.buttonA, R.id.buttonB, R.id.buttonC, R.id.buttonD, R.id.buttonE,\n                R.id.buttonF, R.id.buttonG, R.id.buttonH, R.id.buttonI, R.id.buttonJ,\n                R.id.buttonK, R.id.buttonL, R.id.buttonM, R.id.buttonN, R.id.buttonO,\n                R.id.buttonP, R.id.buttonQ, R.id.buttonR, R.id.buttonS, R.id.buttonT,\n                R.id.buttonU, R.id.buttonV, R.id.buttonW, R.id.buttonX, R.id.buttonY, R.id.buttonZ\n        };\n        for (int i = 0; i < buttonIds.length; i++) {\n            Button button = findViewById(buttonIds[i]);\n            button.setOnClickListener(this);\n        }\n    }\n\n    @Override\n    public void onClick(View v) {\n        Button button = (Button) v;\n        String buttonText = button.getText().toString();\n        for (int i = 0; i < editTextFields.length; i++) {\n            EditText editText = editTextFields[i];\n            if (editText.getText().toString().isEmpty() && letsInRow < 5) {\n                editText.setText(buttonText);\n                // Move focus to the next EditText field if available\n                if (i + 1 < editTextFields.length) {\n                    editTextFields[i + 1].requestFocus();\n                }\n                letsInRow++;\n                break;\n            }\n        }\n    }\n\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/java/com/example/cs2340Project/wordleGame.java b/app/src/main/java/com/example/cs2340Project/wordleGame.java
+---- a/app/src/main/java/com/example/cs2340Project/wordleGame.java	(revision c5590b95cbcd65ce220009340d78c158d96f11d3)
+-+++ b/app/src/main/java/com/example/cs2340Project/wordleGame.java	(date 1687065548773)
+-@@ -72,6 +72,7 @@
+-             Button button = findViewById(buttonIds[i]);
+-             button.setOnClickListener(this);
+-         }
+-+
+-     }
+- 
+-     @Override
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM_[Changes]/shelved.patch	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,30 +0,0 @@
+-Index: app/src/main/res/anim/shake.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/res/anim/shake.xml b/app/src/main/res/anim/shake.xml
+-new file mode 100644
+---- /dev/null	(date 1687110797181)
+-+++ b/app/src/main/res/anim/shake.xml	(date 1687110797181)
+-@@ -0,0 +1,19 @@
+-+<?xml version="1.0" encoding="utf-8"?>
+-+<set xmlns:android="http://schemas.android.com/apk/res/android">
+-+    <rotate
+-+        android:duration="70"
+-+        android:fromDegrees="-5"
+-+        android:interpolator="@android:anim/linear_interpolator"
+-+        android:pivotX="50%"
+-+        android:pivotY="50%"
+-+        android:repeatCount="5"
+-+        android:repeatMode="reverse"
+-+        android:toDegrees="5" />
+-+    <translate
+-+        android:duration="70"
+-+        android:fromXDelta="-10"
+-+        android:interpolator="@android:anim/linear_interpolator"
+-+        android:repeatCount="5"
+-+        android:repeatMode="reverse"
+-+        android:toXDelta="10" />
+-+</set>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM__Changes_.xml	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM_[Changes]" date="1687111680631" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_18_2023_2_07_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 6/18/2023 2:07 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch b/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,30 +0,0 @@
+-Index: app/src/main/res/anim/shake.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/res/anim/shake.xml b/app/src/main/res/anim/shake.xml
+-new file mode 100644
+---- /dev/null	(date 1687111730524)
+-+++ b/app/src/main/res/anim/shake.xml	(date 1687111730524)
+-@@ -0,0 +1,19 @@
+-+<?xml version="1.0" encoding="utf-8"?>
+-+<set xmlns:android="http://schemas.android.com/apk/res/android">
+-+    <rotate
+-+        android:duration="70"
+-+        android:fromDegrees="-5"
+-+        android:interpolator="@android:anim/linear_interpolator"
+-+        android:pivotX="50%"
+-+        android:pivotY="50%"
+-+        android:repeatCount="5"
+-+        android:repeatMode="reverse"
+-+        android:toDegrees="5" />
+-+    <translate
+-+        android:duration="70"
+-+        android:fromXDelta="-10"
+-+        android:interpolator="@android:anim/linear_interpolator"
+-+        android:repeatCount="5"
+-+        android:repeatMode="reverse"
+-+        android:toXDelta="10" />
+-+</set>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM__Changes_.xml	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM_[Changes]" date="1687046235354" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 6/17/2023 7:57 PM [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,30 +0,0 @@
+-Index: app/src/main/res/anim/shake.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/res/anim/shake.xml b/app/src/main/res/anim/shake.xml
+-new file mode 100644
+---- /dev/null	(date 1687111680412)
+-+++ b/app/src/main/res/anim/shake.xml	(date 1687111680412)
+-@@ -0,0 +1,19 @@
+-+<?xml version="1.0" encoding="utf-8"?>
+-+<set xmlns:android="http://schemas.android.com/apk/res/android">
+-+    <rotate
+-+        android:duration="70"
+-+        android:fromDegrees="-5"
+-+        android:interpolator="@android:anim/linear_interpolator"
+-+        android:pivotX="50%"
+-+        android:pivotY="50%"
+-+        android:repeatCount="5"
+-+        android:repeatMode="reverse"
+-+        android:toDegrees="5" />
+-+    <translate
+-+        android:duration="70"
+-+        android:fromXDelta="-10"
+-+        android:interpolator="@android:anim/linear_interpolator"
+-+        android:repeatCount="5"
+-+        android:repeatMode="reverse"
+-+        android:toXDelta="10" />
+-+</set>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_6_16_23,_9_54_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_23,_9_54_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_23,_9_54_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_6_16_23,_9_54_PM_[Changes]/shelved.patch	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,116 +0,0 @@
+-Index: app/src/main/res/layout/wordle_game.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\n<androidx.constraintlayout.widget.ConstraintLayout\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\n    xmlns:tools=\"http://schemas.android.com/tools\"\n    android:layout_width=\"match_parent\"\n    android:layout_height=\"match_parent\"\n    tools:context=\".wordleGame\"\n    android:background=\"@color/yellow\">\n\n    <!-- Keyboard GridLayout -->\n\n    <TextView\n        android:id=\"@+id/wordleHeading\"\n        android:layout_width=\"324dp\"\n        android:layout_height=\"82dp\"\n        android:layout_marginStart=\"40dp\"\n        android:layout_marginTop=\"24dp\"\n        android:ems=\"10\"\n        android:fontFamily=\"@font/pressstart_2p\"\n        android:inputType=\"text\"\n        android:text=\"WORDLE!\"\n        android:textAlignment=\"center\"\n        android:textColor=\"#150101\"\n        android:textSize=\"15sp\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toTopOf=\"parent\" />\n\n    <Button\n        android:id=\"@+id/toMainActivity\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"50dp\"\n        android:layout_marginStart=\"248dp\"\n        android:layout_marginBottom=\"12dp\"\n        android:fontFamily=\"@font/pressstart_2p\"\n        android:text=\"HOME\"\n        app:backgroundTint=\"@color/red\"\n        app:cornerRadius=\"0dp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintStart_toStartOf=\"parent\" />\n\n    <Button\n        android:id=\"@+id/wd_restart_button\"\n        android:layout_width=\"wrap_content\"\n        android:layout_height=\"50dp\"\n        android:layout_marginEnd=\"204dp\"\n        android:layout_marginBottom=\"12dp\"\n        android:fontFamily=\"@font/pressstart_2p\"\n        android:text=\"RESTART\"\n        app:backgroundTint=\"@color/red\"\n        app:cornerRadius=\"0dp\"\n        app:layout_constraintBottom_toBottomOf=\"parent\"\n        app:layout_constraintEnd_toEndOf=\"parent\" />\n\n    <androidx.gridlayout.widget.GridLayout\n        android:layout_width=\"390dp\"\n        android:layout_height=\"238dp\"\n        android:layout_marginTop=\"16dp\"\n        app:columnCount=\"6\"\n        app:layout_constraintBottom_toTopOf=\"@id/toMainActivity\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.476\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@id/wordleHeading\"\n        app:layout_constraintVertical_bias=\"0.911\"\n        app:rowCount=\"7\">\n\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"A\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"B\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"C\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"D\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"E\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"F\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"G\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"H\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"I\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"J\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"K\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"L\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"M\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"N\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"O\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"P\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"Q\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"R\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"S\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"T\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"U\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"V\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"W\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"X\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"Y\"\n            app:backgroundTint=\"@color/black\" />\n\n        <Button\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\"\n            android:text=\"Z\"\n            app:backgroundTint=\"@color/black\" />\n\n    </androidx.gridlayout.widget.GridLayout>\n\n    <androidx.gridlayout.widget.GridLayout\n        android:layout_width=\"366dp\"\n        android:layout_height=\"234dp\"\n        android:layout_marginTop=\"16dp\"\n        app:columnCount=\"5\"\n        app:layout_constraintBottom_toTopOf=\"@id/toMainActivity\"\n        app:layout_constraintEnd_toEndOf=\"parent\"\n        app:layout_constraintHorizontal_bias=\"0.888\"\n        app:layout_constraintStart_toStartOf=\"parent\"\n        app:layout_constraintTop_toBottomOf=\"@id/wordleHeading\"\n        app:layout_constraintVertical_bias=\"0.032\"\n        app:rowCount=\"6\">\n\n        <EditText\n            android:id=\"@+id/editText1\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText2\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText3\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <!-- Row 2 -->\n        <EditText\n            android:id=\"@+id/editText4\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText5\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText6\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <!-- Row 3 -->\n        <EditText\n            android:id=\"@+id/editText7\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText8\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText9\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <!-- Row 4 -->\n        <EditText\n            android:id=\"@+id/editText10\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText11\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText12\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <!-- Row 5 -->\n        <EditText\n            android:id=\"@+id/editText13\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText14\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText15\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText16\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText17\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText18\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <!-- Row 2 -->\n        <EditText\n            android:id=\"@+id/editText19\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText20\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText21\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <!-- Row 3 -->\n        <EditText\n            android:id=\"@+id/editText22\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText23\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText24\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <!-- Row 4 -->\n        <EditText\n            android:id=\"@+id/editText25\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText26\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText27\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <!-- Row 5 -->\n        <EditText\n            android:id=\"@+id/editText28\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText29\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n        <EditText\n            android:id=\"@+id/editText30\"\n            android:layout_width=\"65dp\"\n            android:layout_height=\"wrap_content\" />\n\n    </androidx.gridlayout.widget.GridLayout>\n\n</androidx.constraintlayout.widget.ConstraintLayout>\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/src/main/res/layout/wordle_game.xml b/app/src/main/res/layout/wordle_game.xml
+---- a/app/src/main/res/layout/wordle_game.xml	(revision 8c482a5137fbcf936835d938759ffbc62d3aaff5)
+-+++ b/app/src/main/res/layout/wordle_game.xml	(date 1686860129797)
+-@@ -1,12 +1,11 @@
+- <?xml version="1.0" encoding="utf-8"?>
+--<androidx.constraintlayout.widget.ConstraintLayout
+--    xmlns:android="http://schemas.android.com/apk/res/android"
+-+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+-     xmlns:app="http://schemas.android.com/apk/res-auto"
+-     xmlns:tools="http://schemas.android.com/tools"
+-     android:layout_width="match_parent"
+-     android:layout_height="match_parent"
+--    tools:context=".wordleGame"
+--    android:background="@color/yellow">
+-+    android:background="@color/yellow"
+-+    tools:context=".wordleGame">
+- 
+-     <!-- Keyboard GridLayout -->
+- 
+-@@ -55,6 +54,7 @@
+-     <androidx.gridlayout.widget.GridLayout
+-         android:layout_width="390dp"
+-         android:layout_height="238dp"
+-+        android:layout_marginStart="10dp"
+-         android:layout_marginTop="16dp"
+-         app:columnCount="6"
+-         app:layout_constraintBottom_toTopOf="@id/toMainActivity"
+-@@ -231,10 +231,10 @@
+-         app:columnCount="5"
+-         app:layout_constraintBottom_toTopOf="@id/toMainActivity"
+-         app:layout_constraintEnd_toEndOf="parent"
+--        app:layout_constraintHorizontal_bias="0.888"
+-+        app:layout_constraintHorizontal_bias="0.644"
+-         app:layout_constraintStart_toStartOf="parent"
+-         app:layout_constraintTop_toBottomOf="@id/wordleHeading"
+--        app:layout_constraintVertical_bias="0.032"
+-+        app:layout_constraintVertical_bias="0.035"
+-         app:rowCount="6">
+- 
+-         <EditText
+-@@ -256,7 +256,8 @@
+-         <EditText
+-             android:id="@+id/editText4"
+-             android:layout_width="65dp"
+--            android:layout_height="wrap_content" />
+-+            android:layout_height="wrap_content"
+-+            tools:ignore="SpeakableTextPresentCheck" />
+- 
+-         <EditText
+-             android:id="@+id/editText5"
+-@@ -266,7 +267,8 @@
+-         <EditText
+-             android:id="@+id/editText6"
+-             android:layout_width="65dp"
+--            android:layout_height="wrap_content" />
+-+            android:layout_height="wrap_content"
+-+            tools:ignore="SpeakableTextPresentCheck" />
+- 
+-         <!-- Row 3 -->
+-         <EditText
+-@@ -314,7 +316,8 @@
+-         <EditText
+-             android:id="@+id/editText15"
+-             android:layout_width="65dp"
+--            android:layout_height="wrap_content" />
+-+            android:layout_height="wrap_content"
+-+            tools:ignore="SpeakableTextPresentCheck" />
+- 
+-         <EditText
+-             android:id="@+id/editText16"
+-@@ -340,7 +343,8 @@
+-         <EditText
+-             android:id="@+id/editText20"
+-             android:layout_width="65dp"
+--            android:layout_height="wrap_content" />
+-+            android:layout_height="wrap_content"
+-+            tools:ignore="SpeakableTextPresentCheck" />
+- 
+-         <EditText
+-             android:id="@+id/editText21"
+-@@ -377,7 +381,8 @@
+-         <EditText
+-             android:id="@+id/editText27"
+-             android:layout_width="65dp"
+--            android:layout_height="wrap_content" />
+-+            android:layout_height="wrap_content"
+-+            tools:ignore="SpeakableTextPresentCheck" />
+- 
+-         <!-- Row 5 -->
+-         <EditText
+-Index: .idea/deploymentTargetDropDown.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"deploymentTargetDropDown\">\n    <targetSelectedWithDropDown>\n      <Target>\n        <type value=\"QUICK_BOOT_TARGET\" />\n        <deviceKey>\n          <Key>\n            <type value=\"VIRTUAL_DEVICE_PATH\" />\n            <value value=\"$USER_HOME$/.android/avd/Pixel_3a_API_33_x86_64.avd\" />\n          </Key>\n        </deviceKey>\n      </Target>\n    </targetSelectedWithDropDown>\n    <timeTargetWasSelectedWithDropDown value=\"2023-05-31T17:28:25.388032Z\" />\n  </component>\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/deploymentTargetDropDown.xml b/.idea/deploymentTargetDropDown.xml
+---- a/.idea/deploymentTargetDropDown.xml	(revision 8c482a5137fbcf936835d938759ffbc62d3aaff5)
+-+++ b/.idea/deploymentTargetDropDown.xml	(date 1686859680149)
+-@@ -12,6 +12,6 @@
+-         </deviceKey>
+-       </Target>
+-     </targetSelectedWithDropDown>
+--    <timeTargetWasSelectedWithDropDown value="2023-05-31T17:28:25.388032Z" />
+-+    <timeTargetWasSelectedWithDropDown value="2023-06-15T20:07:56.347888Z" />
+-   </component>
+- </project>
+-\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_57_PM_[Changes]/shelved.patch	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ /dev/null	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
+@@ -1,19 +0,0 @@
+-Index: gradle.properties
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+># Project-wide Gradle settings.\r\n# IDE (e.g. Android Studio) users:\r\n# Gradle settings configured through the IDE *will override*\r\n# any settings specified in this file.\r\n# For more details on how to configure your build environment visit\r\n# http://www.gradle.org/docs/current/userguide/build_environment.html\r\n# Specifies the JVM arguments used for the daemon process.\r\n# The setting is particularly useful for tweaking memory settings.\r\norg.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8\r\n# When configured, Gradle will run in incubating parallel mode.\r\n# This option should only be used with decoupled projects. More details, visit\r\n# http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects\r\n# org.gradle.parallel=true\r\n# AndroidX package structure to make it clearer which packages are bundled with the\r\n# Android operating system, and which are packaged with your app's APK\r\n# https://developer.android.com/topic/libraries/support-library/androidx-rn\r\nandroid.useAndroidX=true\r\n# Enables namespacing of each library's R class so that its R class includes only the\r\n# resources declared in the library itself and none from the library's dependencies,\r\n# thereby reducing the size of the R class for that library\r\nandroid.nonTransitiveRClass=true
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>ISO-8859-1
+-===================================================================
+-diff --git a/gradle.properties b/gradle.properties
+---- a/gradle.properties	(revision 5eee85d9d91e968d7f4aadceec36c02514ad976c)
+-+++ b/gradle.properties	(date 1687045080226)
+-@@ -6,7 +6,7 @@
+- # http://www.gradle.org/docs/current/userguide/build_environment.html
+- # Specifies the JVM arguments used for the daemon process.
+- # The setting is particularly useful for tweaking memory settings.
+--org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+-+org.gradle.jvmargs=-Xmx4608m -Dfile.encoding=UTF-8
+- # When configured, Gradle will run in incubating parallel mode.
+- # This option should only be used with decoupled projects. More details, visit
+- # http://www.gradle.org/docs/current/userguide/multi_project_builds.html#sec:decoupled_projects
+Index: app/src/main/java/com/example/cs2340Project/blackJackCard.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/cs2340Project/blackJackCard.java b/app/src/main/java/com/example/cs2340Project/blackJackCard.java
+new file mode 100644
+--- /dev/null	(date 1687968420822)
++++ b/app/src/main/java/com/example/cs2340Project/blackJackCard.java	(date 1687968420822)
+@@ -0,0 +1,11 @@
++package com.example.cs2340Project;
++
++public class blackJackCard {
++    private int value;
++    private char suite;
++
++    public blackJackCard(int value, char suite) {
++        this.suite = suite;
++        this.value = value;
++    }
++}
+Index: app/src/main/java/com/example/cs2340Project/blackJackPlayer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/cs2340Project/blackJackPlayer.java b/app/src/main/java/com/example/cs2340Project/blackJackPlayer.java
+new file mode 100644
+--- /dev/null	(date 1687968912214)
++++ b/app/src/main/java/com/example/cs2340Project/blackJackPlayer.java	(date 1687968912214)
+@@ -0,0 +1,15 @@
++package com.example.cs2340Project;
++
++import java.util.ArrayList;
++
++public class blackJackPlayer {
++    private ArrayList<blackJackCard> cards;
++
++    public blackJackPlayer() {
++        cards = new ArrayList<blackJackCard>();
++    }
++
++    public void hit() {
++        cards.add(blackJackFunctionality.getCard());
++    }
++}
+Index: app/src/main/java/com/example/cs2340Project/blackJackFunctionality.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/cs2340Project/blackJackFunctionality.java b/app/src/main/java/com/example/cs2340Project/blackJackFunctionality.java
+new file mode 100644
+--- /dev/null	(date 1687969291357)
++++ b/app/src/main/java/com/example/cs2340Project/blackJackFunctionality.java	(date 1687969291357)
+@@ -0,0 +1,9 @@
++package com.example.cs2340Project;
++
++import java.util.Deque;
++
++public class blackJackFunctionality {
++    private Deque<blackJackCard> deck;
++    private char[] suites = {'S','C','H','D'};
++    
++}
+Index: app/src/main/java/com/example/cs2340Project/Player.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cs2340Project;\n\nimport android.view.View;\nimport android.widget.Button;\nimport android.widget.ImageView;\nimport android.widget.TextView;\nimport android.view.View;\n\npublic class Player {\n\n    //singleton design pattern\n    private static Player myPlayer;\n    private Player(){}\n    public static Player getInstance(){\n        if (myPlayer == null) {\n            synchronized (Player.class){\n                if (myPlayer == null) {\n                    myPlayer = new Player();\n                }\n            }\n        }\n        return myPlayer;\n    }\n    private int playerLives;\n    private int playerSprite;\n    private int score;\n    private String playerName;\n\n    public Player(int playerSprite, String playerName) {\n        this.playerLives = 3;\n        this.playerSprite = playerSprite;\n        this.score = 0;\n        this.playerName = playerName;\n\n//        TextView name = findViewByID(R.id.playerDataName);\n//        name.setText(playerName);\n    }\n\n\n    public int getPlayerLives() {\n        return playerLives;\n    }\n\n    public void removeLife() {\n//        if(playerLives == 3){\n//            ImageView imgView = (ImageView) findViewById(R.id.life3);\n//            imgView.setVisibility(View.VISIBLE);\n//        }\n//        else if(playerLives == 2){\n//            ImageView imgView = (ImageView)findViewById(R.id.life2);\n//            imgView.setVisibility(View.VISIBLE);\n//        }\n//        else if(playerLives == 1){\n//            ImageView imgView = (ImageView)findViewById(R.id.life1);\n//            imgView.setVisibility(View.VISIBLE);\n//        }\n                this.playerLives--;\n\n        if(this.playerLives == 0){\n            //signal game over\n        }\n    }\n\n    public int getPlayerSprite() {\n        return playerSprite;\n    }\n\n    public int getScore() {\n        return score;\n    }\n\n    public void setScore(int score) {\n        this.score = score;\n    }\n\n    public String getPlayerName() {\n        return playerName;\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/cs2340Project/Player.java b/app/src/main/java/com/example/cs2340Project/Player.java
+--- a/app/src/main/java/com/example/cs2340Project/Player.java	(revision 941caddfa5897fca6977e0a9aa2301cbaff2db0a)
++++ b/app/src/main/java/com/example/cs2340Project/Player.java	(date 1687963260776)
+@@ -42,6 +42,7 @@
+     }
+ 
+     public void removeLife() {
++
+ //        if(playerLives == 3){
+ //            ImageView imgView = (ImageView) findViewById(R.id.life3);
+ //            imgView.setVisibility(View.VISIBLE);
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_34_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_17_2023_7_34_PM_[Changes]/shelved.patch
+deleted file mode 100644

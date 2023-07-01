@@ -6,6 +6,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,10 +18,9 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
     private Button enter;
     private Button del;
     private int currentRow;
-
     private String answer;
     private wordleGameFunctionality wordle;
-
+    private Player player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,8 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         wordle = new wordleGameFunctionality();
         wordle.selectNewWord();
         answer = wordle.getSolution();
+        player = Player.getInstance();
+        selectLives();
 
         Button toHome = findViewById(R.id.toMainActivity);
         toHome.setOnClickListener(v -> finish());
@@ -149,11 +151,14 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                             checkSolution = false;
                             if(currentRow == 4) {
                                 Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
-                                //remove life
+                                    player.setPlayerLives((player.getPlayerLives())-1);
+                                    Intent intent = new Intent(wordleGame.this, wordleGame.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
                             }
                             break;
                         }
-                    }
 
                     // Show toast message if the guess is correct
                     if (checkSolution) {
@@ -215,5 +220,21 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
             }
         }
     }
-}
 
+    private void selectLives() {
+        if(player.getPlayerLives() == 0){
+            Intent intent = new Intent(wordleGame.this, gameOverScreen.class);
+            startActivity(intent);
+            finish();
+        }
+        TextView name = findViewById(R.id.playerDataName);
+        name.setText(player.getPlayerName());
+        //update the sprite image
+        ImageView sprite = findViewById(R.id.sprite);
+        player.setSpriteImage(sprite);
+        ImageView i1 = findViewById(R.id.life1);
+        ImageView i2 = findViewById(R.id.life2);
+        ImageView i3 = findViewById(R.id.life3);
+        player.setLives(i1,i2,i3);
+    }
+}
