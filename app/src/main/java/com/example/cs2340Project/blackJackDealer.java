@@ -23,7 +23,7 @@ public class blackJackDealer extends blackJackPlayer {
      * @return Returns state of player win/loss
      */
     public int playerWin(blackJackPlayer player) {
-        if (player.getHandSum() > this.getHandSum() && player.getHandSum() <= 22) {
+        if ((player.getHandSum() > this.getHandSum() && player.getHandSum() < 22) | (player.getHandSum() < 22 && this.getHandSum() > 21)) {
             return 2;
         } else if (player.getHandSum() == this.getHandSum()) {
             return 1;

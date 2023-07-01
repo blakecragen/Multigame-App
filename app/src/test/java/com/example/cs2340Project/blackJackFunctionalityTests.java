@@ -37,6 +37,43 @@ public class blackJackFunctionalityTests {
     }
 
     @Test
+    public void testClearHand() {
+        blackJackDeck myDeck = new blackJackDeck();
+        blackJackPlayer me = new blackJackPlayer();
+        blackJackDealer dealer = new blackJackDealer();
+
+        dealer.hit(myDeck);
+        me.hit(myDeck);
+        dealer.hit(myDeck);
+        me.hit(myDeck);
+
+        me.printHand();
+        dealer.printHand();
+        me.clearHand(myDeck);
+        dealer.clearHand(myDeck);
+
+        dealer.hit(myDeck);
+        me.hit(myDeck);
+        dealer.hit(myDeck);
+        me.hit(myDeck);
+
+        me.printHand();
+        dealer.printHand();
+        me.clearHand(myDeck);
+        dealer.clearHand(myDeck);
+
+        dealer.hit(myDeck);
+        me.hit(myDeck);
+        dealer.hit(myDeck);
+        me.hit(myDeck);
+
+        me.printHand();
+        dealer.printHand();
+        me.clearHand(myDeck);
+        dealer.clearHand(myDeck);
+    }
+
+    @Test
     public void testFunctionality() throws IOException {
         Scanner scan = new Scanner(System.in);
         blackJackDeck myDeck = new blackJackDeck();

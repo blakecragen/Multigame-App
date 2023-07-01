@@ -9,15 +9,18 @@ public class blackJackFullFunctionality {
         blackJackDeck myDeck = new blackJackDeck();
         blackJackPlayer me = new blackJackPlayer();
         blackJackDealer dealer = new blackJackDealer();
+        myDeck.shuffle();
         String cont = "y";
-        String hit = "n";
+        String hit = "y";
         while ("y".equals(cont)) {
             dealer.hit(myDeck);
             me.hit(myDeck);
             dealer.hit(myDeck);
             me.hit(myDeck);
-            while (me.getHandSum() < 21 & hit.equals("y")) {
-                Runtime.getRuntime().exec("cls");
+            
+            dealer.printShownCard();
+            me.printHand();
+            while (me.getHandSum() < 21 & "y".equals(hit)) {
                 dealer.printShownCard();
                 System.out.println();
                 me.printHand();
@@ -29,7 +32,6 @@ public class blackJackFullFunctionality {
                 }
             }
             dealer.hit(myDeck);
-            Runtime.getRuntime().exec("cls");
             dealer.printHand();
             me.printHand();
             int won = dealer.playerWin(me);
@@ -43,7 +45,11 @@ public class blackJackFullFunctionality {
             System.out.println();
             System.out.println("Play again?");
             cont = scan.nextLine();
-            Runtime.getRuntime().exec("cls");
+            if (cont.equals("y")) {
+                me.clearHand(myDeck);
+                dealer.clearHand(myDeck);
+                hit = "y";
+            }
         }
     }
 }

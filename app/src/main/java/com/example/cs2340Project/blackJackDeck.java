@@ -80,6 +80,7 @@ public class blackJackDeck {
                 }
             }
         }
+        this.shuffle();
     }
 
     /**

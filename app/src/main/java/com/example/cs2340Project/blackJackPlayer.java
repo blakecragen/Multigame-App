@@ -27,8 +27,9 @@ public class blackJackPlayer {
      * @param deck Deck of cards being played with.
      */
     public void clearHand(blackJackDeck deck) {
-        for (int i = 0; i < hand.size(); ++i) {
-            deck.addCardToDeck(hand.remove(i));
+        int fullSize = hand.size();
+        for (int i = 0; i < fullSize; ++i) {
+            deck.addCardToDeck(hand.remove(0));
         }
     }
 
