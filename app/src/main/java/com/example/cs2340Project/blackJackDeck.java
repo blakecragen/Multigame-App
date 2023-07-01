@@ -1,5 +1,9 @@
 package com.example.cs2340Project;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Random;
 
 public class blackJackDeck {
     /**
@@ -72,5 +76,18 @@ public class blackJackDeck {
         }
     }
 
-
+    public void shuffle() {
+        blackJackCard[] asArray = new blackJackCard[deck.size()];
+        int fullSize = deck.size();
+        for (int i = 0; i < fullSize; ++i) {
+            asArray[i] = deck.removeFirst();
+        }
+        ArrayList<blackJackCard> shuffleArray = new ArrayList<blackJackCard>();
+        shuffleArray.addAll(Arrays.asList(asArray));
+        Random random = new Random();
+        deck.clear();
+        for (int i = 0; i <fullSize; ++i) {
+            deck.addLast(shuffleArray.remove(random.nextInt(shuffleArray.size())));
+        }
+    }
 }
