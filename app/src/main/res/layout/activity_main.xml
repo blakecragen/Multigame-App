@@ -29,6 +29,7 @@
         android:fontFamily="@font/pressstart_2p"
         android:text="@string/checkers_launch"
         app:backgroundTint="@color/yellow"
+        android:textColor="@color/purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

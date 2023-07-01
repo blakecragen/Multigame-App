@@ -79,7 +79,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/press_start_2p"
             android:text="@string/anon"
-            android:gravity="center_horizontal"
+            android:textAlignment="center"
             app:layout_constraintTop_toBottomOf="@id/linearLayout"
             app:layout_constraintStart_toStartOf="parent
 "
