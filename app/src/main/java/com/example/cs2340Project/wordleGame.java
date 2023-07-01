@@ -153,7 +153,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                             isCorrectGuess = false;
                             if(currentRow == 4) {
                                 Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
-                                    // player.setPlayerLives((player.getPlayerLives())-1);
+                                    player.setPlayerLives((player.getPlayerLives())-1);
                                     Intent intent = new Intent(wordleGame.this, wordleGame.class);
                                     startActivity(intent);
                                     finish();
@@ -233,11 +233,10 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         name.setText(player.getPlayerName());
         //update the sprite image
         ImageView sprite = findViewById(R.id.sprite);
-        //player.setSpriteImage(sprite);
+        player.setSpriteImage(sprite);
         ImageView i1 = findViewById(R.id.life1);
         ImageView i2 = findViewById(R.id.life2);
         ImageView i3 = findViewById(R.id.life3);
-        //player.setLives(i1,i2,i3);
+        player.setLives(i1,i2,i3);
     }
 }
-
