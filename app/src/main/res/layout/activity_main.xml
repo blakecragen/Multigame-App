@@ -14,7 +14,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="208dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="Black Jack Start Screen"
+        android:text="@string/blackjack_launch"
         app:backgroundTint="@color/purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="424dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="Checkers Start Screen"
+        android:text="@string/checkers_launch"
         app:backgroundTint="@color/yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="632dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="Wordle Start Screen"
+        android:text="@string/wordle_launch"
         app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
