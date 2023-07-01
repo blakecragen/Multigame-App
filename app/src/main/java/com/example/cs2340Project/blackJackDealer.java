@@ -3,13 +3,13 @@ package com.example.cs2340Project;
 public class blackJackDealer extends blackJackPlayer {
 
     /**
+     * Hits the dealer's hand based on casino rules.
      *
-     * @param deck
+     * @param deck Deck to pull cards from.
      */
-    @Override
-    public void hit(blackJackDeck deck) {
+    public void dealerHit(blackJackDeck deck) {
         if (this.getHandSum() < 17) {
-            super.hit(deck);
+            this.hit(deck);
         }
     }
 

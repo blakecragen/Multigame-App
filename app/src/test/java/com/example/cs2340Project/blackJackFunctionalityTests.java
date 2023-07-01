@@ -74,6 +74,14 @@ public class blackJackFunctionalityTests {
     }
 
     @Test
+    public void testHitDealerHand() {
+        blackJackDeck myDeck = new blackJackDeck();
+        blackJackDealer dealer = new blackJackDealer();
+
+        dealer
+    }
+
+    @Test
     public void testFunctionality() throws IOException {
         Scanner scan = new Scanner(System.in);
         blackJackDeck myDeck = new blackJackDeck();

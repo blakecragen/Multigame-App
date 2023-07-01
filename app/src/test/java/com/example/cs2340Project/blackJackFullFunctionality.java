@@ -31,7 +31,7 @@ public class blackJackFullFunctionality {
                     me.hit(myDeck);
                 }
             }
-            dealer.hit(myDeck);
+            dealer.dealerHit(myDeck);
             dealer.printHand();
             me.printHand();
             int won = dealer.playerWin(me);
