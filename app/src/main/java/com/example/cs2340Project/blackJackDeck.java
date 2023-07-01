@@ -17,6 +17,11 @@ public class blackJackDeck {
     private int numDecks;
 
     /**
+     * Number of cards from the deck that have currently been used.
+     */
+    private int cardsUsed;
+
+    /**
      * Constructor that takes in the number of decks to work with.
      *
      * @param numDecks The number of decks to play with.
@@ -25,6 +30,7 @@ public class blackJackDeck {
         this.numDecks = numDecks;
         this.deck = new ArrayDeque<blackJackCard>();
         this.makeDeck();
+        this.cardsUsed = 0;
     }
 
     /**
@@ -57,16 +63,16 @@ public class blackJackDeck {
                     }
                     switch (k) {
                         case 11:
-                            deck.addLast(new blackJackCard(10, curSuite, "jack"));
+                            deck.addLast(new blackJackCard(10, curSuite, "Jack"));
                             break;
                         case 12:
-                            deck.addLast(new blackJackCard(10, curSuite, "queen"));
+                            deck.addLast(new blackJackCard(10, curSuite, "Queen"));
                             break;
                         case 13:
-                            deck.addLast(new blackJackCard(10, curSuite, "king"));
+                            deck.addLast(new blackJackCard(10, curSuite, "King"));
                             break;
                         case 14:
-                            deck.addLast(new blackJackCard(11, curSuite, "ace"));
+                            deck.addLast(new blackJackCard(11, curSuite, "Ace"));
                             break;
                         default:
                             deck.addLast(new blackJackCard(k, curSuite));
@@ -76,6 +82,9 @@ public class blackJackDeck {
         }
     }
 
+    /**
+     * Helper method to reshuffle whatever cards are in the deck.
+     */
     public void shuffle() {
         blackJackCard[] asArray = new blackJackCard[deck.size()];
         int fullSize = deck.size();
@@ -88,6 +97,30 @@ public class blackJackDeck {
         deck.clear();
         for (int i = 0; i <fullSize; ++i) {
             deck.addLast(shuffleArray.remove(random.nextInt(shuffleArray.size())));
+        }
+    }
+
+    /**
+     * Method to get the first card of the deck.
+     *
+     * @return The first card on the deck.
+     */
+    public blackJackCard getCard() {
+        cardsUsed++;
+        return deck.removeFirst();
+    }
+
+    /**
+     * Meant for use when a played is finished with their hand. Add the used cards to the
+     * back of the deck.
+     *
+     * @param card
+     */
+    public void addCardToDeck(blackJackCard card) {
+        deck.addLast(card);
+        if (cardsUsed >= .8*52*numDecks) {
+            this.shuffle();
+            cardsUsed = 0;
         }
     }
 }

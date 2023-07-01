@@ -75,4 +75,33 @@ public class blackJackCard {
     public String getType() {
         return this.type;
     }
+
+    /**
+     * Return the String representation of a card.
+     *
+     * @return String representation of a card
+     */
+    @Override
+    public String toString() {
+        String cardSuite;
+        switch (suite) {
+            case 'S':
+                cardSuite = "Spades";
+                break;
+            case 'D':
+                cardSuite = "Diamonds";
+                break;
+            case 'H':
+                cardSuite = "Hearts";
+                break;
+            default:
+                cardSuite = "Clubs";
+                break;
+        }
+        if (type == null) {
+            return Integer.toString(value) + " of " + cardSuite;
+        } else {
+            return type + " of " + cardSuite;
+        }
+    }
 }
