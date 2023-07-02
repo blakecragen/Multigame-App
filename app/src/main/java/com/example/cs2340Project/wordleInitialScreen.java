@@ -26,7 +26,7 @@ public class wordleInitialScreen extends AppCompatActivity {
         Button startGame = findViewById(R.id.startGame);
         startGame.setOnClickListener(v -> {
             player = Player.getInstance();
-            //player.setPlayerName(name.getText().toString());
+            player.setPlayerName(name.getText().toString());
             setSprite();
             Intent intent = new Intent(wordleInitialScreen.this, wordleGame.class);
             startActivity(intent);
@@ -41,15 +41,15 @@ public class wordleInitialScreen extends AppCompatActivity {
         RadioButton turtleButton = findViewById(R.id.turtleButton);
         ImageView sprite = findViewById(R.id.sprite);
         if(pandaButton.isChecked()){
-            //player.setPlayerSprite('p');
+            player.setPlayerSprite('p');
             //sprite.setImageResource(R.drawable.panda);
         }
         else if(turtleButton.isChecked()){
-            //player.setPlayerSprite('t');
+            player.setPlayerSprite('t');
             //sprite.setImageResource(R.drawable.turtle);
         }
         else {
-            //player.setPlayerSprite('f');
+            player.setPlayerSprite('f');
             //sprite.setImageResource(R.drawable.fox);
         }
     }
