@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
-public class checkersInitialScreen extends AppCompatActivity {
+public class CheckersInitialScreen extends AppCompatActivity {
     private EditText name;
     private Button add;
 
@@ -24,7 +22,7 @@ public class checkersInitialScreen extends AppCompatActivity {
 
         Button initButton = findViewById(R.id.gameStart);
         initButton.setOnClickListener(v -> {
-            Intent intent = new Intent(checkersInitialScreen.this, checkersGame.class);
+            Intent intent = new Intent(CheckersInitialScreen.this, CheckersGame.class);
             String username = name.getText().toString();
             intent.putExtra("keyname", username);
             startActivity(intent);

@@ -25,7 +25,7 @@
             android:name=".blackJackGame"
             android:exported="false" />
         <activity
-            android:name=".blackJackInitialScreen"
+            android:name=".BlackJackInitialScreen"
             android:exported="false" />
         <activity
             android:name=".wordleStartScreen"

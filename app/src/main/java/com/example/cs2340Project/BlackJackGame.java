@@ -10,9 +10,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-public class blackJackGame extends AppCompatActivity{
+public class BlackJackGame extends AppCompatActivity{
     private Button restartButton;
     private Button homeButton;
     private TextView name;
@@ -42,7 +40,7 @@ public class blackJackGame extends AppCompatActivity{
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(blackJackGame.this, MainActivity.class);
+                Intent intent = new Intent(BlackJackGame.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -50,7 +48,7 @@ public class blackJackGame extends AppCompatActivity{
     @SuppressLint("ResourceAsColor")
     private void selectLives() {
         if(player.getPlayerLives() == 0){
-            Intent intent = new Intent(blackJackGame.this, gameOverScreen.class);
+            Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
             startActivity(intent);
             finish();
         }

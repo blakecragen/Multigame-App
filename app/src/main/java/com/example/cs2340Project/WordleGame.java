@@ -13,13 +13,13 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class wordleGame extends AppCompatActivity implements View.OnClickListener {
+public class WordleGame extends AppCompatActivity implements View.OnClickListener {
     private EditText[][] editTextFields;
     private Button enterButton;
     private Button deleteButton;
     private int currentRow;
     private String answer;
-    private wordleGameFunctionality wordle;
+    private WordleGameFunctionality wordle;
     private Player player;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.wordle_game);
 
         currentRow = 0;
-        wordle = new wordleGameFunctionality();
+        wordle = new WordleGameFunctionality();
         wordle.selectNewWord();
         answer = wordle.getSolution();
         player = Player.getInstance();
@@ -38,7 +38,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
 
         Button restart = findViewById(R.id.wd_restart_button);
         restart.setOnClickListener(v -> {
-            Intent intent = new Intent(wordleGame.this, wordleInitialScreen.class);
+            Intent intent = new Intent(WordleGame.this, WordleInitialScreen.class);
             startActivity(intent);
             finish();
         });
@@ -154,7 +154,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
                             if(currentRow == 4) {
                                 Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
                                     player.setPlayerLives((player.getPlayerLives())-1);
-                                    Intent intent = new Intent(wordleGame.this, wordleGame.class);
+                                    Intent intent = new Intent(WordleGame.this, WordleGame.class);
                                     startActivity(intent);
                                     finish();
                                 }
@@ -225,7 +225,7 @@ public class wordleGame extends AppCompatActivity implements View.OnClickListene
 
     private void selectLives() {
         if(player.getPlayerLives() == 0){
-            Intent intent = new Intent(wordleGame.this, gameOverScreen.class);
+            Intent intent = new Intent(WordleGame.this, GameOverScreen.class);
             startActivity(intent);
             finish();
         }

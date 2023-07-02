@@ -3,12 +3,12 @@ package com.example.cs2340Project;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class blackJackFullFunctionality {
+public class BlackJackFullFunctionality {
     public static void main(String[] args) throws IOException {
         Scanner scan = new Scanner(System.in);
-        blackJackDeck myDeck = new blackJackDeck();
-        blackJackPlayer me = new blackJackPlayer();
-        blackJackDealer dealer = new blackJackDealer();
+        BlackJackDeck myDeck = new BlackJackDeck();
+        BlackJackPlayer me = new BlackJackPlayer();
+        BlackJackDealer dealer = new BlackJackDealer();
         myDeck.shuffle();
         String cont = "y";
         String hit = "y";
