@@ -16,6 +16,9 @@ public class blackJackGame extends AppCompatActivity{
     private Random random;
     private int playerScore;
     private int dealerScore;
+
+    private TextView playerScoreView;
+    private TextView dealerScoreView;
     private Button homeButton;
     private TextView name;
     private ImageView[] pCards;
@@ -36,7 +39,8 @@ public class blackJackGame extends AppCompatActivity{
         name = findViewById(R.id.blackJackConfigScreen);
         String username = getIntent().getStringExtra("keyname");
         name.setText(username);
-
+        playerScoreView = findViewById(R.id.player_show);
+        dealerScoreView = findViewById(R.id.dealer_show);
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,21 +58,21 @@ public class blackJackGame extends AppCompatActivity{
         });
 
 
-    pCards = new ImageView[]{
-        findViewById(R.id.pCard1),
+        pCards = new ImageView[]{
+                findViewById(R.id.pCard1),
                 findViewById(R.id.pCard2),
                 findViewById(R.id.pCard3),
                 findViewById(R.id.pCard4)
-    };
-    dCards = new ImageView[]{
-        findViewById(R.id.dCard1),
+        };
+        dCards = new ImageView[]{
+                findViewById(R.id.dCard1),
                 findViewById(R.id.dCard2),
                 findViewById(R.id.dCard3),
                 findViewById(R.id.dCard4)
-    };
-    cardIndex = 0;
-    deck = new int[]{
-        R.drawable.spades_2,
+        };
+        cardIndex = 0;
+        deck = new int[]{
+                R.drawable.spades_2,
                 R.drawable.spades_3,
                 R.drawable.spades_4,
                 R.drawable.spades_5,
@@ -120,40 +124,88 @@ public class blackJackGame extends AppCompatActivity{
                 R.drawable.hearts_jack,
                 R.drawable.hearts_queen,
                 R.drawable.hearts_king
-    };
+        };
 
-    // Shuffle the deck
-    shuffleDeck();
+        // Shuffle the deck
+        shuffleDeck();
 
         for (ImageView pCard : pCards) {
-        pCard.setVisibility(View.INVISIBLE);
-    }
+            pCard.setVisibility(View.INVISIBLE);
+        }
         for (ImageView dCard : dCards) {
-        dCard.setVisibility(View.INVISIBLE);
-    }
+            dCard.setVisibility(View.INVISIBLE);
+        }
 
-    playerCardIndex = 0;
-    dealerCardIndex = 0;
-    dealButtonClicked = false;
-}
+        playerCardIndex = 0;
+        dealerCardIndex = 0;
+        dealButtonClicked = false;
+    }
 
     public void dealCards(View view) {
         if (!dealButtonClicked) {
             pCards[playerCardIndex].setVisibility(View.VISIBLE);
-            pCards[playerCardIndex].setImageResource(deck[playerCardIndex]);
-
+            pCards[playerCardIndex].setImageResource(deck[cardIndex]);
+            int cardValue = getCardValue(deck[cardIndex]);
+            playerScore += cardValue;
+            playerScoreView.setText("Player Score: " + playerScore);
             playerCardIndex++;
         } else {
             dCards[dealerCardIndex].setVisibility(View.VISIBLE);
-            dCards[dealerCardIndex].setImageResource(deck[playerCardIndex]);
-
+            dCards[dealerCardIndex].setImageResource(deck[cardIndex]);
+            int cardValue = getCardValue(deck[cardIndex]);
+            dealerScore += cardValue;
+            dealerScoreView.setText("Dealer Score: " + dealerScore);
             dealerCardIndex++;
         }
 
         dealButtonClicked = !dealButtonClicked;
+        cardIndex++;
     }
 
-    private void shuffleDeck() {
+    public int getCardValue(int value) {
+        if (value == R.drawable.spades_2 || value == R.drawable.clubs_2 || value == R.drawable.diamonds_2 || value == R.drawable.hearts_2) {
+            return 2;
+        } else if (value == R.drawable.spades_3 || value == R.drawable.clubs_3 || value == R.drawable.diamonds_3 || value == R.drawable.hearts_3) {
+            return 3;
+        } else if (value == R.drawable.spades_4 || value == R.drawable.clubs_4 || value == R.drawable.diamonds_4 || value == R.drawable.hearts_4) {
+            return 4;
+        } else if (value == R.drawable.spades_5 || value == R.drawable.clubs_5 || value == R.drawable.diamonds_5 || value == R.drawable.hearts_5) {
+            return 5;
+        } else if (value == R.drawable.spades_6 || value == R.drawable.clubs_6 || value == R.drawable.diamonds_6 || value == R.drawable.hearts_6) {
+            return 6;
+        } else if (value == R.drawable.spades_7 || value == R.drawable.clubs_7 || value == R.drawable.diamonds_7 || value == R.drawable.hearts_7) {
+            return 7;
+        } else if (value == R.drawable.spades_8 || value == R.drawable.clubs_8 || value == R.drawable.diamonds_8 || value == R.drawable.hearts_8) {
+            return 8;
+        } else if (value == R.drawable.spades_9 || value == R.drawable.clubs_9 || value == R.drawable.diamonds_9 || value == R.drawable.hearts_9) {
+            return 9;
+        } else if (value == R.drawable.spades_10 ||
+                value == R.drawable.clubs_10 ||
+                value == R.drawable.diamonds_10 ||
+                value == R.drawable.hearts_10 ||
+                value == R.drawable.spades_jack ||
+                value == R.drawable.clubs_jack ||
+                value == R.drawable.diamonds_jack ||
+                value == R.drawable.hearts_jack ||
+                value == R.drawable.spades_queen ||
+                value == R.drawable.clubs_queen ||
+                value == R.drawable.diamonds_queen ||
+                value == R.drawable.hearts_queen ||
+                value == R.drawable.spades_king ||
+                value == R.drawable.clubs_king ||
+                value == R.drawable.diamonds_king ||
+                value == R.drawable.hearts_king) {
+            return 10;
+        } else if (value == R.drawable.spades_ace_simple || value == R.drawable.clubs_ace || value == R.drawable.diamonds_ace || value == R.drawable.hearts_ace) {
+            return 11;
+        }
+        else {
+            return 0;
+        }
+    }
+
+
+    private void shuffleDeck () {
         for (int i = deck.length - 1; i > 0; i--) {
             int j = random.nextInt(i + 1);
             int temp = deck[i];
