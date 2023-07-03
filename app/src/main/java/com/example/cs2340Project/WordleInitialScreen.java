@@ -28,7 +28,7 @@ public class WordleInitialScreen extends AppCompatActivity {
             player = Player.getInstance();
             player.setPlayerName(name.getText().toString());
             setSprite();
-            Intent intent = new Intent(WordleInitialScreen.this, wordleGame.class);
+            Intent intent = new Intent(WordleInitialScreen.this, WordleGame.class);
             startActivity(intent);
             finish();
             //startActivityForResult(intent, 1);

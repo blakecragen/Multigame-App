@@ -13,34 +13,34 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".checkersGame"
+            android:name=".CheckersGame"
             android:exported="false" />
         <activity
-            android:name=".checkersInitialScreen"
+            android:name=".CheckersInitialScreen"
             android:exported="false" />
         <activity
-            android:name=".checkersStartScreen"
+            android:name=".CheckersStartScreen"
             android:exported="false" />
         <activity
-            android:name=".blackJackGame"
+            android:name=".BlackJackGame"
             android:exported="false" />
         <activity
             android:name=".BlackJackInitialScreen"
             android:exported="false" />
         <activity
-            android:name=".wordleStartScreen"
+            android:name=".WordleStartScreen"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".wordleGame"
+            android:name=".WordleGame"
             android:exported="false"
-            android:parentActivityName=".wordleInitialScreen" />
+            android:parentActivityName=".WordleInitialScreen" />
         <activity
-            android:name=".wordleInitialScreen"
+            android:name=".WordleInitialScreen"
             android:exported="false"
-            android:parentActivityName=".wordleStartScreen" />
+            android:parentActivityName=".WordleStartScreen" />
         <activity
-            android:name=".blackJackStartScreen"
+            android:name=".BlackJackStartScreen"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
