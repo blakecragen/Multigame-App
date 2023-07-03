@@ -28,18 +28,23 @@ public class BlackJackGame extends AppCompatActivity{
     private int dealerCardIndex;
     private boolean dealButtonClicked;
 
+    private Player player;
+
     private BlackJackDeck myDeck;
     private BlackJackDealer dealer;
-    private BlackJackPlayer player;
+    private BlackJackPlayer ourPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        player = new BlackJackPlayer();
+        ourPlayer = new BlackJackPlayer();
         myDeck = new BlackJackDeck();
         dealer = new BlackJackDealer();
         myDeck.shuffle();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.black_jack_game);
+
+        player = player.getInstance();
+        selectLives();
 
         restartButton = findViewById(R.id.bj_restart_button);
         random = new Random();
@@ -329,5 +334,22 @@ public class BlackJackGame extends AppCompatActivity{
             deck[i] = deck[j];
             deck[j] = temp;
         }
+    }
+    private void selectLives() {
+        if(player.getPlayerLives() == 0){
+            Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+            startActivity(intent);
+            finish();
+        }
+        TextView name = findViewById(R.id.playerDataName);
+        name.setText(player.getPlayerName());
+        name.setTextColor(-1);
+        //update the sprite image
+        ImageView sprite = findViewById(R.id.sprite);
+        player.setSpriteImage(sprite);
+        ImageView i1 = findViewById(R.id.life1);
+        ImageView i2 = findViewById(R.id.life2);
+        ImageView i3 = findViewById(R.id.life3);
+        player.setLives(i1,i2,i3);
     }
 }
