@@ -1,0 +1,17 @@
+Index: app/src/test/java/com/example/cs2340Project/blackJackFunctionalityTests.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/test/java/com/example/cs2340Project/blackJackFunctionalityTests.java b/app/src/test/java/com/example/cs2340Project/blackJackFunctionalityTests.java
+--- a/app/src/test/java/com/example/cs2340Project/blackJackFunctionalityTests.java	
++++ b/app/src/test/java/com/example/cs2340Project/blackJackFunctionalityTests.java	
+@@ -12,7 +12,7 @@
+     @Test
+     public void testDeckCreation() {
+         blackJackDeck myDeck = new blackJackDeck();
+-        assertEquals(myDeck, new blackJackDeck());
++        assertNotEquals(myDeck, new blackJackDeck());
+     }
+ 
+     @Test

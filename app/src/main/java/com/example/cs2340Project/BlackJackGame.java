@@ -28,8 +28,16 @@ public class BlackJackGame extends AppCompatActivity{
     private int dealerCardIndex;
     private boolean dealButtonClicked;
 
+    private BlackJackDeck myDeck;
+    private BlackJackDealer dealer;
+    private BlackJackPlayer player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        player = new BlackJackPlayer();
+        myDeck = new BlackJackDeck();
+        dealer = new BlackJackDealer();
+        myDeck.shuffle();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.black_jack_game);
 
@@ -80,10 +88,10 @@ public class BlackJackGame extends AppCompatActivity{
                 R.drawable.spades_8,
                 R.drawable.spades_9,
                 R.drawable.spades_10,
-                R.drawable.spades_ace_simple,
                 R.drawable.spades_jack,
                 R.drawable.spades_queen,
                 R.drawable.spades_king,
+                R.drawable.spades_ace_simple,
                 R.drawable.clubs_2,
                 R.drawable.clubs_3,
                 R.drawable.clubs_4,
@@ -93,10 +101,10 @@ public class BlackJackGame extends AppCompatActivity{
                 R.drawable.clubs_8,
                 R.drawable.clubs_9,
                 R.drawable.clubs_10,
-                R.drawable.clubs_ace,
                 R.drawable.clubs_jack,
                 R.drawable.clubs_queen,
                 R.drawable.clubs_king,
+                R.drawable.clubs_ace,
                 R.drawable.diamonds_2,
                 R.drawable.diamonds_3,
                 R.drawable.diamonds_4,
@@ -106,10 +114,10 @@ public class BlackJackGame extends AppCompatActivity{
                 R.drawable.diamonds_8,
                 R.drawable.diamonds_9,
                 R.drawable.diamonds_10,
-                R.drawable.diamonds_ace,
                 R.drawable.diamonds_jack,
                 R.drawable.diamonds_queen,
                 R.drawable.diamonds_king,
+                R.drawable.diamonds_ace,
                 R.drawable.hearts_2,
                 R.drawable.hearts_3,
                 R.drawable.hearts_4,
@@ -119,10 +127,10 @@ public class BlackJackGame extends AppCompatActivity{
                 R.drawable.hearts_8,
                 R.drawable.hearts_9,
                 R.drawable.hearts_10,
-                R.drawable.hearts_ace,
                 R.drawable.hearts_jack,
                 R.drawable.hearts_queen,
-                R.drawable.hearts_king
+                R.drawable.hearts_king,
+                R.drawable.hearts_ace
         };
 
         // Shuffle the deck
@@ -141,12 +149,121 @@ public class BlackJackGame extends AppCompatActivity{
     }
 
     public void dealCards(View view) {
+        dealer.hit(myDeck);
+        player.hit(myDeck);
+        dealer.hit(myDeck);
+        player.hit(myDeck);
+        int playerScore = player.getHand().get(0).getValue();
+        //playerScore += player.getHand().get(1).getValue();
+        int dealerScore = dealer.getHand().get(0).getValue();
+        playerScoreView.setText("Player Score: " + playerScore);
+        dealerScoreView.setText("Dealer Score: " + dealerScore);
+
+        int cardIndex = 0;
+        switch (player.getHand().get(0).getSuit()) {
+            case 'C':
+                cardIndex += 13;
+                break;
+            case 'H':
+                cardIndex += 39;
+                break;
+            case 'D':
+                cardIndex += 26;
+                break;
+        }
+        cardIndex += player.getHand().get(0).getValue();
+        switch (player.getHand().get(0).getType()) {
+            case "Jack":
+                cardIndex += 1;
+                break;
+            case "Queen":
+                cardIndex += 2;
+                break;
+            case "King":
+                cardIndex += 3;
+                break;
+            case "Ace":
+                cardIndex += 4;
+                break;
+        }
+        cardIndex -= 2;
+        pCards[0].setImageResource(deck[cardIndex]);
+        pCards[0].setVisibility(View.VISIBLE);
+
+
+        cardIndex = 0;
+        switch (player.getHand().get(1).getSuit()) {
+            case 'C':
+                cardIndex += 13;
+                break;
+            case 'H':
+                cardIndex += 39;
+                break;
+            case 'D':
+                cardIndex += 26;
+                break;
+        }
+        cardIndex += player.getHand().get(1).getValue();
+        switch (player.getHand().get(1).getType()) {
+            case "Jack":
+                cardIndex += 1;
+                break;
+            case "Queen":
+                cardIndex += 2;
+                break;
+            case "King":
+                cardIndex += 3;
+                break;
+            case "Ace":
+                cardIndex += 4;
+                break;
+        }
+        cardIndex -= 2;
+        pCards[1].setImageResource(deck[cardIndex]);
+        pCards[1].setVisibility(View.VISIBLE);
+
+
+        cardIndex = 0;
+        switch (dealer.getHand().get(0).getSuit()) {
+            case 'C':
+                cardIndex += 13;
+                break;
+            case 'H':
+                cardIndex += 39;
+                break;
+            case 'D':
+                cardIndex += 26;
+                break;
+        }
+        cardIndex += dealer.getHand().get(0).getValue();
+        switch (dealer.getHand().get(0).getType()) {
+            case "Jack":
+                cardIndex += 1;
+                break;
+            case "Queen":
+                cardIndex += 2;
+                break;
+            case "King":
+                cardIndex += 3;
+                break;
+            case "Ace":
+                cardIndex += 4;
+                break;
+        }
+        cardIndex -= 2;
+        dCards[0].setImageResource(deck[cardIndex]);
+        dCards[0].setVisibility(View.VISIBLE);
+
+
+
+        /*
         if (!dealButtonClicked) {
             pCards[playerCardIndex].setVisibility(View.VISIBLE);
             pCards[playerCardIndex].setImageResource(deck[cardIndex]);
             int cardValue = getCardValue(deck[cardIndex]);
             playerScore += cardValue;
             playerScoreView.setText("Player Score: " + playerScore);
+            playerCardIndex++;
             playerCardIndex++;
         } else {
             dCards[dealerCardIndex].setVisibility(View.VISIBLE);
@@ -159,6 +276,7 @@ public class BlackJackGame extends AppCompatActivity{
 
         dealButtonClicked = !dealButtonClicked;
         cardIndex++;
+         */
     }
 
     public int getCardValue(int value) {
