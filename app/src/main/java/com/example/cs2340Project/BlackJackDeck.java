@@ -95,7 +95,7 @@ public class BlackJackDeck {
         shuffleArray.addAll(Arrays.asList(asArray));
         Random random = new Random();
         deck.clear();
-        for (int i = 0; i <fullSize; ++i) {
+        for (int i = 0; i < fullSize; ++i) {
             deck.addLast(shuffleArray.remove(random.nextInt(shuffleArray.size())));
         }
     }

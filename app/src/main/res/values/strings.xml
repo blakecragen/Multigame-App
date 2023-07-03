@@ -13,7 +13,8 @@
     <string name="blackjack_launch">Black Jack Start Screen</string>
     <string name="hit">HIT!</string>
     <string name="stand">STAND!</string>
-    <string name="counter">COUNTER</string>
+    <string name="dealer_score">Dealer Score:</string>
+    <string name="player_score">Player Score:</string>
     <string name="checkers">CHECKERS!</string>
     <string name="checkers_launch">Checkers Start Screen</string>
 
