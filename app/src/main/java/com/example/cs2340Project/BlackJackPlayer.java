@@ -2,14 +2,14 @@ package com.example.cs2340Project;
 
 import java.util.ArrayList;
 
-public class blackJackPlayer {
-    private ArrayList<blackJackCard> hand;
+public class BlackJackPlayer {
+    private ArrayList<BlackJackCard> hand;
 
     /**
      * Constructor for a player object.
      */
-    public blackJackPlayer() {
-        hand = new ArrayList<blackJackCard>();
+    public BlackJackPlayer() {
+        hand = new ArrayList<>();
     }
 
     /**
@@ -17,7 +17,7 @@ public class blackJackPlayer {
      *
      * @param deck
      */
-    public void hit(blackJackDeck deck) {
+    public void hit(BlackJackDeck deck) {
         hand.add(deck.getCard());
     }
 
@@ -26,7 +26,7 @@ public class blackJackPlayer {
      *
      * @param deck Deck of cards being played with.
      */
-    public void clearHand(blackJackDeck deck) {
+    public void clearHand(BlackJackDeck deck) {
         int fullSize = hand.size();
         for (int i = 0; i < fullSize; ++i) {
             deck.addCardToDeck(hand.remove(0));
@@ -40,7 +40,7 @@ public class blackJackPlayer {
      */
     public int getHandSum() {
         int sum = 0;
-        for (blackJackCard card: hand) {
+        for (BlackJackCard card: hand) {
             sum += card.getValue();
         }
         return sum;
@@ -51,7 +51,7 @@ public class blackJackPlayer {
      *
      * @return The hand.
      */
-    public ArrayList<blackJackCard> getHand() {
+    public ArrayList<BlackJackCard> getHand() {
         return this.hand;
     }
 
@@ -60,7 +60,7 @@ public class blackJackPlayer {
      */
     public void printHand() {
         System.out.printf("Your hand:\n");
-        for (blackJackCard card: hand) {
+        for (BlackJackCard card: hand) {
             System.out.printf("%s\n",card);
         }
     }

@@ -2,14 +2,13 @@ package com.example.cs2340Project;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.Random;
 
-public class blackJackDeck {
+public class BlackJackDeck {
     /**
      * Deck of cards being played with.
      */
-    private ArrayDeque<blackJackCard> deck;
+    private ArrayDeque<BlackJackCard> deck;
 
     /**
      * Number of decks to play with.
@@ -26,9 +25,9 @@ public class blackJackDeck {
      *
      * @param numDecks The number of decks to play with.
      */
-    public blackJackDeck(int numDecks) {
+    public BlackJackDeck(int numDecks) {
         this.numDecks = numDecks;
-        this.deck = new ArrayDeque<blackJackCard>();
+        this.deck = new ArrayDeque<BlackJackCard>();
         this.makeDeck();
         this.cardsUsed = 0;
     }
@@ -36,7 +35,7 @@ public class blackJackDeck {
     /**
      * Constructor that defaults to working with 2 decks.
      */
-    public blackJackDeck() {
+    public BlackJackDeck() {
         this(2);
     }
 
@@ -63,19 +62,19 @@ public class blackJackDeck {
                     }
                     switch (k) {
                         case 11:
-                            deck.addLast(new blackJackCard(10, curSuite, "Jack"));
+                            deck.addLast(new BlackJackCard(10, curSuite, "Jack"));
                             break;
                         case 12:
-                            deck.addLast(new blackJackCard(10, curSuite, "Queen"));
+                            deck.addLast(new BlackJackCard(10, curSuite, "Queen"));
                             break;
                         case 13:
-                            deck.addLast(new blackJackCard(10, curSuite, "King"));
+                            deck.addLast(new BlackJackCard(10, curSuite, "King"));
                             break;
                         case 14:
-                            deck.addLast(new blackJackCard(11, curSuite, "Ace"));
+                            deck.addLast(new BlackJackCard(11, curSuite, "Ace"));
                             break;
                         default:
-                            deck.addLast(new blackJackCard(k, curSuite));
+                            deck.addLast(new BlackJackCard(k, curSuite));
                     }
                 }
             }
@@ -87,12 +86,12 @@ public class blackJackDeck {
      * Helper method to reshuffle whatever cards are in the deck.
      */
     public void shuffle() {
-        blackJackCard[] asArray = new blackJackCard[deck.size()];
+        BlackJackCard[] asArray = new BlackJackCard[deck.size()];
         int fullSize = deck.size();
         for (int i = 0; i < fullSize; ++i) {
             asArray[i] = deck.removeFirst();
         }
-        ArrayList<blackJackCard> shuffleArray = new ArrayList<blackJackCard>();
+        ArrayList<BlackJackCard> shuffleArray = new ArrayList<>();
         shuffleArray.addAll(Arrays.asList(asArray));
         Random random = new Random();
         deck.clear();
@@ -106,7 +105,7 @@ public class blackJackDeck {
      *
      * @return The first card on the deck.
      */
-    public blackJackCard getCard() {
+    public BlackJackCard getCard() {
         cardsUsed++;
         return deck.removeFirst();
     }
@@ -117,7 +116,7 @@ public class blackJackDeck {
      *
      * @param card
      */
-    public void addCardToDeck(blackJackCard card) {
+    public void addCardToDeck(BlackJackCard card) {
         deck.addLast(card);
         if (cardsUsed >= .8*52*numDecks) {
             this.shuffle();

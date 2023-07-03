@@ -26,7 +26,7 @@
             android:id="@+id/go_game_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="GAME"
+            android:text="@string/game"
             android:fontFamily="@font/pressstart_2p"
             app:cornerRadius="0dp"
             android:textSize="50dp"
@@ -52,7 +52,7 @@
             android:textColor="@color/yellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="OVER" />
+            android:text="@string/over" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,7 +67,7 @@
                 android:layout_height="70dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/pressstart_2p"
-                android:text="HOME"
+                android:text="@string/home"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 app:backgroundTint="@color/black"
@@ -81,7 +81,7 @@
                 android:layout_height="70dp"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/pressstart_2p"
-                android:text="RESTART"
+                android:text="@string/restart"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 app:backgroundTint="@color/black"
@@ -97,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/pressstart_2p"
-            android:text="YOUR SCORE: "
+            android:text="@string/your_score"
             android:textColor="@color/yellow"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/pressstart_2p"
-            android:text="HIGH SCORE: "
+            android:text="@string/high_score"
             android:textColor="@color/yellow"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toBottomOf="parent"

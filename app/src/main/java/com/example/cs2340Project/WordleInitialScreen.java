@@ -9,7 +9,7 @@ import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class wordleInitialScreen extends AppCompatActivity {
+public class WordleInitialScreen extends AppCompatActivity {
     private EditText name;
     private Button add;
     private Player player;
@@ -28,7 +28,7 @@ public class wordleInitialScreen extends AppCompatActivity {
             player = Player.getInstance();
             player.setPlayerName(name.getText().toString());
             setSprite();
-            Intent intent = new Intent(wordleInitialScreen.this, wordleGame.class);
+            Intent intent = new Intent(WordleInitialScreen.this, WordleGame.class);
             startActivity(intent);
             finish();
             //startActivityForResult(intent, 1);

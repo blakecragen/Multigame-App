@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
-public class blackJackInitialScreen extends AppCompatActivity{
+public class BlackJackInitialScreen extends AppCompatActivity{
     private Button prevButton;
     private Button continueButton;
     private Player player;
@@ -31,7 +31,7 @@ public class blackJackInitialScreen extends AppCompatActivity{
                 player = Player.getInstance();
                 player.setPlayerName(name.getText().toString());
                 setSprite();
-                Intent intent = new Intent(blackJackInitialScreen.this, blackJackGame.class);
+                Intent intent = new Intent(BlackJackInitialScreen.this, BlackJackGame.class);
                 String username = name.getText().toString();
                 intent.putExtra("keyname", username);
                 startActivity(intent);
@@ -42,7 +42,7 @@ public class blackJackInitialScreen extends AppCompatActivity{
         prevButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(blackJackInitialScreen.this, blackJackStartScreen.class);
+                Intent intent = new Intent(BlackJackInitialScreen.this, BlackJackStartScreen.class);
                 startActivity(intent);
                 finish();
             }

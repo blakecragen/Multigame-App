@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/purple"
-    tools:context=".blackJackInitialScreen">
+    tools:context=".BlackJackInitialScreen">
 
     <Button
         android:id="@+id/bj_restart_button"
@@ -29,7 +29,7 @@
         android:backgroundTint="@color/red"
         android:fontFamily="@font/press_start_2p"
         android:paddingTop="13dp"
-        android:text="HIT!"
+        android:text="@string/hit"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
         android:backgroundTint="@color/red"
         android:fontFamily="@font/press_start_2p"
         android:paddingTop="13dp"
-        android:text="STAND!"
+        android:text="@string/stand"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +81,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/press_start_2p"
-        android:text="BlackJack!"
+        android:text="@string/blackjack"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -111,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/press_start_2p"
-        android:text="Dealer Score:"
+        android:text="@string/dealer_score"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -125,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/press_start_2p"
-        android:text="Player Score:"
+        android:text="@string/player_score"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -18,7 +18,7 @@
         android:ems="10"
         android:fontFamily="@font/pressstart_2p"
         android:inputType="text"
-        android:text="WORDLE!"
+        android:text="@string/wordle"
         android:textAlignment="center"
         android:textColor="#150101"
         android:textSize="45sp"
@@ -32,7 +32,7 @@
         android:layout_marginStart="252dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="HOME"
+        android:text="@string/home"
         app:backgroundTint="@color/red"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +45,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="84dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="RESTART"
+        android:text="@string/restart"
         app:backgroundTint="@color/red"
         app:cornerRadius="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -70,13 +70,13 @@
             android:id="@+id/buttonQ"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="Q"
+            android:text="@string/q"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonW"
             android:layout_width="65dp"
-            android:text="W"
+            android:text="@string/w"
             app:backgroundTint="@color/black"
             app:layout_column="1"
             app:layout_row="0" />
@@ -85,161 +85,160 @@
             android:id="@+id/buttonE"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="E"
+            android:text="@string/e"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonR"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="R"
+            android:text="@string/r"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonT"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="T"
+            android:text="@string/t"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonY"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="Y"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:id="@+id/buttonU"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="U"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:id="@+id/buttonI"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="I"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:id="@+id/buttonO"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="O"
-            app:backgroundTint="@color/black" />
-
-        <Button
-            android:id="@+id/buttonP"
-            android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="P"
+            android:text="@string/y"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonA"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="A"
+            android:text="@string/a"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonS"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="S"
+            android:text="@string/s"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonD"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="D"
+            android:text="@string/d"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonF"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="F"
+            android:text="@string/f"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonG"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="G"
+            android:text="@string/g"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonH"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="H"
+            android:text="@string/h"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonJ"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="J"
+            android:text="@string/j"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonK"
             android:layout_width="65dp"
-            android:layout_height="wrap_content"
-            android:text="K"
+            android:text="@string/k"
             app:backgroundTint="@color/black" />
 
         <Button
-            android:id="@+id/buttonL"
+            android:id="@+id/buttonU"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="L"
+            android:text="@string/u"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/buttonI"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/i"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/buttonO"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/o"
+            app:backgroundTint="@color/black" />
+
+        <Button
+            android:id="@+id/buttonP"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/p"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonZ"
             android:layout_width="65dp"
-            android:text="Z"
+            android:layout_height="wrap_content"
+            android:text="@string/z"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonX"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="X"
+            android:text="@string/x"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonC"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="C"
+            android:text="@string/c"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonV"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="V"
+            android:text="@string/v"
             app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonB"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="B"
+            android:text="@string/b"
             app:backgroundTint="@color/black" />
 
+        <Button
+            android:id="@+id/buttonL"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:text="@string/l"
+            app:backgroundTint="@color/black" />
 
         <Button
             android:id="@+id/buttonN"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="N"
+            android:text="@string/n"
             app:backgroundTint="@color/black"
             app:layout_column="2"
             app:layout_row="4" />
@@ -248,7 +247,7 @@
             android:id="@+id/buttonM"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:text="M"
+            android:text="@string/m"
             app:backgroundTint="@color/black" />
 
         <Button
@@ -277,40 +276,40 @@
             android:id="@+id/editText1"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="A"
+            android:hint="@string/a"
             android:maxLength="1" />
 
         <EditText
             android:id="@+id/editText2"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="A" />
+            android:hint="@string/a" />
 
         <EditText
             android:id="@+id/editText3"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="A" />
+            android:hint="@string/a" />
 
         <!-- Row 2 -->
         <EditText
             android:id="@+id/editText4"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="A"
+            android:hint="@string/a"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText5"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="A" />
+            android:hint="@string/a" />
 
         <EditText
             android:id="@+id/editText6"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="B"
+            android:hint="@string/b"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Row 3 -->
@@ -318,134 +317,134 @@
             android:id="@+id/editText7"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="B" />
+            android:hint="@string/b" />
 
         <EditText
             android:id="@+id/editText8"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="B" />
+            android:hint="@string/b" />
 
         <EditText
             android:id="@+id/editText9"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="B" />
+            android:hint="@string/b" />
 
         <!-- Row 4 -->
         <EditText
             android:id="@+id/editText10"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="B" />
+            android:hint="@string/b" />
 
         <EditText
             android:id="@+id/editText11"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="C" />
+            android:hint="@string/c" />
 
         <EditText
             android:id="@+id/editText12"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="C" />
+            android:hint="@string/c" />
 
         <!-- Row 5 -->
         <EditText
             android:id="@+id/editText13"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="C" />
+            android:hint="@string/c" />
 
         <EditText
             android:id="@+id/editText14"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="C" />
+            android:hint="@string/c" />
 
         <EditText
             android:id="@+id/editText15"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="C"
+            android:hint="@string/c"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText16"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="D" />
+            android:hint="@string/d" />
 
         <EditText
             android:id="@+id/editText17"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="D" />
+            android:hint="@string/d" />
 
         <EditText
             android:id="@+id/editText18"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="D" />
+            android:hint="@string/d" />
 
         <!-- Row 2 -->
         <EditText
             android:id="@+id/editText19"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="D"
+            android:hint="@string/d"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
             android:id="@+id/editText20"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="D" />
+            android:hint="@string/d" />
 
         <EditText
             android:id="@+id/editText21"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="E" />
+            android:hint="@string/e" />
 
         <!-- Row 3 -->
         <EditText
             android:id="@+id/editText22"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="E" />
+            android:hint="@string/e" />
 
         <EditText
             android:id="@+id/editText23"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="E" />
+            android:hint="@string/e" />
 
         <EditText
             android:id="@+id/editText24"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="E" />
+            android:hint="@string/e" />
 
         <!-- Row 4 -->
         <EditText
             android:id="@+id/editText25"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="E" />
+            android:hint="@string/e" />
 
         <EditText
             android:id="@+id/editText26"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="F" />
+            android:hint="@string/f" />
 
         <EditText
             android:id="@+id/editText27"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="F"
+            android:hint="@string/f"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <!-- Row 5 -->
@@ -453,19 +452,19 @@
             android:id="@+id/editText28"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="F" />
+            android:hint="@string/f" />
 
         <EditText
             android:id="@+id/editText29"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="F" />
+            android:hint="@string/f" />
 
         <EditText
             android:id="@+id/editText30"
             android:layout_width="65dp"
             android:layout_height="wrap_content"
-            android:hint="F" />
+            android:hint="@string/f" />
 
     </androidx.gridlayout.widget.GridLayout>
 
@@ -475,7 +474,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="286dp"
         android:layout_marginTop="510dp"
-        android:text="Enter"
+        android:text="@string/enter"
         android:textSize="20dp"
         app:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"
@@ -487,7 +486,7 @@
         android:layout_height="45dp"
         android:layout_marginStart="14dp"
         android:layout_marginTop="510dp"
-        android:text="Delete"
+        android:text="@string/delete"
         android:textSize="20dp"
         app:backgroundTint="@color/black"
         app:layout_constraintStart_toStartOf="parent"

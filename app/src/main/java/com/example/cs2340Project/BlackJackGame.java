@@ -11,12 +11,11 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class blackJackGame extends AppCompatActivity{
+public class BlackJackGame extends AppCompatActivity{
     private Button restartButton;
     private Random random;
     private int playerScore;
     private int dealerScore;
-
     private TextView playerScoreView;
     private TextView dealerScoreView;
     private Button homeButton;
@@ -52,7 +51,7 @@ public class blackJackGame extends AppCompatActivity{
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(blackJackGame.this, MainActivity.class);
+                Intent intent = new Intent(BlackJackGame.this, MainActivity.class);
                 startActivity(intent);
             }
         });

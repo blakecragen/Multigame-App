@@ -1,6 +1,5 @@
 package com.example.cs2340Project;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,19 +9,19 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class wordleFuntionalityTests {
+public class WordleFuntionalityTests {
 
     // By Charlie
     @Test
     public void testInitialization() {
-        wordleGameFunctionality correctWord = new wordleGameFunctionality();
+        WordleGameFunctionality correctWord = new WordleGameFunctionality();
         assertNull(correctWord.getSolution());
     }
 
     // By Charlie
     @Test
     public void testSelectNewWord() {
-        wordleGameFunctionality correctWord = new wordleGameFunctionality();
+        WordleGameFunctionality correctWord = new WordleGameFunctionality();
 
         correctWord.setNewWord("Hello");
         assertEquals("Hello", correctWord.getSolution());
@@ -42,7 +41,7 @@ public class wordleFuntionalityTests {
     // By Christeena
     @Test
     public void testCheckGuessCorrLets() {
-        wordleGameFunctionality correctWord = new wordleGameFunctionality();
+        WordleGameFunctionality correctWord = new WordleGameFunctionality();
 
         // Check if the method works if a guess is completely correct.
         String ans = "Hello";
@@ -75,7 +74,7 @@ public class wordleFuntionalityTests {
     // By Christeena
     @Test
     public void checkGuessValid() {
-        wordleGameFunctionality wordle = new wordleGameFunctionality();
+        WordleGameFunctionality wordle = new WordleGameFunctionality();
         String word = "hello";
         assertEquals(true, wordle.checkGuessValid(word) >= 0);
         word = "horse";
@@ -107,7 +106,7 @@ public class wordleFuntionalityTests {
     // By Scott
     @Test
     public void testClear() {
-        wordleGameFunctionality game = new wordleGameFunctionality();
+        WordleGameFunctionality game = new WordleGameFunctionality();
         game.push(0, 'a');
         game.push(1, 'l');
         assertTrue(game.get(0, 'a'));
@@ -118,7 +117,7 @@ public class wordleFuntionalityTests {
     // By Joey
     @Test
     public void testCheckGuessCorrLetsWrongSpot() {
-        wordleGameFunctionality correctWord = new wordleGameFunctionality();
+        WordleGameFunctionality correctWord = new WordleGameFunctionality();
         String ans = "candy";
         int[] expected = new int[]{1, 0, 0, 1, 0};
         correctWord.setNewWord(ans);
@@ -139,7 +138,7 @@ public class wordleFuntionalityTests {
     // By Joey
     @Test
     public void testGet() {
-        wordleGameFunctionality game = new wordleGameFunctionality();
+        WordleGameFunctionality game = new WordleGameFunctionality();
         game.push(0,'a');
         game.push(1,'b');
         game.push(2,'c');
@@ -160,7 +159,7 @@ public class wordleFuntionalityTests {
     // By Arden
     @Test
     public void  testPush() {
-        wordleGameFunctionality wordle = new wordleGameFunctionality();
+        WordleGameFunctionality wordle = new WordleGameFunctionality();
         wordle.push(new Node(0,'a'));
         wordle.push(new Node(6,'b'));
         wordle.push(new Node(11,'c'));
@@ -173,7 +172,7 @@ public class wordleFuntionalityTests {
     // By Blake
     @Test
     public void testRemove() {
-        wordleGameFunctionality wordle = new wordleGameFunctionality();
+        WordleGameFunctionality wordle = new WordleGameFunctionality();
         wordle.push(0, 'a');
         wordle.push(1, 'b');
         wordle.push(2, 'c');
@@ -192,7 +191,7 @@ public class wordleFuntionalityTests {
     // By Blake
     @Test
     public void testCheckGuess() {
-        wordleGameFunctionality correctWord = new wordleGameFunctionality();
+        WordleGameFunctionality correctWord = new WordleGameFunctionality();
 
         // Check if the method works if a guess is completely correct.
         String ans = "Hello";

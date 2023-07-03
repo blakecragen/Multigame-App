@@ -1,13 +1,13 @@
 package com.example.cs2340Project;
 
-public class blackJackDealer extends blackJackPlayer {
+public class BlackJackDealer extends BlackJackPlayer {
 
     /**
      * Hits the dealer's hand based on casino rules.
      *
      * @param deck Deck to pull cards from.
      */
-    public void dealerHit(blackJackDeck deck) {
+    public void dealerHit(BlackJackDeck deck) {
         if (this.getHandSum() < 17) {
             this.hit(deck);
         }
@@ -22,7 +22,7 @@ public class blackJackDealer extends blackJackPlayer {
      * @param player Player to check if they won.
      * @return Returns state of player win/loss
      */
-    public int playerWin(blackJackPlayer player) {
+    public int playerWin(BlackJackPlayer player) {
         if ((player.getHandSum() > this.getHandSum() && player.getHandSum() < 22) | (player.getHandSum() < 22 && this.getHandSum() > 21)) {
             return 2;
         } else if (player.getHandSum() == this.getHandSum()) {
@@ -37,7 +37,7 @@ public class blackJackDealer extends blackJackPlayer {
      *
      * @return The index 0 card (card to be shown).
      */
-    public blackJackCard getShownCard() {
+    public BlackJackCard getShownCard() {
         return this.getHand().get(0);
     }
 
@@ -47,7 +47,7 @@ public class blackJackDealer extends blackJackPlayer {
     @Override
     public void printHand() {
         System.out.printf("Dealer hand:\n");
-        for (blackJackCard card: this.getHand()) {
+        for (BlackJackCard card: this.getHand()) {
             System.out.printf("%s\n",card);
         }
     }

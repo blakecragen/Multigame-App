@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class checkersGame extends AppCompatActivity {
+public class CheckersGame extends AppCompatActivity {
     private TextView name;
 
 

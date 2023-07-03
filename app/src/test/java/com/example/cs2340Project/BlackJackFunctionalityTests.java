@@ -7,33 +7,34 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import static org.junit.Assert.*;
 
-public class blackJackFunctionalityTests {
+public class BlackJackFunctionalityTests {
 
     @Test
     public void testDeckCreation() {
-        blackJackDeck myDeck = new blackJackDeck();
-        assertEquals(myDeck, new blackJackDeck());
+        BlackJackDeck myDeck = new BlackJackDeck();
+        assertEquals(myDeck, new BlackJackDeck());
     }
 
     @Test
     public void testShuffle() {
-        blackJackDeck myDeck = new blackJackDeck();
+        BlackJackDeck myDeck = new BlackJackDeck();
         myDeck.makeDeck();
-        blackJackDeck testDeck = myDeck;
+        BlackJackDeck testDeck = myDeck;
         myDeck.shuffle();
         assertNotEquals(testDeck.getCard(), myDeck.getCard());
     }
 
     @Test
     public void testCardToString() {
-        blackJackCard card1 = new blackJackCard(8, 'H');
-        blackJackCard card2 = new blackJackCard(9, 'D');
-        blackJackCard card3 = new blackJackCard(10, 'S');
-        blackJackCard card4 = new blackJackCard(10, 'C', "Jack");
-        blackJackCard card5 = new blackJackCard(10, 'H', "Queen");
-        blackJackCard card6 = new blackJackCard(10, 'D', "King");
-        blackJackCard card7 = new blackJackCard(11, 'S', "Ace");
-        blackJackCard card8 = new blackJackCard(8,'H');
+        BlackJackCard card1 = new BlackJackCard(8, 'H');
+        BlackJackCard card2 = new BlackJackCard(9, 'D');
+        BlackJackCard card3 = new BlackJackCard(10, 'S');
+        BlackJackCard card4 = new BlackJackCard(10, 'C', "Jack");
+        BlackJackCard card5 = new BlackJackCard(10, 'H', "Queen");
+        BlackJackCard card6 = new BlackJackCard(10, 'D', "King");
+        BlackJackCard card7 = new BlackJackCard(11, 'S', "Ace");
+        BlackJackCard card8 = new BlackJackCard(8, 'H');
+
         System.out.println(card1);
         System.out.println(card2);
         System.out.println(card3);
@@ -52,9 +53,9 @@ public class blackJackFunctionalityTests {
 
     @Test
     public void testClearHand() {
-        blackJackDeck myDeck = new blackJackDeck();
-        blackJackPlayer me = new blackJackPlayer();
-        blackJackDealer dealer = new blackJackDealer();
+        BlackJackDeck myDeck = new BlackJackDeck();
+        BlackJackPlayer me = new BlackJackPlayer();
+        BlackJackDealer dealer = new BlackJackDealer();
 
         dealer.hit(myDeck);
         me.hit(myDeck);
@@ -91,11 +92,12 @@ public class blackJackFunctionalityTests {
     }
     @Test
     public void testHitDealerHand() {
-        blackJackDeck myDeck = new blackJackDeck();
-        blackJackDealer dealer = new blackJackDealer();
+        BlackJackDeck myDeck = new BlackJackDeck();
+        BlackJackDealer dealer = new BlackJackDealer();
+
         myDeck.makeDeck();
         dealer.hit(myDeck);
-        ArrayList<blackJackCard> test = dealer.getHand();
+        ArrayList<BlackJackCard> test = dealer.getHand();
 
         dealer.dealerHit(myDeck);
 
@@ -106,9 +108,9 @@ public class blackJackFunctionalityTests {
     @Test
     public void testFunctionality() throws IOException {
         Scanner scan = new Scanner(System.in);
-        blackJackDeck myDeck = new blackJackDeck();
-        blackJackPlayer me = new blackJackPlayer();
-        blackJackDealer dealer = new blackJackDealer();
+        BlackJackDeck myDeck = new BlackJackDeck();
+        BlackJackPlayer me = new BlackJackPlayer();
+        BlackJackDealer dealer = new BlackJackDealer();
         int money = 500;
         int bet = 0;
         String cont = "y";
@@ -152,14 +154,14 @@ public class blackJackFunctionalityTests {
 
     @Test
     public void testPlayerHandSum() {
-        blackJackDeck deck = new blackJackDeck();
+        BlackJackDeck deck = new BlackJackDeck();
         deck.makeDeck();
-        blackJackPlayer player = new blackJackPlayer();
+        BlackJackPlayer player = new BlackJackPlayer();
 
         player.hit(deck);
         player.hit(deck);
 
-        ArrayList<blackJackCard> hand = player.getHand();
+        ArrayList<BlackJackCard> hand = player.getHand();
 
         hand.get(0).setValue(5);
         hand.get(1).setValue(10);
@@ -170,19 +172,19 @@ public class blackJackFunctionalityTests {
     @Test
     public void testPlayerWin() {
         //player win
-        blackJackDeck deck = new blackJackDeck();
+        BlackJackDeck deck = new BlackJackDeck();
         deck.makeDeck();
 
-        blackJackPlayer player = new blackJackPlayer();
-        blackJackDealer dealer = new blackJackDealer();
+        BlackJackPlayer player = new BlackJackPlayer();
+        BlackJackDealer dealer = new BlackJackDealer();
 
         player.hit(deck);
         dealer.hit(deck);
         player.hit(deck);
         dealer.hit(deck);
 
-        ArrayList<blackJackCard> playerHand = player.getHand();
-        ArrayList<blackJackCard> dealerHand = dealer.getHand();
+        ArrayList<BlackJackCard> playerHand = player.getHand();
+        ArrayList<BlackJackCard> dealerHand = dealer.getHand();
 
         playerHand.get(0).setValue(10);
         playerHand.get(1).setValue(10);
@@ -195,12 +197,12 @@ public class blackJackFunctionalityTests {
 
     @Test
     public void testGetHand() {
-        blackJackPlayer player = new blackJackPlayer();
-        ArrayList<blackJackCard> test = new ArrayList<>();
+        BlackJackPlayer player = new BlackJackPlayer();
+        ArrayList<BlackJackCard> test = new ArrayList<>();
 
         assertEquals(player.getHand(), test);
 
-        blackJackDeck deck = new blackJackDeck();
+        BlackJackDeck deck = new BlackJackDeck();
         deck.makeDeck();
 
         player.hit(deck);
@@ -209,28 +211,28 @@ public class blackJackFunctionalityTests {
 
     @Test
     public void testGetShownCard() {
-        blackJackDeck deck = new blackJackDeck();
+        BlackJackDeck deck = new BlackJackDeck();
         deck.makeDeck();
 
-        blackJackDealer dealer = new blackJackDealer();
+        BlackJackDealer dealer = new BlackJackDealer();
         dealer.hit(deck);
         dealer.hit(deck);
 
-        ArrayList<blackJackCard> hand = dealer.getHand();
+        ArrayList<BlackJackCard> hand = dealer.getHand();
         assertEquals(dealer.getShownCard(),hand.get(0));
     }
 
     @Test
     public void testHit() {
-        blackJackDeck deck = new blackJackDeck();
+        BlackJackDeck deck = new BlackJackDeck();
         deck.makeDeck();
 
-        blackJackPlayer player = new blackJackPlayer();
+        BlackJackPlayer player = new BlackJackPlayer();
         player.hit(deck);
         player.hit(deck);
         player.hit(deck);
 
-        ArrayList<blackJackCard> test = player.getHand();
+        ArrayList<BlackJackCard> test = player.getHand();
 
         test.get(0).setValue(4);
         test.get(1).setValue(5);
@@ -242,19 +244,19 @@ public class blackJackFunctionalityTests {
 
     @Test
     public void testPrintHand() {
-        blackJackDeck deck = new blackJackDeck();
+        BlackJackDeck deck = new BlackJackDeck();
         deck.makeDeck();
 
-        blackJackPlayer player = new blackJackPlayer();
-        blackJackDealer dealer = new blackJackDealer();
+        BlackJackPlayer player = new BlackJackPlayer();
+        BlackJackDealer dealer = new BlackJackDealer();
 
         player.hit(deck);
         dealer.hit(deck);
         player.hit(deck);
         dealer.hit(deck);
 
-        ArrayList<blackJackCard> pHand = player.getHand();
-        ArrayList<blackJackCard> dHand = dealer.getHand();
+        ArrayList<BlackJackCard> pHand = player.getHand();
+        ArrayList<BlackJackCard> dHand = dealer.getHand();
 
         /* pHand and dHand represent the player's and dealer's hand, so turning them
         * to strings and comparing them will act like printing their respective hands like in

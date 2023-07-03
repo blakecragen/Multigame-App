@@ -1,25 +1,25 @@
 package com.example.cs2340Project;
 
-public class blackJackCard {
+public class BlackJackCard {
     private int value;
-    private char suite;
+    private char suit;
     private String type;
 
     /**
      * Constructor for a single card
      *
      * @param value Card's value
-     * @param suite Suite of the card (spaces, clubs, etc.)
+     * @param suit Suit of the card (spaces, clubs, etc.)
      * @param type Type of card (for faces)
      */
-    public blackJackCard(int value, char suite, String type) {
-        this.suite = suite;
+    public BlackJackCard(int value, char suit, String type) {
+        this.suit = suit;
         this.value = value;
         this.type = type;
     }
 
-    public blackJackCard(int value, char suite) {
-        this(value, suite, null);
+    public BlackJackCard(int value, char suit) {
+        this(value, suit, null);
     }
 
     /**
@@ -41,21 +41,21 @@ public class blackJackCard {
     }
 
     /**
-     * Setter for card's suite.
+     * Setter for card's suit.
      *
-     * @param suite Suite of card
+     * @param suit Suit of card
      */
-    public void setSuite(char suite) {
-        this.suite = suite;
+    public void setSuit(char suit) {
+        this.suit = suit;
     }
 
     /**
-     * Getter for card's suite
+     * Getter for card's suit
      *
-     * @return Card's suite
+     * @return Card's suit
      */
-    public char getSuite() {
-        return this.suite;
+    public char getSuit() {
+        return this.suit;
     }
 
     /**
@@ -83,25 +83,25 @@ public class blackJackCard {
      */
     @Override
     public String toString() {
-        String cardSuite;
-        switch (suite) {
+        String cardSuit;
+        switch (suit) {
             case 'S':
-                cardSuite = "Spades";
+                cardSuit = "Spades";
                 break;
             case 'D':
-                cardSuite = "Diamonds";
+                cardSuit = "Diamonds";
                 break;
             case 'H':
-                cardSuite = "Hearts";
+                cardSuit = "Hearts";
                 break;
             default:
-                cardSuite = "Clubs";
+                cardSuit = "Clubs";
                 break;
         }
         if (type == null) {
-            return Integer.toString(value) + " of " + cardSuite;
+            return Integer.toString(value) + " of " + cardSuit;
         } else {
-            return type + " of " + cardSuite;
+            return type + " of " + cardSuit;
         }
     }
 }

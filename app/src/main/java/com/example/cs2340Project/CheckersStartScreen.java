@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.EditText;
 
-public class checkersStartScreen extends AppCompatActivity {
+public class CheckersStartScreen extends AppCompatActivity {
 
 
     @Override
@@ -17,7 +16,7 @@ public class checkersStartScreen extends AppCompatActivity {
 
         Button initButton = findViewById(R.id.initializeButton);
         initButton.setOnClickListener(v -> {
-            Intent intent = new Intent(checkersStartScreen.this, checkersInitialScreen.class);
+            Intent intent = new Intent(CheckersStartScreen.this, CheckersInitialScreen.class);
             startActivity(intent);
             finish();
         });

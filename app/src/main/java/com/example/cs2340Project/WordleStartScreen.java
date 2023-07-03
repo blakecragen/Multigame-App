@@ -6,18 +6,20 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class blackJackStartScreen extends AppCompatActivity {
+public class WordleStartScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.black_jack_start_screen);
-        Button homeButton = findViewById(R.id.homeButton);
+        setContentView(R.layout.wordle_start_screen);
+
+        Button homeButton = findViewById(R.id.toHome);
         homeButton.setOnClickListener(v -> finish());
 
-        Button initButton = findViewById(R.id.init);
+
+        Button initButton = findViewById(R.id.initButton);
         initButton.setOnClickListener(v -> {
-            Intent intent = new Intent(blackJackStartScreen.this, blackJackInitialScreen.class);
+            Intent intent = new Intent(WordleStartScreen.this, WordleInitialScreen.class);
             startActivity(intent);
             finish();
         });
