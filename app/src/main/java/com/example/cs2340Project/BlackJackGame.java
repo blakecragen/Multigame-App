@@ -155,17 +155,17 @@ public class BlackJackGame extends AppCompatActivity{
 
     public void dealCards(View view) {
         dealer.hit(myDeck);
-        player.hit(myDeck);
+        ourPlayer.hit(myDeck);
         dealer.hit(myDeck);
-        player.hit(myDeck);
-        int playerScore = player.getHand().get(0).getValue();
+        ourPlayer.hit(myDeck);
+        int playerScore = ourPlayer.getHand().get(0).getValue();
         //playerScore += player.getHand().get(1).getValue();
         int dealerScore = dealer.getHand().get(0).getValue();
         playerScoreView.setText("Player Score: " + playerScore);
         dealerScoreView.setText("Dealer Score: " + dealerScore);
 
         int cardIndex = 0;
-        switch (player.getHand().get(0).getSuit()) {
+        switch (ourPlayer.getHand().get(0).getSuit()) {
             case 'C':
                 cardIndex += 13;
                 break;
@@ -176,8 +176,8 @@ public class BlackJackGame extends AppCompatActivity{
                 cardIndex += 26;
                 break;
         }
-        cardIndex += player.getHand().get(0).getValue();
-        switch (player.getHand().get(0).getType()) {
+        cardIndex += ourPlayer.getHand().get(0).getValue();
+        switch (ourPlayer.getHand().get(0).getType()) {
             case "Jack":
                 cardIndex += 1;
                 break;
@@ -197,7 +197,7 @@ public class BlackJackGame extends AppCompatActivity{
 
 
         cardIndex = 0;
-        switch (player.getHand().get(1).getSuit()) {
+        switch (ourPlayer.getHand().get(1).getSuit()) {
             case 'C':
                 cardIndex += 13;
                 break;
@@ -208,8 +208,8 @@ public class BlackJackGame extends AppCompatActivity{
                 cardIndex += 26;
                 break;
         }
-        cardIndex += player.getHand().get(1).getValue();
-        switch (player.getHand().get(1).getType()) {
+        cardIndex += ourPlayer.getHand().get(1).getValue();
+        switch (ourPlayer.getHand().get(1).getType()) {
             case "Jack":
                 cardIndex += 1;
                 break;
