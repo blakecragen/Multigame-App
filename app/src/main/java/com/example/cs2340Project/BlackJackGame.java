@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.style.UpdateLayout;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -28,10 +29,15 @@ public class BlackJackGame extends AppCompatActivity{
     private int dealerCardIndex;
     private boolean dealButtonClicked;
 
+    private Player player;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.black_jack_game);
+
+        player = player.getInstance();
+        selectLives();
 
         restartButton = findViewById(R.id.bj_restart_button);
         random = new Random();
@@ -211,5 +217,21 @@ public class BlackJackGame extends AppCompatActivity{
             deck[i] = deck[j];
             deck[j] = temp;
         }
+    }
+    private void selectLives() {
+        if(player.getPlayerLives() == 0){
+            Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+            startActivity(intent);
+            finish();
+        }
+        TextView name = findViewById(R.id.playerDataName);
+        name.setText(player.getPlayerName());
+        //update the sprite image
+        ImageView sprite = findViewById(R.id.sprite);
+        player.setSpriteImage(sprite);
+        ImageView i1 = findViewById(R.id.life1);
+        ImageView i2 = findViewById(R.id.life2);
+        ImageView i3 = findViewById(R.id.life3);
+        player.setLives(i1,i2,i3);
     }
 }
