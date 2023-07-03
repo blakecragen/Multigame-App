@@ -32,8 +32,6 @@ public class BlackJackInitialScreen extends AppCompatActivity{
                 player.setPlayerName(name.getText().toString());
                 setSprite();
                 Intent intent = new Intent(BlackJackInitialScreen.this, BlackJackGame.class);
-                String username = name.getText().toString();
-                intent.putExtra("keyname", username);
                 startActivity(intent);
             }
         });

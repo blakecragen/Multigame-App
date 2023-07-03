@@ -226,6 +226,7 @@ public class BlackJackGame extends AppCompatActivity{
         }
         TextView name = findViewById(R.id.playerDataName);
         name.setText(player.getPlayerName());
+        name.setTextColor(-1);
         //update the sprite image
         ImageView sprite = findViewById(R.id.sprite);
         player.setSpriteImage(sprite);
