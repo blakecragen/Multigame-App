@@ -234,7 +234,7 @@ public class BlackJackGame extends AppCompatActivity {
             gameOver("Dealer Busted!");
             Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
             startActivity(intent);
-        } else if (dealerScore > playerScore || (dealerScore == 21 && playerScore == 21)) {
+        } else if (dealerScore > playerScore || dealerScore == playerScore) {
             player1.setPlayerLives((player1.getPlayerLives())-1);
             selectLives();
             Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
