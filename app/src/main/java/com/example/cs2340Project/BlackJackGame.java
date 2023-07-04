@@ -83,7 +83,10 @@ public class BlackJackGame extends AppCompatActivity {
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                recreate();
+                Intent intent = new Intent(BlackJackGame.this, BlackJackInitialScreen.class);
+                player1.setPlayerLives((3));
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -92,6 +95,7 @@ public class BlackJackGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(BlackJackGame.this, MainActivity.class);
+                player1.setPlayerLives((3));
                 startActivity(intent);
             }
         });
@@ -210,6 +214,9 @@ public class BlackJackGame extends AppCompatActivity {
             cardIndex++;
         }
         if (playerScore > 21) {
+            player1.setPlayerLives((player1.getPlayerLives())-1);
+            selectLives();
+            Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
             gameOver("Player Busted!");
         }
     }
@@ -225,10 +232,18 @@ public class BlackJackGame extends AppCompatActivity {
         }
         if (dealerScore > 21) {
             gameOver("Dealer Busted!");
-        } else if (dealerScore > playerScore) {
+            Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
+            startActivity(intent);
+        } else if (dealerScore > playerScore || (dealerScore == 21 && playerScore == 21)) {
+            player1.setPlayerLives((player1.getPlayerLives())-1);
+            selectLives();
+            Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
             gameOver("Dealer Wins!");
+            startActivity(intent);
         } else if (dealerScore < playerScore) {
             gameOver("Player Wins!");
+            Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
+            startActivity(intent);
         }
     }
 
@@ -245,6 +260,7 @@ public class BlackJackGame extends AppCompatActivity {
         }
         TextView name = findViewById(R.id.playerDataName);
         name.setText(player1.getPlayerName());
+        name.setTextColor(-1);
         //update the sprite image
         ImageView sprite = findViewById(R.id.sprite);
         player1.setSpriteImage(sprite);
@@ -253,5 +269,4 @@ public class BlackJackGame extends AppCompatActivity {
         ImageView i3 = findViewById(R.id.life3);
         player1.setLives(i1,i2,i3);
     }
-
 }
