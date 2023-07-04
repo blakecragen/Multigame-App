@@ -32,8 +32,7 @@ public class BlackJackGame extends AppCompatActivity {
     private Button homeButton;
     private TextView name;
     private int cardIndex;
-    private int playerCardIndex;
-    private int dealerCardIndex;
+
     private boolean dealButtonClicked;
 
     private BlackJackPlayer player;
@@ -158,21 +157,27 @@ public class BlackJackGame extends AppCompatActivity {
         if (pCardCount < 4 && dCardCount < 4 && cardIndex < deck.size()) {
             if (pCardCount < 2) {
                 // Deal two cards to the player initially
-                int card = deck.get(cardIndex);
+                int randomIndex = random.nextInt(deck.size()); // Generate a random index
+                int card = deck.get(randomIndex);
+                deck.remove(randomIndex); // Remove the dealt card from the deck
                 pCards[pCardCount].setImageResource(card);
                 pCards[pCardCount].setVisibility(View.VISIBLE);
                 pCardCount++;
                 playerScore += myDeck.getCardRank(card);
                 playerScoreView.setText(String.valueOf(playerScore));
             } else if (dCardCount < 2) {
-                int card = deck.get(cardIndex);
+                int randomIndex = random.nextInt(deck.size());
+                int card = deck.get(randomIndex);
+                deck.remove(randomIndex);
                 dCards[dCardCount].setImageResource(card);
                 dCards[dCardCount].setVisibility(View.VISIBLE);
                 dCardCount++;
                 dealerScore += myDeck.getCardRank(card);
                 cardIndex++;
             } else {
-                int card = deck.get(cardIndex);
+                int randomIndex = random.nextInt(deck.size());
+                int card = deck.get(randomIndex);
+                deck.remove(randomIndex);
                 if (pCardCount < 4) {
                     pCards[pCardCount].setImageResource(card);
                     pCards[pCardCount].setVisibility(View.VISIBLE);
