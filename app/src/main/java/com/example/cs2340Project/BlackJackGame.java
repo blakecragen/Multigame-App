@@ -41,6 +41,8 @@ public class BlackJackGame extends AppCompatActivity {
     private BlackJackDealer dealer;
     private BlackJackPlayer ourPlayer;
 
+    private Player player1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +78,8 @@ public class BlackJackGame extends AppCompatActivity {
         name.setText(username);
         playerScoreView = findViewById(R.id.player_show);
         dealerScoreView = findViewById(R.id.dealer_show);
+        player1 = Player.getInstance();
+        selectLives();
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -231,6 +235,23 @@ public class BlackJackGame extends AppCompatActivity {
     private void gameOver(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         restartButton.setVisibility(View.VISIBLE);
+    }
+
+    private void selectLives() {
+        if(player1.getPlayerLives() == 0){
+            Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+            startActivity(intent);
+            finish();
+        }
+        TextView name = findViewById(R.id.playerDataName);
+        name.setText(player1.getPlayerName());
+        //update the sprite image
+        ImageView sprite = findViewById(R.id.sprite);
+        player1.setSpriteImage(sprite);
+        ImageView i1 = findViewById(R.id.life1);
+        ImageView i2 = findViewById(R.id.life2);
+        ImageView i3 = findViewById(R.id.life3);
+        player1.setLives(i1,i2,i3);
     }
 
 }
