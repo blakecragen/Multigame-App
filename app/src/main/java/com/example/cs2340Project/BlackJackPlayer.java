@@ -3,12 +3,45 @@ package com.example.cs2340Project;
 import java.util.ArrayList;
 
 public class BlackJackPlayer {
+    private static BlackJackPlayer instance;
     private ArrayList<BlackJackCard> hand;
+    private int lives;
+    private int score;
+
+
+
+    public static BlackJackPlayer getInstance() {
+        if (instance == null) {
+            instance = new BlackJackPlayer();
+        }
+        return instance;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
+    public void reduceLives() {
+        lives--;
+    }
+
+    public int getLives() {
+        return lives;
+    }
+
+    public void incrementScore() {
+        score++;
+    }
+
 
     /**
      * Constructor for a player object.
      */
     public BlackJackPlayer() {
+
+        hand = new ArrayList<>();
+        lives = 0;
+        score = 0;
         hand = new ArrayList<>();
     }
 

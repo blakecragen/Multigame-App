@@ -5,6 +5,24 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class BlackJackDeck {
+
+    public int getCardRank(int card) {
+        int cardValue = card % 13; // Get the value of the card (0-12)
+
+        // Face cards (King, Queen, Jack) count as 10
+        if (cardValue >= 10) {
+            return 10;
+        }
+        // Ace has a value of 11
+        else if (cardValue == 0) {
+            return 11;
+        }
+        // All other cards have their face value
+        else {
+            return cardValue;
+        }
+    }
+
     /**
      * Deck of cards being played with.
      */
