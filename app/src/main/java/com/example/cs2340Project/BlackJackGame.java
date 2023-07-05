@@ -240,18 +240,15 @@ public class BlackJackGame extends AppCompatActivity {
             player1.setPlayerLives((player1.getPlayerLives())-1);
             if (player1.getPlayerLives() == 0) {
                 gameOver("Game Over");
-                finish();
-                Intent intent = new Intent(BlackJackGame.this, BlackJackInitialScreen.class);
                 player1.setPlayerLives(3);
+                Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
                 startActivity(intent);
-                pause(2000);
             } else {
                 gameOver("Player Busted!");
                 selectLives();
                 finish();
                 Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
                 startActivity(intent);
-                pause(2000);
             }
         }
     }
@@ -270,20 +267,16 @@ public class BlackJackGame extends AppCompatActivity {
             gameOver("Dealer Wins!");
             player1.setPlayerLives(player1.getPlayerLives() - 1);
         }
-        pause(2000);
         if (player1.getPlayerLives() == 0) {
             gameOver("Game Over");
-            finish();
-            Intent intent = new Intent(BlackJackGame.this, BlackJackInitialScreen.class);
             player1.setPlayerLives(3);
+            Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
             startActivity(intent);
-            pause(2000);
         } else {
             selectLives();
             finish();
             Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
             startActivity(intent);
-            pause(2000);
         }
     }
 
