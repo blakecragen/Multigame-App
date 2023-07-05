@@ -30,6 +30,9 @@ public class BlackJackGame extends AppCompatActivity {
     private TextView playerScoreView;
     private TextView dealerScoreView;
     private Button homeButton;
+    private Button hitButton;
+    private Button standButton;
+    private Button dealButton;
     private TextView name;
     private int cardIndex;
 
@@ -48,7 +51,7 @@ public class BlackJackGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.black_jack_game);
 
-        Button dealButton = findViewById(R.id.deal_button);
+        dealButton = findViewById(R.id.deal_button);
         dealButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +111,7 @@ public class BlackJackGame extends AppCompatActivity {
             }
         });
 
-        Button hitButton = findViewById(R.id.hit_button);
+        hitButton = findViewById(R.id.hit_button);
 
         hitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,8 +125,8 @@ public class BlackJackGame extends AppCompatActivity {
                 }
             }
         });
-
-        Button standButton = findViewById(R.id.stand_button);
+        hitButton.setEnabled(false);
+        standButton = findViewById(R.id.stand_button);
         standButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,6 +139,7 @@ public class BlackJackGame extends AppCompatActivity {
                 }
             }
         });
+        standButton.setEnabled(false);
     }
 
     private void initializeViews() {
@@ -192,6 +196,9 @@ public class BlackJackGame extends AppCompatActivity {
         playerScoreView.setText(String.valueOf(playerScore));
         dealerScore += dealer.getHand().get(0).getValue();
         dealerScoreView.setText(String.valueOf(dealerScore));
+        dealButton.setEnabled(false);
+        hitButton.setEnabled(true);
+        standButton.setEnabled(true);
     }
 
     private int getImageSource(BlackJackCard card) {
@@ -231,12 +238,18 @@ public class BlackJackGame extends AppCompatActivity {
         }
         if (playerScore > 21) {
             player1.setPlayerLives((player1.getPlayerLives())-1);
-            selectLives();
-            Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
-            gameOver("Player Busted!");
             if (player1.getPlayerLives() == 0) {
+                gameOver("Game Over");
                 finish();
+                Intent intent = new Intent(BlackJackGame.this, BlackJackInitialScreen.class);
+                player1.setPlayerLives(3);
+                startActivity(intent);
+                pause(2000);
             } else {
+                gameOver("Player Busted!");
+                selectLives();
+                finish();
+                Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
                 startActivity(intent);
                 pause(2000);
             }
@@ -259,10 +272,18 @@ public class BlackJackGame extends AppCompatActivity {
         }
         pause(2000);
         if (player1.getPlayerLives() == 0) {
+            gameOver("Game Over");
             finish();
+            Intent intent = new Intent(BlackJackGame.this, BlackJackInitialScreen.class);
+            player1.setPlayerLives(3);
+            startActivity(intent);
+            pause(2000);
         } else {
+            selectLives();
+            finish();
             Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
             startActivity(intent);
+            pause(2000);
         }
     }
 
