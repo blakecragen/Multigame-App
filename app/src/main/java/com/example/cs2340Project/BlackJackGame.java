@@ -114,7 +114,11 @@ public class BlackJackGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (dealButtonClicked) {
-                    hit();
+                    try {
+                        hit();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         });
@@ -124,7 +128,11 @@ public class BlackJackGame extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (dealButtonClicked) {
-                    stand();
+                    try {
+                        stand();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
             }
         });
@@ -146,15 +154,19 @@ public class BlackJackGame extends AppCompatActivity {
                 R.drawable.spades_2, R.drawable.spades_3, R.drawable.spades_4, R.drawable.spades_5,
                 R.drawable.spades_6, R.drawable.spades_7, R.drawable.spades_8, R.drawable.spades_9,
                 R.drawable.spades_10, R.drawable.spades_jack, R.drawable.spades_queen, R.drawable.spades_king,
+                R.drawable.spades_ace_simple,
                 R.drawable.hearts_2, R.drawable.hearts_3, R.drawable.hearts_4, R.drawable.hearts_5,
                 R.drawable.hearts_6, R.drawable.hearts_7, R.drawable.hearts_8, R.drawable.hearts_9,
                 R.drawable.hearts_10, R.drawable.hearts_jack, R.drawable.hearts_queen, R.drawable.hearts_king,
+                R.drawable.hearts_ace,
                 R.drawable.diamonds_2, R.drawable.diamonds_3, R.drawable.diamonds_4, R.drawable.diamonds_5,
                 R.drawable.diamonds_6, R.drawable.diamonds_7, R.drawable.diamonds_8, R.drawable.diamonds_9,
                 R.drawable.diamonds_10, R.drawable.diamonds_jack, R.drawable.diamonds_queen, R.drawable.diamonds_king,
+                R.drawable.diamonds_ace,
                 R.drawable.clubs_2, R.drawable.clubs_3, R.drawable.clubs_4, R.drawable.clubs_5,
                 R.drawable.clubs_6, R.drawable.clubs_7, R.drawable.clubs_8, R.drawable.clubs_9,
-                R.drawable.clubs_10, R.drawable.clubs_jack, R.drawable.clubs_queen, R.drawable.clubs_king
+                R.drawable.clubs_10, R.drawable.clubs_jack, R.drawable.clubs_queen, R.drawable.clubs_king,
+                R.drawable.clubs_ace
         ));
         pCardCount = 0;
         dCardCount = 0;
@@ -162,89 +174,113 @@ public class BlackJackGame extends AppCompatActivity {
     }
 
     private void dealCard() {
-        if (pCardCount < 4 && dCardCount < 4 && cardIndex < deck.size()) {
-            if (pCardCount < 2) {
-                // Deal two cards to the player initially
-                int randomIndex = random.nextInt(deck.size()); // Generate a random index
-                int card = deck.get(randomIndex);
-                deck.remove(randomIndex); // Remove the dealt card from the deck
-                pCards[pCardCount].setImageResource(card);
-                pCards[pCardCount].setVisibility(View.VISIBLE);
-                pCardCount++;
-                playerScore += myDeck.getCardRank(card);
-                playerScoreView.setText(String.valueOf(playerScore));
-            } else if (dCardCount < 2) {
-                int randomIndex = random.nextInt(deck.size());
-                int card = deck.get(randomIndex);
-                deck.remove(randomIndex);
-                dCards[dCardCount].setImageResource(card);
-                dCards[dCardCount].setVisibility(View.VISIBLE);
-                dCardCount++;
-                dealerScore += myDeck.getCardRank(card);
-                cardIndex++;
-            } else {
-                int randomIndex = random.nextInt(deck.size());
-                int card = deck.get(randomIndex);
-                deck.remove(randomIndex);
-                if (pCardCount < 4) {
-                    pCards[pCardCount].setImageResource(card);
-                    pCards[pCardCount].setVisibility(View.VISIBLE);
-                    pCardCount++;
-                    playerScore += myDeck.getCardRank(card);
-                    playerScoreView.setText(String.valueOf(playerScore));
-                } else if (dCardCount < 4) {
-                    dCards[dCardCount].setImageResource(card);
-                    dCards[dCardCount].setVisibility(View.VISIBLE);
-                    dCardCount++;
-                    dealerScore += myDeck.getCardRank(card);
-                    dealerScoreView.setText(String.valueOf(dealerScore));
-                }
-                cardIndex++;
-            }
-        }
+        ourPlayer.hit(myDeck);
+        dealer.hit(myDeck);
+        ourPlayer.hit(myDeck);
+        dealer.hit(myDeck);
+        cardIndex = 0;
+        pCards[pCardCount].setImageResource(getImageSource(ourPlayer.getHand().get(pCardCount)));
+        pCards[pCardCount].setVisibility(View.VISIBLE);
+        pCardCount++;
+        pCards[pCardCount].setImageResource(getImageSource(ourPlayer.getHand().get(pCardCount)));
+        pCards[pCardCount].setVisibility(View.VISIBLE);
+        pCardCount++;
+        dCards[dCardCount].setImageResource(getImageSource(dealer.getHand().get(dCardCount)));
+        dCards[dCardCount].setVisibility(View.VISIBLE);
+        dCardCount++;
+        playerScore += ourPlayer.getHand().get(0).getValue() + ourPlayer.getHand().get(1).getValue();
+        playerScoreView.setText(String.valueOf(playerScore));
+        dealerScore += dealer.getHand().get(0).getValue();
+        dealerScoreView.setText(String.valueOf(dealerScore));
     }
 
-    private void hit() {
+    private int getImageSource(BlackJackCard card) {
+        cardIndex = 0;
+        switch (card.getSuit()) {
+            case 'C':
+                cardIndex += 39;
+                break;
+            case 'D':
+                cardIndex += 26;
+                break;
+            case 'H':
+                cardIndex += 13;
+        }
+        cardIndex += card.getValue() - 2;
+        if (card.getType() == null) {
+
+        } else if (card.getType().equals("Jack")) {
+            cardIndex += 1;
+        } else if (card.getType().equals("Queen")) {
+            cardIndex += 2;
+        } else if (card.getType().equals("King")) {
+            cardIndex += 3;
+        } else if (card.getType().equals("Ace")) {
+            cardIndex += 3;
+        }
+        return deck.get(cardIndex);
+    }
+
+    private void hit() throws InterruptedException {
         if (pCardCount < 4) {
-            int card = deck.get(cardIndex);
-            pCards[pCardCount].setImageResource(card);
-            pCardCount++;
-            playerScore += myDeck.getCardRank(card);
+            ourPlayer.hit(myDeck);
+            pCards[pCardCount].setImageResource(getImageSource(ourPlayer.getHand().get(pCardCount)));
+            playerScore += ourPlayer.getHand().get(pCardCount).getValue();
             playerScoreView.setText(String.valueOf(playerScore));
-            cardIndex++;
+            pCardCount++;
         }
         if (playerScore > 21) {
             player1.setPlayerLives((player1.getPlayerLives())-1);
             selectLives();
             Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
             gameOver("Player Busted!");
+            if (player1.getPlayerLives() == 0) {
+                finish();
+            } else {
+                startActivity(intent);
+                pause(2000);
+            }
         }
     }
 
-    private void stand() {
-        while (dealerScore < 17 && dCardCount < 4) {
-            int card = deck.get(cardIndex);
-            dCards[dCardCount].setImageResource(card);
-            dCardCount++;
-            dealerScore += myDeck.getCardRank(card);
-            dealerScoreView.setText(String.valueOf(dealerScore));
-            cardIndex++;
-        }
-        if (dealerScore > 21) {
-            gameOver("Dealer Busted!");
-            Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
-            startActivity(intent);
-        } else if (dealerScore > playerScore || dealerScore == playerScore) {
-            player1.setPlayerLives((player1.getPlayerLives())-1);
-            selectLives();
-            Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
-            gameOver("Dealer Wins!");
-            startActivity(intent);
-        } else if (dealerScore < playerScore) {
+    private void stand() throws InterruptedException {
+        dealerScore = 0;
+        dealerHits();
+        if (dealer.playerWin(ourPlayer) == 2) {
             gameOver("Player Wins!");
+            if (player1.getPlayerLives() < 3) {
+                player1.setPlayerLives(player1.getPlayerLives() + 1);
+            }
+        } else if (dealer.playerWin(ourPlayer) == 1) {
+            gameOver("Tie");
+        } else if (dealer.playerWin(ourPlayer) == 0) {
+            gameOver("Dealer Wins!");
+            player1.setPlayerLives(player1.getPlayerLives() - 1);
+        }
+        pause(2000);
+        if (player1.getPlayerLives() == 0) {
+            finish();
+        } else {
             Intent intent = new Intent(BlackJackGame.this, BlackJackGame.class);
             startActivity(intent);
         }
+    }
+
+    private void pause(int millis) throws InterruptedException {
+        Thread.sleep(millis);
+    }
+
+    private void dealerHits() {
+        dealer.dealerHit(myDeck);
+        for (int i = 0; i < dealer.getHand().size(); ++i) {
+            dCards[i].setImageResource(getImageSource(dealer.getHand().get(i)));
+            dCards[i].setVisibility(View.VISIBLE);
+            dealerScore += dealer.getHand().get(i).getValue();
+            if (i == 4) {
+                break;
+            }
+        }
+        dealerScoreView.setText(String.valueOf(dealerScore));
     }
 
     private void gameOver(String message) {
