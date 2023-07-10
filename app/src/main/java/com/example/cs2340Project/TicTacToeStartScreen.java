@@ -6,17 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
-public class CheckersStartScreen extends AppCompatActivity {
+public class TicTacToeStartScreen extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.checkers_start_screen);
+        setContentView(R.layout.tic_tac_toe_start_screen);
 
         Button initButton = findViewById(R.id.initializeButton);
         initButton.setOnClickListener(v -> {
-            Intent intent = new Intent(CheckersStartScreen.this, CheckersInitialScreen.class);
+            Intent intent = new Intent(TicTacToeStartScreen.this, TicTacToeInitialScreen.class);
             startActivity(intent);
             finish();
         });

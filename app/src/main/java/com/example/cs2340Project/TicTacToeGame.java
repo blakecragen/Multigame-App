@@ -6,17 +6,14 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class CheckersGame extends AppCompatActivity {
+public class TicTacToeGame extends AppCompatActivity {
     private TextView name;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.checkers_game);
-        name = findViewById(R.id.checkersHeading);
-        String username = getIntent().getStringExtra("keyname");
-        name.setText(username);
+        setContentView(R.layout.tic_tac_toe_game);
 
         Button homeButton = findViewById(R.id.toHome);
         homeButton.setOnClickListener(v -> finish());

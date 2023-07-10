@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".checkersStartScreen"
     android:background="@color/purple">
 
     <TextView
@@ -15,7 +14,7 @@
         android:ems="10"
         android:fontFamily="@font/pressstart_2p"
         android:inputType="text"
-        android:text="@string/checkers"
+        android:text="@string/tictactoe"
         android:textAlignment="center"
         android:textColor="#F8F3F3"
         android:textSize="34sp"

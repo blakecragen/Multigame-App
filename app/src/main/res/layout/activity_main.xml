@@ -27,7 +27,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="424dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="@string/checkers_launch"
+        android:text="@string/tictactoe_launch"
         app:backgroundTint="@color/yellow"
         android:textColor="@color/purple"
         app:layout_constraintStart_toStartOf="parent"

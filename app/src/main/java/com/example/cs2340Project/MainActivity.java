@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Button checkersScreenButton = findViewById(R.id.checkersStartScreen);
         checkersScreenButton.setOnClickListener(v -> {
             player.setCurrentGame('c');
-            Intent intent = new Intent(MainActivity.this, CheckersStartScreen.class);
+            Intent intent = new Intent(MainActivity.this, TicTacToeStartScreen.class);
             startActivity(intent);
         });
 

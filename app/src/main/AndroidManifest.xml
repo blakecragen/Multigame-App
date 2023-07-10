@@ -13,13 +13,13 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".CheckersGame"
+            android:name=".TicTacToeGame"
             android:exported="false" />
         <activity
-            android:name=".CheckersInitialScreen"
+            android:name=".TicTacToeInitialScreen"
             android:exported="false" />
         <activity
-            android:name=".CheckersStartScreen"
+            android:name=".TicTacToeStartScreen"
             android:exported="false" />
         <activity
             android:name=".BlackJackGame"
