@@ -13,12 +13,13 @@ public class Player {
 
     //singleton design pattern
     private static Player myPlayer;
-
     private static int playerLives = 3;
     private static char playerSprite = 'f';
     private static int score = 0;
     private static int highScore = 0;
     private static String playerName = "Anon";
+
+    private static char currentGame;
     private Player(){}
     public static synchronized Player getInstance(){
         if (myPlayer == null) {
@@ -88,5 +89,12 @@ public class Player {
     }
     public void setPlayerName(String playerName){
         myPlayer.playerName = playerName;
+    }
+
+    public void setCurrentGame(char currentGame){
+        myPlayer.currentGame = currentGame;
+    }
+    public char getCurrentGame(){
+        return myPlayer.currentGame;
     }
     }
