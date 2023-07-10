@@ -8,7 +8,7 @@ public class BlackJackDealer extends BlackJackPlayer {
      * @param deck Deck to pull cards from.
      */
     public void dealerHit(BlackJackDeck deck) {
-        if (this.getHandSum() < 17) {
+        while (this.getHandSum() < 17) {
             this.hit(deck);
         }
     }
@@ -23,12 +23,20 @@ public class BlackJackDealer extends BlackJackPlayer {
      * @return Returns state of player win/loss
      */
     public int playerWin(BlackJackPlayer player) {
-        if ((player.getHandSum() > this.getHandSum() && player.getHandSum() < 22) | (player.getHandSum() < 22 && this.getHandSum() > 21)) {
-            return 2;
-        } else if (player.getHandSum() == this.getHandSum()) {
-            return 1;
+        if (this.getHandSum() > 21) {
+            if (player.getHandSum() < 22) {
+                return 2;
+            } else {
+                return 0;
+            }
         } else {
-            return 0;
+            if (player.getHandSum() == this.getHandSum()) {
+                return 1;
+            } else if (player.getHandSum() < this.getHandSum()) {
+                return 0;
+            } else {
+                return 2;
+            }
         }
     }
 
