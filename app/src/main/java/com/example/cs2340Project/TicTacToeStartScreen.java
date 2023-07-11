@@ -20,7 +20,7 @@ public class TicTacToeStartScreen extends AppCompatActivity {
             startActivity(intent);
             finish();
         });
-        Button homeButton = findViewById(R.id.toHome);
+        Button homeButton = findViewById(R.id.t_home_button);
         homeButton.setOnClickListener(v -> finish());
     }
 }

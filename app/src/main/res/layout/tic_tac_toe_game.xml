@@ -53,7 +53,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/ck_restart_button"
+        android:id="@+id/t_restart_button"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
@@ -83,7 +83,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/toHome"
+        android:id="@+id/t_home_button"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
@@ -92,7 +92,7 @@
         android:text="@string/home"
         app:backgroundTint="@color/red"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/ck_restart_button"
+        app:layout_constraintBottom_toTopOf="@+id/t_restart_button"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout

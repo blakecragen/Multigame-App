@@ -25,7 +25,7 @@
         app:layout_constraintVertical_bias="0.441" />
 
     <Button
-        android:id="@+id/toHome"
+        android:id="@+id/t_home_button"
         android:layout_width="211dp"
         android:layout_height="53dp"
         android:layout_marginBottom="68dp"
@@ -50,7 +50,7 @@
         android:textSize="22sp"
         app:backgroundTint="@color/red"
         app:cornerRadius="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/toHome"
+        app:layout_constraintBottom_toTopOf="@+id/t_home_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

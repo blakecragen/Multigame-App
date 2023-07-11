@@ -15,14 +15,12 @@ public class BlackJackInitialScreen extends AppCompatActivity{
     private Button continueButton;
     private Player player;
     private EditText name;
-    private Button add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.black_jack_initial_screen);
         name = findViewById(R.id.player_name);
-        add = findViewById(R.id.bj_continue_button);
 
         continueButton = findViewById(R.id.bj_continue_button);
         continueButton.setOnClickListener(new View.OnClickListener() {
