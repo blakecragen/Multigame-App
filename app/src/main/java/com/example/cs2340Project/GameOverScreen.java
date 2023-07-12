@@ -12,7 +12,7 @@ public class GameOverScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gave_over_screen);
+        setContentView(R.layout.game_over_screen);
 
         Button home = findViewById(R.id.go_home_button);
         Button restart = findViewById(R.id.go_restart_button);
