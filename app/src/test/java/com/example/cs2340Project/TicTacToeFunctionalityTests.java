@@ -10,6 +10,7 @@ import org.junit.Test;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToeFunctionalityTests {
@@ -322,8 +323,85 @@ public class TicTacToeFunctionalityTests {
         assertEquals(0, comp.checkAlmostWin(game.getBoard(), 1));
         int[] expected = new int[]{2,3,4,5,6,7,9};
         assertArrayEquals(expected, makeArrayFromList());
+
+        // - - x
+        // - - -
+        // - x -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(3, null);
+        game.updateTurn();
+        game.placePiece(8, null);
+        assertEquals(0, comp.checkAlmostWin(game.getBoard(), 1));
+        expected = new int[]{1,2,4,5,6,7,9};
+        assertArrayEquals(expected, makeArrayFromList());
+
+        // x x x
+        // x x x
+        // x x -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(1, null);
+        game.updateTurn();
+        game.placePiece(2, null);
+        game.updateTurn();
+        game.placePiece(3, null);
+        game.updateTurn();
+        game.placePiece(4, null);
+        game.updateTurn();
+        game.placePiece(5, null);
+        game.updateTurn();
+        game.placePiece(6, null);
+        game.updateTurn();
+        game.placePiece(7, null);
+        game.updateTurn();
+        game.placePiece(8, null);
+        expected = new int[]{9};
+        assertArrayEquals(expected, makeArrayFromList());
     }
 
+    //13
+    @Test
+    public void testGetComputerMove() {
+        Random rand = new Random();
+
+        game.setPlayerPiece(1);
+        game.placePiece(1, null);
+        game.placeCompPiece(null);
+        int nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()) - 1);
+        game.placePiece(nextMove, null);
+        game.placeCompPiece(null);
+        assertEquals(4, checkNumPiecesOnBoard(game.getBoard()));
+
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(5, null);
+        game.placeCompPiece(null);
+        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()) - 1);
+        game.placePiece(nextMove, null);
+        game.placeCompPiece(null);
+        assertEquals(4, checkNumPiecesOnBoard(game.getBoard()));
+
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(5, null);
+        game.placeCompPiece(null);
+        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()) - 1);
+        game.placePiece(nextMove, null);
+        game.placeCompPiece(null);
+        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()) - 1);
+        game.placePiece(nextMove, null);
+        game.placeCompPiece(null);
+        assertEquals(6, checkNumPiecesOnBoard(game.getBoard()));
+    }
+
+
+    /**
+     *  Return Arraylist as an array.
+     *
+     *  @return Arraylist as an array.
+     *  - I know there is a toArray() function... but just in case ;p
+     */
     private int[] makeArrayFromList() {
         ArrayList<Integer> out = comp.getPossibleMoves(game.getBoard(), game);
         int[] actual = new int[out.size()];
@@ -331,5 +409,22 @@ public class TicTacToeFunctionalityTests {
             actual[i] = out.get(i);
         }
         return actual;
+    }
+
+    /**
+     * Get the number of pieces on the board for testing.
+     *
+     * @return Number of pieces on the board.
+     */
+    private int checkNumPiecesOnBoard(int[][] board) {
+        int counter = 0;
+        for (int i = 0;i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                if (board[i][j] != 0) {
+                    counter++;
+                }
+            }
+        }
+        return counter;
     }
 }

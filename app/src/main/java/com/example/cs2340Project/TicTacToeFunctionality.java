@@ -6,13 +6,13 @@ public class TicTacToeFunctionality {
     private int[][] board;
     int playerPiece;
     int whosTurn;
+    TicTacToeComputerMovement comp;
 
     /**
      * Makes a 3x3 tic tac toe board
      */
     public TicTacToeFunctionality() {
         board = new int[3][3];
-
         /**
          * The following sets the player piece based on the number of lives that the player has. We
          * can change this if we want to implement it in a different way.
@@ -24,6 +24,7 @@ public class TicTacToeFunctionality {
             playerPiece = 2; // Set player piece to O's
         }
         whosTurn = 1;
+        comp = new TicTacToeComputerMovement(playerPiece);
     }
 
     /**
@@ -32,8 +33,12 @@ public class TicTacToeFunctionality {
      * @param piece What piece the player wants.
      */
     public void setPlayerPiece(int piece) {
-        if (piece == 1 || piece == 2) {
+        if (piece == 1) {
             playerPiece = piece;
+            comp.setComputerPiece(2);
+        } else if (piece == 2) {
+            playerPiece = piece;
+            comp.setComputerPiece(1);
         }
     }
 
@@ -103,6 +108,22 @@ public class TicTacToeFunctionality {
                 board[getRow(where)][getCol(where)] = playerPiece;
                 updateTurn();
             }
+            return checkForWinner();
+        }
+        return -1;
+    }
+
+    /**
+     * Gets the computer's move and places the piece.
+     *
+     * @param game The game activity.
+     * @return if there is a winner or not.
+     */
+    public int placeCompPiece(TicTacToeGame game) {
+        if (whosTurn != playerPiece) {
+            int where = comp.getComputerMove(board, this);
+            board[getRow(where)][getCol(where)] = comp.getComputerPiece();
+            updateTurn();
             return checkForWinner();
         }
         return -1;
