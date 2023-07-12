@@ -53,9 +53,9 @@ public class TicTacToeFunctionality {
             } else {
                 Toast.makeText(game, "Cannot place piece here.", Toast.LENGTH_SHORT).show();
             }
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     /**
@@ -91,17 +91,21 @@ public class TicTacToeFunctionality {
     }
 
     /**
-     * Method to actually place the piece onto the board. Assume player will
+     * Method to actually place the piece onto the board.
+     * Return 1 (X win), 2 (O win), 0 (No winner), -1 (Invalid Move)
      *
      * @param where Where the user wants to place a piece.
      * @param game The instance of a game to work with.
      */
     public int placePiece(int where, TicTacToeGame game) {
-        if (canPlacePiece(where, game)) {
-            board[getRow(where)][getCol(where)] = playerPiece;
-            updateTurn();
+        if (whosTurn == playerPiece) {
+            if (canPlacePiece(where, game)) {
+                board[getRow(where)][getCol(where)] = playerPiece;
+                updateTurn();
+            }
+            return checkForWinner();
         }
-        return checkForWinner();
+        return -1;
     }
 
     /**
@@ -172,5 +176,14 @@ public class TicTacToeFunctionality {
      */
     public int getPlayerPiece() {
         return playerPiece;
+    }
+
+    /**
+     * Getter for whosTurn.
+     *
+     * @return whosTurn.
+     */
+    public int getWhosTurn() {
+        return whosTurn;
     }
 }
