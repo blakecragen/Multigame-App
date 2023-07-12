@@ -368,7 +368,7 @@ public class TicTacToeFunctionalityTests {
         game.setPlayerPiece(1);
         game.placePiece(1, null);
         game.placeCompPiece(null);
-        int nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()) - 1);
+        int nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()));
         game.placePiece(nextMove, null);
         game.placeCompPiece(null);
         assertEquals(4, checkNumPiecesOnBoard(game.getBoard()));
@@ -377,7 +377,7 @@ public class TicTacToeFunctionalityTests {
         game.setPlayerPiece(1);
         game.placePiece(5, null);
         game.placeCompPiece(null);
-        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()) - 1);
+        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()));
         game.placePiece(nextMove, null);
         game.placeCompPiece(null);
         assertEquals(4, checkNumPiecesOnBoard(game.getBoard()));
@@ -386,10 +386,10 @@ public class TicTacToeFunctionalityTests {
         game.setPlayerPiece(1);
         game.placePiece(5, null);
         game.placeCompPiece(null);
-        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()) - 1);
+        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()));
         game.placePiece(nextMove, null);
         game.placeCompPiece(null);
-        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()) - 1);
+        nextMove = comp.getPossibleMoves(game.getBoard(), game).get(rand.nextInt(comp.getPossibleMoves(game.getBoard(), game).size()));
         game.placePiece(nextMove, null);
         game.placeCompPiece(null);
         assertEquals(6, checkNumPiecesOnBoard(game.getBoard()));

@@ -42,13 +42,13 @@ public class TicTacToeComputerMovement {
         // Checks cols for almost wins
         for (int i = 0; i < 3; i++) {
             if (board[0][i] == checkFor && board[1][i] == checkFor && board[2][i] == 0) {
-                return 3 * i + 3;
+                return 7 + i;
             }
             if (board[0][i] == checkFor && board[2][i] == checkFor && board[1][i] == 0) {
-                return 3 * i + 2;
+                return 4 + i;
             }
             if (board[2][i] == checkFor && board[1][i] == checkFor && board[0][i] == 0) {
-                return 3 * i + 1;
+                return 1 + i;
             }
         }
         //check main diag
