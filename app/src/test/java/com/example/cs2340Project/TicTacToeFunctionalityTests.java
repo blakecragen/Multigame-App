@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -197,10 +198,138 @@ public class TicTacToeFunctionalityTests {
     //11
     @Test
     public void testCheckAlmostWin() {
+        // x - x
+        // - - -
+        // - - -
         game.setPlayerPiece(1);
         game.placePiece(1, null);
         game.updateTurn();
         game.placePiece(3, null);
         assertEquals(2, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // x x -
+        // - - -
+        // - - -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(1, null);
+        game.updateTurn();
+        game.placePiece(2, null);
+        assertEquals(3, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // - - -
+        // - - -
+        // - x x
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(8, null);
+        game.updateTurn();
+        game.placePiece(9, null);
+        assertEquals(7, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // x - -
+        // - - -
+        // x - -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(1, null);
+        game.updateTurn();
+        game.placePiece(7, null);
+        assertEquals(4, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // - - x
+        // - - -
+        // - - x
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(3, null);
+        game.updateTurn();
+        game.placePiece(9, null);
+        assertEquals(6, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // - - x
+        // - - -
+        // x - -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(3, null);
+        game.updateTurn();
+        game.placePiece(7, null);
+        assertEquals(5, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // - - x
+        // - x -
+        // - - -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(3, null);
+        game.updateTurn();
+        game.placePiece(5, null);
+        assertEquals(7, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // x - -
+        // - - -
+        // - - x
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(1, null);
+        game.updateTurn();
+        game.placePiece(9, null);
+        assertEquals(5, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // - - -
+        // - x -
+        // - - x
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(5, null);
+        game.updateTurn();
+        game.placePiece(9, null);
+        assertEquals(1, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // x - -
+        // - x -
+        // - - -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(1, null);
+        game.updateTurn();
+        game.placePiece(5, null);
+        assertEquals(9, comp.checkAlmostWin(game.getBoard(), 1));
+
+        // x - -
+        // - - -
+        // - x -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(1, null);
+        game.updateTurn();
+        game.placePiece(8, null);
+        assertEquals(0, comp.checkAlmostWin(game.getBoard(), 1));
+    }
+
+    //12
+    @Test
+    public void testGetPossibleMoves() {
+        // x - -
+        // - - -
+        // - x -
+        game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
+        game.placePiece(1, null);
+        game.updateTurn();
+        game.placePiece(8, null);
+        assertEquals(0, comp.checkAlmostWin(game.getBoard(), 1));
+        int[] expected = new int[]{2,3,4,5,6,7,9};
+        assertArrayEquals(expected, makeArrayFromList());
+    }
+
+    private int[] makeArrayFromList() {
+        ArrayList<Integer> out = comp.getPossibleMoves(game.getBoard(), game);
+        int[] actual = new int[out.size()];
+        for (int i = 0; i < actual.length; ++i) {
+            actual[i] = out.get(i);
+        }
+        return actual;
     }
 }

@@ -1,5 +1,7 @@
 package com.example.cs2340Project;
 
+import java.util.ArrayList;
+
 public class TicTacToeComputerMovement {
 
     int computerPiece;
@@ -47,5 +49,17 @@ public class TicTacToeComputerMovement {
             return 7;
         }
         return 0;
+    }
+
+    public ArrayList<Integer> getPossibleMoves(int[][] board, TicTacToeFunctionality game) {
+        ArrayList<Integer> out = new ArrayList<Integer>();
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                if (game.canPlacePiece(3 * i + 1 + j, null)) {
+                    out.add(3 * i + 1 + j);
+                }
+            }
+        }
+        return out;
     }
 }
