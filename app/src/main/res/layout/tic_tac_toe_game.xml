@@ -141,39 +141,40 @@
                     android:layout_width="110dp"
                     android:layout_height="120dp"
                     android:layout_margin="5dp"
-                    android:backgroundTint="@color/green"
+                    android:onClick="onGridButtonClick"
                     app:cornerRadius="0dp"
-                    android:text=" "
-                    android:hint="."
+                    android:text="Click to select"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/press_start_2p"
-                    android:textSize="50dp"
-                    android:textColor="@color/black"/>
+                    android:textSize="10dp" />
 
                 <Button
                     android:id="@+id/grid01"
                     android:layout_width="110dp"
                     android:layout_height="120dp"
+                    android:textColor="@color/black"
                     android:layout_margin="5dp"
-                    android:backgroundTint="@color/green"
+                    android:onClick="onGridButtonClick"
                     app:cornerRadius="0dp"
-                    android:text=" "
-                    android:hint="."
+                    android:text="Click to select"
+
                     android:fontFamily="@font/press_start_2p"
-                    android:textSize="50dp"
-                    android:textColor="@color/black"/>
+                    android:textSize="10dp"
+                   />
 
                 <Button
                     android:id="@+id/grid02"
                     android:layout_width="110dp"
                     android:layout_height="120dp"
                     android:layout_margin="5dp"
-                    android:backgroundTint="@color/green"
+                    android:textColor="@color/black"
+                    android:onClick="onGridButtonClick"
                     app:cornerRadius="0dp"
-                    android:text=" "
-                    android:hint="."
+                    android:text="Click to select"
+
                     android:fontFamily="@font/press_start_2p"
-                    android:textSize="50dp"
-                    android:textColor="@color/black"/>
+                    android:textSize="10dp"
+                   />
 
             </LinearLayout>
 
@@ -200,12 +201,12 @@
                     android:layout_height="110dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/green"
-                    android:fontFamily="@font/press_start_2p"
-                    android:text=" "
-                    android:hint="."
                     android:textColor="@color/black"
-                    android:textSize="50dp"
+                    android:onClick="onGridButtonClick"
+                    android:fontFamily="@font/press_start_2p"
+                    android:text="Click to select"
+
+                    android:textSize="10dp"
                     app:cornerRadius="0dp" />
 
                 <Button
@@ -213,13 +214,13 @@
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/green"
-                    android:fontFamily="@font/press_start_2p"
-                    android:text=" "
-                    android:hint="."
                     android:textColor="@color/black"
-                    android:textSize="50dp"
+                    android:layout_weight="1"
+                    android:onClick="onGridButtonClick"
+                    android:text="Click to select"
+
+                    android:fontFamily="@font/press_start_2p"
+                    android:textSize="10dp"
                     app:cornerRadius="0dp" />
 
                 <Button
@@ -227,13 +228,13 @@
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/green"
-                    android:fontFamily="@font/press_start_2p"
-                    android:text=" "
-                    android:hint="."
                     android:textColor="@color/black"
-                    android:textSize="50dp"
+                    android:layout_weight="1"
+                    android:onClick="onGridButtonClick"
+                    android:text="Click to select"
+
+                    android:fontFamily="@font/press_start_2p"
+                    android:textSize="10dp"
                     app:cornerRadius="0dp"/>
 
             </LinearLayout>
@@ -248,6 +249,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="120dp"
                 android:layout_marginStart="1dp"
+                android:textColor="@color/black"
                 android:layout_marginEnd="1dp"
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal"
@@ -261,12 +263,12 @@
                     android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/green"
-                    android:fontFamily="@font/press_start_2p"
-                    android:text=" "
-                    android:hint="."
+                    android:onClick="onGridButtonClick"
+                    android:text="Click to select"
                     android:textColor="@color/black"
-                    android:textSize="50dp"
+
+                    android:fontFamily="@font/press_start_2p"
+                    android:textSize="10dp"
                     app:cornerRadius="0dp" />
 
                 <Button
@@ -275,12 +277,11 @@
                     android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/green"
+                    android:onClick="onGridButtonClick"
+                    android:text="Click to select"
                     android:fontFamily="@font/press_start_2p"
-                    android:text=" "
-                    android:hint="."
+                    android:textSize="10dp"
                     android:textColor="@color/black"
-                    android:textSize="50dp"
                     app:cornerRadius="0dp" />
 
                 <Button
@@ -289,12 +290,11 @@
                     android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/green"
-                    android:fontFamily="@font/press_start_2p"
-                    android:text=" "
-                    android:hint="."
+                    android:text="Click to select"
                     android:textColor="@color/black"
-                    android:textSize="50dp"
+                    android:fontFamily="@font/press_start_2p"
+                    android:textSize="10dp"
+                    android:onClick="onGridButtonClick"
                     app:cornerRadius="0dp" />
             </LinearLayout>
         </TableRow>
