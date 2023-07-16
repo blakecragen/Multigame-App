@@ -1,0 +1,19 @@
+Index: app/src/main/java/com/example/cs2340Project/GameOverScreen.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.cs2340Project;\r\n\r\nimport android.content.Intent;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.Button;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\n\r\npublic class GameOverScreen extends AppCompatActivity {\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.gave_over_screen);\r\n\r\n        Button home = findViewById(R.id.go_home_button);\r\n        Button restart = findViewById(R.id.go_restart_button);\r\n\r\n        home.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent intent = new Intent(GameOverScreen.this, MainActivity.class);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n        });\r\n\r\n        restart.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                Intent intent = new Intent(GameOverScreen.this, BlackJackInitialScreen.class);\r\n                startActivity(intent);\r\n                finish();\r\n            }\r\n        });\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/example/cs2340Project/GameOverScreen.java b/app/src/main/java/com/example/cs2340Project/GameOverScreen.java
+--- a/app/src/main/java/com/example/cs2340Project/GameOverScreen.java	(revision 9d1847385e7b81af13fd3f54300c4e5c6d384829)
++++ b/app/src/main/java/com/example/cs2340Project/GameOverScreen.java	(date 1689014179927)
+@@ -12,7 +12,7 @@
+     @Override
+     protected void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+-        setContentView(R.layout.gave_over_screen);
++        setContentView(R.layout.game_over_screen);
+ 
+         Button home = findViewById(R.id.go_home_button);
+         Button restart = findViewById(R.id.go_restart_button);
