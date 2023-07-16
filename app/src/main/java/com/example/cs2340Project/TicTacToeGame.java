@@ -9,6 +9,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class TicTacToeGame extends AppCompatActivity {
@@ -36,6 +39,7 @@ public class TicTacToeGame extends AppCompatActivity {
 
         initializeButtons();
         makeComputerMove();
+        selectLives();
 
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,8 +157,11 @@ public class TicTacToeGame extends AppCompatActivity {
         String message;
         if (winner == 1) {
             message = "Player wins!";
+            player1.setScore(player1.getScore() + 1);
         } else if (winner == 2) {
             message = "Computer wins!";
+            player1.setPlayerLives(player1.getPlayerLives() - 1);
+            selectLives();
         } else {
             message = "It's a draw!";
         }
@@ -173,6 +180,24 @@ public class TicTacToeGame extends AppCompatActivity {
                 })
                 .create()
                 .show();
+    }
+
+    private void selectLives() {
+        if(player1.getPlayerLives() == 0){
+            Intent intent = new Intent(TicTacToeGame.this, gameOverScreen.class);
+            startActivity(intent);
+            finish();
+        }
+        TextView name = findViewById(R.id.playerDataName);
+        name.setText(player1.getPlayerName());
+        name.setTextColor(-1);
+        //update the sprite image
+        ImageView sprite = findViewById(R.id.sprite);
+        player1.setSpriteImage(sprite);
+        ImageView i1 = findViewById(R.id.life1);
+        ImageView i2 = findViewById(R.id.life2);
+        ImageView i3 = findViewById(R.id.life3);
+        player1.setLives(i1,i2,i3);
     }
 }
 
