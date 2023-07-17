@@ -194,7 +194,7 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
     @Override
     public void selectLives() {
         if(player1.getPlayerLives() == 0){
-            Intent intent = new Intent(TicTacToeGame.this, GameOverScreen.class);
+            Intent intent = new Intent(TicTacToeGame.this, gameOverScreen.class);
             startActivity(intent);
             finish();
         }
