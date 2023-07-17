@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GameOverScreen extends AppCompatActivity {
+public class gameOverScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class GameOverScreen extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GameOverScreen.this, MainActivity.class);
+                Intent intent = new Intent(gameOverScreen.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -29,7 +29,7 @@ public class GameOverScreen extends AppCompatActivity {
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GameOverScreen.this, BlackJackInitialScreen.class);
+                Intent intent = new Intent(gameOverScreen.this, BlackJackInitialScreen.class);
                 startActivity(intent);
                 finish();
             }

@@ -44,7 +44,7 @@
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".GameOverScreen"
+            android:name=".gameOverScreen"
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
