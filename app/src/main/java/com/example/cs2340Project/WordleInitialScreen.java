@@ -9,7 +9,7 @@ import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class WordleInitialScreen extends AppCompatActivity {
+public class WordleInitialScreen extends AppCompatActivity implements SpriteSettable{
     private EditText name;
     private Button add;
     private Player player;
@@ -35,7 +35,8 @@ public class WordleInitialScreen extends AppCompatActivity {
         });
     }
 
-    private void setSprite(){
+    @Override
+    public void setSprite(){
         RadioButton pandaButton = findViewById(R.id.pandaButton);
         RadioButton foxButton = findViewById(R.id.foxButton);
         RadioButton turtleButton = findViewById(R.id.turtleButton);

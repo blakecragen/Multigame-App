@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 
-public class TicTacToeInitialScreen extends AppCompatActivity {
+public class TicTacToeInitialScreen extends AppCompatActivity implements SpriteSettable{
         private Button prevButton;
         private Button continueButton;
         private Player player;
@@ -45,7 +45,8 @@ public class TicTacToeInitialScreen extends AppCompatActivity {
             });
 
         }
-        private void setSprite(){
+        @Override
+        public void setSprite(){
             RadioButton pandaButton = findViewById(R.id.pandaButton);
             RadioButton foxButton = findViewById(R.id.foxButton);
             RadioButton turtleButton = findViewById(R.id.turtleButton);

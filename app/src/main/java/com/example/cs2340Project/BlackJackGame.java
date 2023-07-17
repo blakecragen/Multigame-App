@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class BlackJackGame extends AppCompatActivity {
+public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
     private Button restartButton;
     private List<Integer> deck;
     private ImageView[] pCards;
@@ -302,7 +302,8 @@ public class BlackJackGame extends AppCompatActivity {
         restartButton.setVisibility(View.VISIBLE);
     }
 
-    private void selectLives() {
+    @Override
+    public void selectLives() {
         if(player1.getPlayerLives() == 0){
             Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
             startActivity(intent);

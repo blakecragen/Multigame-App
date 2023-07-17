@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class TicTacToeGame extends AppCompatActivity {
+public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
     private Button restartButton;
     private Button homeButton;
     private Player player1;
@@ -191,9 +191,10 @@ public class TicTacToeGame extends AppCompatActivity {
                 .show();
     }
 
-    private void selectLives() {
+    @Override
+    public void selectLives() {
         if(player1.getPlayerLives() == 0){
-            Intent intent = new Intent(TicTacToeGame.this, gameOverScreen.class);
+            Intent intent = new Intent(TicTacToeGame.this, GameOverScreen.class);
             startActivity(intent);
             finish();
         }
