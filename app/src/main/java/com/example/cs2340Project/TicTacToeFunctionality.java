@@ -1,9 +1,9 @@
 package com.example.cs2340Project;
+
 import android.widget.Toast;
 
 public class TicTacToeFunctionality {
     private int[][] board;
-    private int currentPlayerPiece;
     int playerPiece;
     int whosTurn;
     TicTacToeComputerMovement comp;
@@ -13,7 +13,6 @@ public class TicTacToeFunctionality {
      */
     public TicTacToeFunctionality() {
         board = new int[3][3];
-        currentPlayerPiece = 1;
         /**
          * The following sets the player piece based on the number of lives that the player has. We
          * can change this if we want to implement it in a different way.
@@ -27,10 +26,6 @@ public class TicTacToeFunctionality {
         whosTurn = 1;
         comp = new TicTacToeComputerMovement(playerPiece);
     }
-    public int getCurrentPlayerPiece() {
-        return currentPlayerPiece;
-    }
-
 
     /**
      * Method to set the player piece.
@@ -48,25 +43,24 @@ public class TicTacToeFunctionality {
     }
 
     /**
-     * Assume board is laid out like the following:
+     * Assume board is layed out like the following:
      * 1|2|3
      * 4|5|6
      * 7|8|9
-     *
-     * @param game  TicTacToe game to display the message.
-     * @param where Where the user wants to place a piece.
+     * @param game TicTacToe game to display the message.
+     * @param where Where the user onces to place a piece.
      * @return Whether the piece can be added in the specified spot.
      */
     public boolean canPlacePiece(int where, TicTacToeGame game) {
-        if (board[getRow(where)][getCol(where)] != 0) {
-            if (game == null) {
-                System.out.println("Cannot place piece here.");
-            } else {
-                Toast.makeText(game, "Cannot place piece here.", Toast.LENGTH_SHORT).show();
-            }
-            return false;
+        if (board[getRow(where)][getCol(where)] == 0) {
+            return true;
         }
-        return true;
+        if (game == null) {
+            System.out.println("Cannot place piece here.");
+        } else {
+            Toast.makeText(game, "Cannot place piece here.", Toast.LENGTH_SHORT).show();
+        }
+        return false;
     }
 
     /**
@@ -86,10 +80,10 @@ public class TicTacToeFunctionality {
     }
 
     /**
-     * Helper method to get the column to place a piece.
+     * Helper method to get the col to place a piece.
      *
      * @param where Where the user wants to place a piece.
-     * @return Which column to place the piece.
+     * @return Which col to place the piece.
      */
     public int getCol(int where) {
         if (where % 3 == 1) {
@@ -105,33 +99,34 @@ public class TicTacToeFunctionality {
      * Method to actually place the piece onto the board.
      * Return 1 (X win), 2 (O win), 0 (No winner), -1 (Invalid Move)
      *
-     * @param row Where the user wants to place a piece.
-     * @param col The instance of a game to work with.
+     * @param where Where the user wants to place a piece.
+     * @param game The instance of a game to work with.
      */
-    public int placePiece(int row, int col) {
-        if (board[row][col] == 0) { // Check if the cell is empty
-            board[row][col] = currentPlayerPiece; // Place the current player's piece
-            // Switch the current player's piece for the next move
-            currentPlayerPiece = (currentPlayerPiece == 1) ? 2 : 1;
-            return currentPlayerPiece; // Return the player whose piece was placed
+    public int placePiece(int where, TicTacToeGame game) {
+        if (whosTurn == playerPiece) {
+            if (canPlacePiece(where, game)) {
+                board[getRow(where)][getCol(where)] = playerPiece;
+                updateTurn();
+            }
+            return checkForWinner();
         }
-        return -1; // Return -1 to indicate an invalid move
+        return -1;
     }
 
     /**
      * Gets the computer's move and places the piece.
      *
      * @param game The game activity.
-     * @return If there is a winner or not.
+     * @return if there is a winner or not.
      */
-    public int placeCompPiece(TicTacToeGame game) {
+    public int[] placeCompPiece(TicTacToeGame game) {
         if (whosTurn != playerPiece) {
             int where = comp.getComputerMove(board, this);
             board[getRow(where)][getCol(where)] = comp.getComputerPiece();
             updateTurn();
-            return checkForWinner();
+            return new int[]{checkForWinner(), where};
         }
-        return -1;
+        return new int[]{-1, -1};
     }
 
     /**
@@ -151,46 +146,32 @@ public class TicTacToeFunctionality {
      * @return If there is a winner or not (0 = none, 1 = X, 2 = O)
      */
     public int checkForWinner() {
-            // Check rows
-            for (int i = 0; i < 3; i++) {
-                if (board[i][0] == board[i][1] && board[i][0] == board[i][2] && board[i][0] != 0) {
-                    return board[i][0];
-                }
-            }
+        if (board[0][0] == board[0][1] && board[0][2] == board[0][0] && board[0][0] != 0) {
+            return board[0][0]; //Check first row
 
-            // Check columns
-            for (int i = 0; i < 3; i++) {
-                if (board[0][i] == board[1][i] && board[0][i] == board[2][i] && board[0][i] != 0) {
-                    return board[0][i];
-                }
-            }
+        } else if (board[0][0] == board[1][0] && board[0][0] == board[2][0] && board[0][0] != 0) {
+            return board[0][0]; //Check first col
 
-            // Check diagonals
-            if (board[0][0] == board[1][1] && board[0][0] == board[2][2] && board[0][0] != 0) {
-                return board[0][0];
-            }
-            if (board[0][2] == board[1][1] && board[0][2] == board[2][0] && board[0][2] != 0) {
-                return board[0][2];
-            }
+        } else if (board[0][1] == board[1][1] && board[0][1] == board[2][1] && board[0][1] != 0) {
+            return board[0][1]; //Check sec col
 
-            // Check for a draw
-            boolean isDraw = true;
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if (board[i][j] == 0) {
-                        isDraw = false;
-                        break;
-                    }
-                }
-            }
-            if (isDraw) {
-                return 3;
-            }
+        } else if (board[0][2] == board[1][2] && board[0][2] == board[2][2] && board[0][2] != 0) {
+            return board[0][2]; //Check third col
 
-            // No winner yet
-            return 0;
+        } else if (board[1][0] == board[1][1] && board[1][2] == board[1][0] && board[1][1] != 0) {
+            return board[1][0]; //Check sec row
+
+        } else if (board[2][0] == board[2][1] && board[2][2] == board[2][0] && board[2][2] != 0) {
+            return board[2][0]; //Check third row
+
+        } else if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != 0) {
+            return board[0][0]; //Check main diagonal
+        } else if (board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[1][1] != 0) {
+            return board[1][1]; // Check minor diagonal
         }
 
+        return 0;
+    }
 
     /**
      * Getter to get a piece on the board.
