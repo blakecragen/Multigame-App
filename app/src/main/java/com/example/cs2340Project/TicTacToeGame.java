@@ -9,13 +9,17 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
-public class TicTacToeGame extends AppCompatActivity {
+public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
     private Button restartButton;
     private Button homeButton;
     private Player player1;
     private int winner;
+    private int movesLeft;
     private TicTacToeFunctionality game;
     private TicTacToeComputerMovement computerMovement;
     private ArrayList<Button> gameButtons;
@@ -26,21 +30,25 @@ public class TicTacToeGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tic_tac_toe_game);
 
+        movesLeft = 9;
         restartButton = findViewById(R.id.t_restart_button);
         player1 = Player.getInstance();
         game = new TicTacToeFunctionality();
+        game.setPlayerPiece(1);
         computerMovement = new TicTacToeComputerMovement(game.getPlayerPiece());
         gameButtons = new ArrayList<>();
         playerTurn = true;
         winner = 0;
 
         initializeButtons();
-        makeComputerMove();
+        selectLives();
 
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                restartGame();
+                Intent intent = new Intent(TicTacToeGame.this, TicTacToeGame.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -71,55 +79,58 @@ public class TicTacToeGame extends AppCompatActivity {
         }
     }
 
-    private void restartGame() {
-        game.resetBoard();
-        updateBoardUI();
-        playerTurn = true;
-        makeComputerMove();
-    }
-
     private void makePlayerMove(int index, Button button) {
-        int row = index / 3;
-        int col = index % 3;
-        if (game.placePiece(row, col) != -1) {
+        int winner = game.placePiece(index, this);
+        if (winner != -1) {
+            button.setEnabled(false);
             button.setText("X");
             button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.yellow))); // Change the clicked button's background color to yellow
-
+            movesLeft--;
             playerTurn = false;
-            makeComputerMove();
+            if (movesLeft == 0 || winner > 0) {
+                handleGameEnd(winner);
+            } else {
+                makeComputerMove();
+            }
         }
     }
 
     private void afterPlayerMove(Button button) {
         if (playerTurn) {
             int buttonIndex = gameButtons.indexOf(button);
-            makePlayerMove(buttonIndex, button);
+            makePlayerMove(buttonIndex + 1, button);
         }
     }
 
     private void makeComputerMove() {
         if (!playerTurn) {
+            /*
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    int compMove = computerMovement.getComputerMove(game.getBoard(), game);
-                    int row = compMove / 3;
-                    int col = compMove % 3;
-                    game.placePiece(row, col);
-                    Button button = gameButtons.get(compMove);
+                    int[] compMove = game.placeCompPiece(TicTacToeGame.this);
+                    Button button = gameButtons.get(compMove[1]);
                     button.setText("O");
                     button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(TicTacToeGame.this, R.color.red)));
 
-                    afterComputerMove(compMove, R.color.red);
+                    afterComputerMove(compMove[1], R.color.red);
 
-                    winner = game.checkForWinner(); // Update the winner after the computer's move
-                    if (winner != 0) {
-                        handleGameEnd(winner);
-                    } else {
-                        playerTurn = true;
-                    }
+                    handleGameEnd(compMove[0]);
+                    playerTurn = true;
                 }
             }, 200); // Delay in milliseconds before the computer moves
+             */
+            int[] compMove = game.placeCompPiece(TicTacToeGame.this);
+            Button button = gameButtons.get(compMove[1] - 1);
+            button.setEnabled(false);
+            button.setText("O");
+            button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(TicTacToeGame.this, R.color.red)));
+            movesLeft--;
+            afterComputerMove(compMove[1] - 1, R.color.red);
+            if (compMove[0] != 0) {
+                handleGameEnd(compMove[0]);
+            }
+            playerTurn = true;
         }
     }
 
@@ -153,13 +164,18 @@ public class TicTacToeGame extends AppCompatActivity {
         String message;
         if (winner == 1) {
             message = "Player wins!";
+            player1.setScore(player1.getScore() + 1);
         } else if (winner == 2) {
             message = "Computer wins!";
+            player1.setPlayerLives(player1.getPlayerLives() - 1);
+            selectLives();
         } else {
             message = "It's a draw!";
         }
         showMessageDialog(message);
-        restartGame();
+        Intent intent = new Intent(TicTacToeGame.this, TicTacToeGame.class);
+        startActivity(intent);
+        finish();
     }
 
     private void showMessageDialog(String message) {
@@ -174,5 +190,25 @@ public class TicTacToeGame extends AppCompatActivity {
                 .create()
                 .show();
     }
+
+    @Override
+    public void selectLives() {
+        if(player1.getPlayerLives() == 0){
+            Intent intent = new Intent(TicTacToeGame.this, gameOverScreen.class);
+            startActivity(intent);
+            finish();
+        }
+        TextView name = findViewById(R.id.playerDataName);
+        name.setText(player1.getPlayerName());
+        name.setTextColor(-1);
+        //update the sprite image
+        ImageView sprite = findViewById(R.id.sprite);
+        player1.setSpriteImage(sprite);
+        ImageView i1 = findViewById(R.id.life1);
+        ImageView i2 = findViewById(R.id.life2);
+        ImageView i3 = findViewById(R.id.life3);
+        player1.setLives(i1,i2,i3);
+    }
 }
+
 

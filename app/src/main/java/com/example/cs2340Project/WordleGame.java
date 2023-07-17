@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class WordleGame extends AppCompatActivity implements View.OnClickListener {
+public class WordleGame extends AppCompatActivity implements View.OnClickListener, LivesSelectable {
     private EditText[][] letterGrid;
     private Button enter;
     private Button del;
@@ -220,7 +220,8 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-    private void selectLives() {
+    @Override
+    public void selectLives() {
         if(player.getPlayerLives() == 0){
             Intent intent = new Intent(WordleGame.this, gameOverScreen.class);
             startActivity(intent);

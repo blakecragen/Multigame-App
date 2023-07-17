@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/wordleHeading2"
-        android:layout_width="345dp"
-        android:layout_height="56dp"
+        android:layout_width="371dp"
+        android:layout_height="50dp"
         android:layout_marginTop="44dp"
         android:ems="10"
         android:fontFamily="@font/pressstart_2p"

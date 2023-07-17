@@ -79,10 +79,13 @@ public class Player {
 
     public void setScore(int score) {
         myPlayer.score = score;
-        if(score>myPlayer.highScore){
-            myPlayer.highScore = score;
-        }
     }
+
+    public void setHighScore(int score) {
+        myPlayer.highScore = score;
+    }
+
+    public int getHighScore() { return highScore;}
 
     public String getPlayerName() {
         return playerName;

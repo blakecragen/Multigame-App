@@ -111,6 +111,7 @@ public class TicTacToeComputerMovement {
                     out.add(3 * i + 1 + j);
                 }
             }
+
         }
         return out;
     }
@@ -133,3 +134,4 @@ public class TicTacToeComputerMovement {
         this.computerPiece = computerPiece;
     }
 }
+
