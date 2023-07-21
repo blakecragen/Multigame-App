@@ -1,5 +1,6 @@
 package com.example.cs2340Project;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class WordleGame extends AppCompatActivity implements View.OnClickListener, LivesSelectable {
     private EditText[][] letterGrid;
@@ -144,6 +146,7 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                         }
                         count++;
                     }
+                    setColors(guess);
 
 
                     boolean checkSolution = true;
@@ -239,4 +242,14 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
         ImageView i3 = findViewById(R.id.life3);
         player.setLives(i1,i2,i3);
     }
+
+    public void setColors(char[] guess){
+        //go through the guess and for each of the indexes of the int array set the color
+        for(int i = 0; i < guess.length; i++ ) {
+            int letterIndex = (int) guess[i] - (int) 'a';
+            Button b = findViewById(buttonIds[letterIndex]);
+            b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green)));
+        }
+    }
+
 }
