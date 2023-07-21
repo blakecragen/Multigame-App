@@ -9,7 +9,6 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.view.View;
 
-
 public class Player {
 
     //singleton design pattern
