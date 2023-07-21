@@ -143,7 +143,7 @@
                     android:layout_margin="5dp"
                     android:onClick="onGridButtonClick"
                     app:cornerRadius="0dp"
-                    android:text="Click to select"
+                    android:text="@string/select"
                     android:textColor="@color/black"
                     android:fontFamily="@font/press_start_2p"
                     android:textSize="10dp" />
@@ -156,7 +156,7 @@
                     android:layout_margin="5dp"
                     android:onClick="onGridButtonClick"
                     app:cornerRadius="0dp"
-                    android:text="Click to select"
+                    android:text="@string/select"
 
                     android:fontFamily="@font/press_start_2p"
                     android:textSize="10dp"
@@ -170,7 +170,7 @@
                     android:textColor="@color/black"
                     android:onClick="onGridButtonClick"
                     app:cornerRadius="0dp"
-                    android:text="Click to select"
+                    android:text="@string/select"
 
                     android:fontFamily="@font/press_start_2p"
                     android:textSize="10dp"
@@ -204,7 +204,7 @@
                     android:textColor="@color/black"
                     android:onClick="onGridButtonClick"
                     android:fontFamily="@font/press_start_2p"
-                    android:text="Click to select"
+                    android:text="@string/select"
 
                     android:textSize="10dp"
                     app:cornerRadius="0dp" />
@@ -217,7 +217,7 @@
                     android:textColor="@color/black"
                     android:layout_weight="1"
                     android:onClick="onGridButtonClick"
-                    android:text="Click to select"
+                    android:text="@string/select"
 
                     android:fontFamily="@font/press_start_2p"
                     android:textSize="10dp"
@@ -231,7 +231,7 @@
                     android:textColor="@color/black"
                     android:layout_weight="1"
                     android:onClick="onGridButtonClick"
-                    android:text="Click to select"
+                    android:text="@string/select"
 
                     android:fontFamily="@font/press_start_2p"
                     android:textSize="10dp"
@@ -264,7 +264,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:onClick="onGridButtonClick"
-                    android:text="Click to select"
+                    android:text="@string/select"
                     android:textColor="@color/black"
 
                     android:fontFamily="@font/press_start_2p"
@@ -278,7 +278,7 @@
                     android:layout_margin="5dp"
                     android:layout_weight="1"
                     android:onClick="onGridButtonClick"
-                    android:text="Click to select"
+                    android:text="@string/select"
                     android:fontFamily="@font/press_start_2p"
                     android:textSize="10dp"
                     android:textColor="@color/black"
@@ -290,7 +290,7 @@
                     android:layout_height="120dp"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="Click to select"
+                    android:text="@string/select"
                     android:textColor="@color/black"
                     android:fontFamily="@font/press_start_2p"
                     android:textSize="10dp"
