@@ -17,6 +17,7 @@
     <string name="player_score">Player Score:</string>
     <string name="tictactoe">Tic-Tac-Toe!</string>
     <string name="tictactoe_launch">Tic Tac Toe Start Screen</string>
+    <string name="select">CLick to select</string>
 
     <string name="wordle">WORDLE!</string>
     <string name="wordle_launch">Wordle Start Screen</string>
