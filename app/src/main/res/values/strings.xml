@@ -18,7 +18,6 @@
     <string name="tictactoe">Tic-Tac-Toe!</string>
     <string name="tictactoe_launch">Tic Tac Toe Start Screen</string>
     <string name="select">CLick to select</string>
-
     <string name="wordle">WORDLE!</string>
     <string name="wordle_launch">Wordle Start Screen</string>
     <string name="enter">Enter</string>
@@ -53,4 +52,5 @@
     <string name="over">OVER</string>
     <string name="your_score">YOUR SCORE: </string>
     <string name="high_score">HIGH SCORE: </string>
+    <string name="leaderboard">LEADER: </string>
 </resources>
