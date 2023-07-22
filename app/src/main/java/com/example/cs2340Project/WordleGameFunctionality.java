@@ -170,9 +170,17 @@ public class WordleGameFunctionality {
      */
     public void selectNewWord() {
         Random rand = new Random();
-        int whichWord = rand.nextInt(2310); // There are 2310 words in the "answers.txt" file.
-        solution = wordList[whichWord];
-        this.setNewWord(solution);
+        String selection = solution;
+        if (selection == null) {
+            int whichWord = rand.nextInt(wordList.length);
+            selection = wordList[whichWord];
+        } else {
+            while (selection.equals(solution)) {
+                int whichWord = rand.nextInt(wordList.length);
+                selection = wordList[whichWord];
+            }
+        }
+        this.setNewWord(selection);
     }
 
     /**
