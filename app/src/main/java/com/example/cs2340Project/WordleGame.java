@@ -142,12 +142,12 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                     for (int i = 0; i < guess.length; i++) {
                         if (guess[i] == solution[i]) {
                             wordleLetters.updateAccuracy(guess[i], 1);
-                            letterGrid[currentRow][count].setBackgroundResource(R.color.green);
+                            letterGrid[currentRow][count].setBackgroundResource(R.color.bright_green);
                         } else if (answer.contains(String.valueOf(guess[i]))) {
                             wordleLetters.updateAccuracy(guess[i], 0);
                             letterGrid[currentRow][count].setBackgroundResource(R.color.purple);
                         } else {
-                            letterGrid[currentRow][count].setBackgroundResource(R.color.red);
+                            letterGrid[currentRow][count].setBackgroundResource(R.color.gray);
                         }
                         count++;
                     }
@@ -259,10 +259,10 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                 b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.purple)));
             }
             else if (accuracy ==1 ){
-                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green)));
+                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.bright_green)));
             }
             else if (accuracy == -1 ){
-                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red)));
+                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.gray)));
             }
 
         }
