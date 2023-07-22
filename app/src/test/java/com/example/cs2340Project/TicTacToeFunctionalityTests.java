@@ -395,6 +395,25 @@ public class TicTacToeFunctionalityTests {
         assertEquals(6, checkNumPiecesOnBoard(game.getBoard()));
     }
 
+    @Test
+    public void testResetBoard() {
+        game = new TicTacToeFunctionality();
+        game.placePiece(1, null);
+        game.placePiece(7, null);
+        game.placePiece(5, null);
+        game.placePiece(8, null);
+        game.resetBoard();
+        assertEquals(0, game.getPiece(1));
+        assertEquals(0, game.getPiece(2));
+        assertEquals(0, game.getPiece(3));
+        assertEquals(0, game.getPiece(4));
+        assertEquals(0, game.getPiece(5));
+        assertEquals(0, game.getPiece(6));
+        assertEquals(0, game.getPiece(7));
+        assertEquals(0, game.getPiece(8));
+        assertEquals(0, game.getPiece(9));
+    }
+
 
     /**
      *  Return Arraylist as an array.
