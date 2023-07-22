@@ -146,7 +146,7 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                         }
                         count++;
                     }
-                    setColors(guess);
+                    setColors(guess, solution);
 
 
                     boolean checkSolution = true;
@@ -243,12 +243,17 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
         player.setLives(i1,i2,i3);
     }
 
-    public void setColors(char[] guess){
+    public void setColors(char[] guess, char [] solution){
         //go through the guess and for each of the indexes of the int array set the color
         for(int i = 0; i < guess.length; i++ ) {
             int letterIndex = (int) guess[i] - (int) 'a';
             Button b = findViewById(buttonIds[letterIndex]);
-            b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green)));
+            b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red)));
+            for(int j =0; j< solution.length; j++){
+                if(guess[i] == solution[j]){
+                    b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green)));
+                }
+            }
         }
     }
 
