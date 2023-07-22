@@ -1,5 +1,6 @@
 package com.example.cs2340Project;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class WordleGame extends AppCompatActivity implements View.OnClickListener, LivesSelectable {
     private EditText[][] letterGrid;
@@ -20,10 +22,24 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
     private String answer;
     private WordleGameFunctionality wordle;
     private Player player;
+
+    private WordleLetters wordleLetters = new WordleLetters();
+
+
+    int[] buttonIds = {
+            R.id.buttonA, R.id.buttonB, R.id.buttonC, R.id.buttonD, R.id.buttonE,
+            R.id.buttonF, R.id.buttonG, R.id.buttonH, R.id.buttonI, R.id.buttonJ,
+            R.id.buttonK, R.id.buttonL, R.id.buttonM, R.id.buttonN, R.id.buttonO,
+            R.id.buttonP, R.id.buttonQ, R.id.buttonR, R.id.buttonS, R.id.buttonT,
+            R.id.buttonU, R.id.buttonV, R.id.buttonW, R.id.buttonX, R.id.buttonY, R.id.buttonZ
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wordle_game);
+
+        TextView wordleHeading = findViewById(R.id.wordleHeading);
+        wordleHeading.setEnabled(false);
 
         currentRow = 0;
         wordle = new WordleGameFunctionality();
@@ -69,13 +85,7 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
         letterGrid[4][3] = findViewById(R.id.editText24);
         letterGrid[4][4] = findViewById(R.id.editText25);
 
-        int[] buttonIds = {
-                R.id.buttonA, R.id.buttonB, R.id.buttonC, R.id.buttonD, R.id.buttonE,
-                R.id.buttonF, R.id.buttonG, R.id.buttonH, R.id.buttonI, R.id.buttonJ,
-                R.id.buttonK, R.id.buttonL, R.id.buttonM, R.id.buttonN, R.id.buttonO,
-                R.id.buttonP, R.id.buttonQ, R.id.buttonR, R.id.buttonS, R.id.buttonT,
-                R.id.buttonU, R.id.buttonV, R.id.buttonW, R.id.buttonX, R.id.buttonY, R.id.buttonZ
-        };
+
         for (int i = 0; i < buttonIds.length; i++) {
             Button button = findViewById(buttonIds[i]);
             button.setOnClickListener(this);
@@ -134,14 +144,17 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                 if (valid != -1) {
                     for (int i = 0; i < guess.length; i++) {
                         if (guess[i] == solution[i]) {
-                            letterGrid[currentRow][count].setBackgroundResource(R.color.green);
+                            wordleLetters.updateAccuracy(guess[i], 1);
+                            letterGrid[currentRow][count].setBackgroundResource(R.color.bright_green);
                         } else if (answer.contains(String.valueOf(guess[i]))) {
+                            wordleLetters.updateAccuracy(guess[i], 0);
                             letterGrid[currentRow][count].setBackgroundResource(R.color.purple);
                         } else {
-                            letterGrid[currentRow][count].setBackgroundResource(R.color.red);
+                            letterGrid[currentRow][count].setBackgroundResource(R.color.gray);
                         }
                         count++;
                     }
+                    setColors(guess);
 
 
                     boolean checkSolution = true;
@@ -237,4 +250,26 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
         ImageView i3 = findViewById(R.id.life3);
         player.setLives(i1,i2,i3);
     }
+
+    public void setColors(char[] guess){
+        //go through the guess and for each of the indexes of the int array set the color
+
+        for(int i = 0; i < guess.length; i++ ) {
+            int letterIndex = (int) guess[i] - (int) 'a';
+            Button b = findViewById(buttonIds[letterIndex]);
+            int accuracy = wordleLetters.getLetterAccuracy(letterIndex);
+            if(accuracy == 0) {
+                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.purple)));
+            }
+            else if (accuracy ==1 ){
+                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.bright_green)));
+            }
+            else if (accuracy == -1 ){
+                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.gray)));
+            }
+
+        }
+
+    }
+
 }

@@ -9,16 +9,14 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class WordleFuntionalityTests {
+public class WordleFunctionalityTests {
 
-    // By Charlie
     @Test
     public void testInitialization() {
         WordleGameFunctionality correctWord = new WordleGameFunctionality();
         assertNull(correctWord.getSolution());
     }
 
-    // By Charlie
     @Test
     public void testSelectNewWord() {
         WordleGameFunctionality correctWord = new WordleGameFunctionality();
@@ -38,9 +36,8 @@ public class WordleFuntionalityTests {
         assertNotEquals(temp, correctWord.getSolution());
     }
 
-    // By Christeena
     @Test
-    public void testCheckGuessCorrLets() {
+    public void testCheckGuessCorrectLetters() {
         WordleGameFunctionality correctWord = new WordleGameFunctionality();
 
         // Check if the method works if a guess is completely correct.
@@ -71,7 +68,6 @@ public class WordleFuntionalityTests {
         assertArrayEquals(expected, correctWord.getPlayerCorrectness());
     }
 
-    // By Christeena
     @Test
     public void checkGuessValid() {
         WordleGameFunctionality wordle = new WordleGameFunctionality();
@@ -85,25 +81,26 @@ public class WordleFuntionalityTests {
         assertEquals(true, wordle.checkGuessValid(word) < 0);
         word = "frail";
         assertEquals(true, wordle.checkGuessValid(word) >= 0);
+        word = "htrys";
+        assertEquals(true, wordle.checkGuessValid(word) < 0);
     }
 
-    // By Scott
     @Test
     public void testHashcode() {
-        int ascii = (int) 'a';
-        assertEquals(2, ascii % 5);
-        ascii = (int) 'b';
-        assertEquals(3, ascii % 5);
-        ascii = (int) 'c';
-        assertEquals(4, ascii % 5);
-        ascii = (int) 'd';
-        assertEquals(0, ascii % 5);
-        ascii = (int) 'e';
-        assertEquals(1, ascii % 5);
-
+        WordleGameFunctionality hF = new WordleGameFunctionality();
+        char ascii = 'a';
+        assertEquals(2, hF.hashcode(ascii));
+        ascii = 'b';
+        assertEquals(3, hF.hashcode(ascii));
+        ascii = 'c';
+        assertEquals(4, hF.hashcode(ascii));
+        ascii = 'd';
+        assertEquals(0, hF.hashcode(ascii));
+        ascii = 'e';
+        assertEquals(1, hF.hashcode(ascii));
+        assertEquals(hF.hashcode('e'), hF.hashcode(ascii));
     }
 
-    // By Scott
     @Test
     public void testClear() {
         WordleGameFunctionality game = new WordleGameFunctionality();
@@ -114,9 +111,8 @@ public class WordleFuntionalityTests {
         assertFalse(game.get(0,'a'));
     }
 
-    // By Joey
     @Test
-    public void testCheckGuessCorrLetsWrongSpot() {
+    public void testExistingLettersWrongIndex() {
         WordleGameFunctionality correctWord = new WordleGameFunctionality();
         String ans = "candy";
         int[] expected = new int[]{1, 0, 0, 1, 0};
@@ -135,7 +131,6 @@ public class WordleFuntionalityTests {
         assertArrayEquals(expected, correctWord.getPlayerCorrectness());
     }
 
-    // By Joey
     @Test
     public void testGet() {
         WordleGameFunctionality game = new WordleGameFunctionality();
@@ -146,7 +141,6 @@ public class WordleFuntionalityTests {
         assertFalse(game.get(1,'g'));
     }
 
-    // By Arden
     @Test
     public void testNodeClass() {
         Node newNode = new Node(1, 'a');
@@ -156,7 +150,6 @@ public class WordleFuntionalityTests {
         assertNull(newNode.next.next);
     }
 
-    // By Arden
     @Test
     public void  testPush() {
         WordleGameFunctionality wordle = new WordleGameFunctionality();
@@ -169,7 +162,6 @@ public class WordleFuntionalityTests {
         assertEquals(true, map2[0].equals(map1[0].pos, map1[0].let));
     }
 
-    // By Blake
     @Test
     public void testRemove() {
         WordleGameFunctionality wordle = new WordleGameFunctionality();
@@ -188,7 +180,6 @@ public class WordleFuntionalityTests {
         assertNull(map[1]);
     }
 
-    // By Blake
     @Test
     public void testCheckGuess() {
         WordleGameFunctionality correctWord = new WordleGameFunctionality();
