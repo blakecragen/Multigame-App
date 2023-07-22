@@ -23,6 +23,9 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
     private WordleGameFunctionality wordle;
     private Player player;
 
+    private WordleLetters wordleLetters = new WordleLetters();
+
+
     int[] buttonIds = {
             R.id.buttonA, R.id.buttonB, R.id.buttonC, R.id.buttonD, R.id.buttonE,
             R.id.buttonF, R.id.buttonG, R.id.buttonH, R.id.buttonI, R.id.buttonJ,
@@ -138,8 +141,10 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                 if (valid != -1) {
                     for (int i = 0; i < guess.length; i++) {
                         if (guess[i] == solution[i]) {
+                            wordleLetters.updateAccuracy(guess[i], 1);
                             letterGrid[currentRow][count].setBackgroundResource(R.color.green);
                         } else if (answer.contains(String.valueOf(guess[i]))) {
+                            wordleLetters.updateAccuracy(guess[i], 0);
                             letterGrid[currentRow][count].setBackgroundResource(R.color.purple);
                         } else {
                             letterGrid[currentRow][count].setBackgroundResource(R.color.red);
@@ -245,11 +250,23 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
 
     public void setColors(char[] guess){
         //go through the guess and for each of the indexes of the int array set the color
+
         for(int i = 0; i < guess.length; i++ ) {
             int letterIndex = (int) guess[i] - (int) 'a';
             Button b = findViewById(buttonIds[letterIndex]);
-            b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green)));
+            int accuracy = wordleLetters.getLetterAccuracy(letterIndex);
+            if(accuracy == 0) {
+                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.purple)));
+            }
+            else if (accuracy ==1 ){
+                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green)));
+            }
+            else if (accuracy == -1 ){
+                b.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red)));
+            }
+
         }
+
     }
 
 }
