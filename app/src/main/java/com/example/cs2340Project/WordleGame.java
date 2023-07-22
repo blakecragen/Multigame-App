@@ -38,6 +38,9 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wordle_game);
 
+        TextView wordleHeading = findViewById(R.id.wordleHeading);
+        wordleHeading.setEnabled(false);
+
         currentRow = 0;
         wordle = new WordleGameFunctionality();
         wordle.selectNewWord();
