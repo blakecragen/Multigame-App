@@ -49,7 +49,7 @@
         android:id="@+id/imageView10"
         android:layout_width="140dp"
         android:layout_height="239dp"
-        android:layout_marginStart="132dp"
+        android:layout_marginStart="125dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cards" />
@@ -70,7 +70,7 @@
         android:layout_height="133dp"
         android:layout_marginStart="133dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="144dp"
+        android:layout_marginEnd="120dp"
         android:layout_marginBottom="14dp"
         app:layout_constraintBottom_toTopOf="@+id/checkersStartScreen"
         app:layout_constraintEnd_toEndOf="parent"
