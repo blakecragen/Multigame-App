@@ -27,28 +27,17 @@ public class BlackJackFunctionalityTests {
     @Test
     public void testCardToString() {
         BlackJackCard card1 = new BlackJackCard(8, 'H');
-        BlackJackCard card2 = new BlackJackCard(9, 'D');
-        BlackJackCard card3 = new BlackJackCard(10, 'S');
-        BlackJackCard card4 = new BlackJackCard(10, 'C', "Jack");
-        BlackJackCard card5 = new BlackJackCard(10, 'H', "Queen");
-        BlackJackCard card6 = new BlackJackCard(10, 'D', "King");
-        BlackJackCard card7 = new BlackJackCard(11, 'S', "Ace");
-        BlackJackCard card8 = new BlackJackCard(8, 'H');
-
-        System.out.println(card1);
-        System.out.println(card2);
-        System.out.println(card3);
-        System.out.println(card4);
-        System.out.println(card5);
-        System.out.println(card6);
-        System.out.println(card7);
+        BlackJackCard card2 = new BlackJackCard(10, 'S', "Jack");
+        BlackJackCard card3 = new BlackJackCard(8, 'H');
 
         String test = card1.toString();
-        String test2 = card8.toString();
+        String test2 = card2.toString();
         String test3 = card3.toString();
 
-        assertEquals(test, test2);
-        assertNotEquals(test, test3);
+        assertEquals("8 of Hearts", test);
+        assertEquals("Jack of Spades", test2);
+        assertEquals(test, test3);
+        assertNotEquals(test, test2);
     }
 
     @Test
@@ -57,33 +46,11 @@ public class BlackJackFunctionalityTests {
         BlackJackPlayer me = new BlackJackPlayer();
         BlackJackDealer dealer = new BlackJackDealer();
 
-        dealer.hit(myDeck);
-        me.hit(myDeck);
-        dealer.hit(myDeck);
-        me.hit(myDeck);
+        for (int i = 0; i < 4; i++) {
+            me.hit(myDeck);
+            dealer.hit(myDeck);
+        }
 
-        me.printHand();
-        dealer.printHand();
-        me.clearHand(myDeck);
-        dealer.clearHand(myDeck);
-
-        dealer.hit(myDeck);
-        me.hit(myDeck);
-        dealer.hit(myDeck);
-        me.hit(myDeck);
-
-        me.printHand();
-        dealer.printHand();
-        me.clearHand(myDeck);
-        dealer.clearHand(myDeck);
-
-        dealer.hit(myDeck);
-        me.hit(myDeck);
-        dealer.hit(myDeck);
-        me.hit(myDeck);
-
-        me.printHand();
-        dealer.printHand();
         me.clearHand(myDeck);
         dealer.clearHand(myDeck);
 
