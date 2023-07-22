@@ -18,6 +18,7 @@ public class Player {
     private static int score = 0;
     private static int highScore = 0;
     private static String playerName = "Anon";
+    private static String leader = "None";
 
     private static char currentGame;
     private Player(){}
@@ -92,6 +93,13 @@ public class Player {
     }
     public void setPlayerName(String playerName){
         myPlayer.playerName = playerName;
+    }
+
+    public String getLeader() {
+        return leader;
+    }
+    public void setLeader() {
+        leader = playerName;
     }
 
     public void setCurrentGame(char currentGame){
