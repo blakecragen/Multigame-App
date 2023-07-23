@@ -27,7 +27,7 @@
         android:layout_marginStart="44dp"
         android:layout_marginTop="424dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="@string/tictactoe"
+        android:text="@string/tic_tac_toe"
         android:textColor="@color/purple"
         app:backgroundTint="@color/yellow"
         app:layout_constraintStart_toStartOf="parent"
