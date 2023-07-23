@@ -53,4 +53,5 @@
     <string name="your_score">YOUR SCORE: </string>
     <string name="high_score">HIGH SCORE: </string>
     <string name="leaderboard">LEADER: </string>
+    <string name="tic_tac_toe">TIC-TAC-TOE!</string>
 </resources>
