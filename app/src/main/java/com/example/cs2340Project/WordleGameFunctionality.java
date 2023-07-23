@@ -1,4 +1,6 @@
 package com.example.cs2340Project;
+import android.widget.TextView;
+
 import java.util.Random;
 
 /**
@@ -368,4 +370,6 @@ public class WordleGameFunctionality {
     public Node[] getWordHashmap() {
         return wordHashmap;
     }
+
+
 }

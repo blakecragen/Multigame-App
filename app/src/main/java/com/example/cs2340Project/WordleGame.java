@@ -184,10 +184,7 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                         letterGrid[currentRow][0].requestFocus();
                     }
                 } else {
-                    // Add animation
-                    TextView tv = findViewById(R.id.wordleHeading);
-                    Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
-                    tv.startAnimation(animation);
+                    shakeAnimation();
                 }
 
             }
@@ -197,6 +194,12 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
             keyboard(v);
         }
 
+    }
+
+    public void shakeAnimation() {
+        TextView tv = findViewById(R.id.wordleHeading);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.shake);
+        tv.startAnimation(animation);
     }
 
     private boolean checkRow(int row) {
