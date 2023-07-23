@@ -15,10 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class WordleGame extends AppCompatActivity implements View.OnClickListener, LivesSelectable {
-
-    private Button enter;
-    private WordleGameFunctionality wordleFunctionality;
     private EditText[][] letterGrid;
+    private Button enter;
     private Button del;
     private int currentRow;
     private String answer;
@@ -60,7 +58,6 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
             finish();
         });
 
-        wordleFunctionality = new WordleGameFunctionality();
         letterGrid = new EditText[5][5];
         letterGrid[0][0] = findViewById(R.id.editText1);
         letterGrid[0][1] = findViewById(R.id.editText2);
@@ -111,11 +108,32 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
 
     public void onClick(View v) {
         if (v.getId() == R.id.delete) {
-            Button delButton = (Button) v;
-            wordleFunctionality.delete(delButton, letterGrid, currentRow);
+            Button del = (Button) v;
+            String delText = del.getText().toString();
+            if (delText.equals("Delete")) {
+                for (int col = 4; col >= 0; col--) {
+                    EditText letter = letterGrid[currentRow][col];
+                    if (!letter.getText().toString().isEmpty()) {
+                        letter.setText("");
+                        letter.requestFocus();
+                        break;
+                    }
+                }
+            } else {
+                for (int col = 0; col < 5; col++) {
+                    EditText letter = letterGrid[currentRow][col];
+                    if (letter.getText().toString().isEmpty()) {
+                        letter.setText(delText);
+                        if (col + 1 < 5) {
+                            letterGrid[currentRow][col + 1].requestFocus();
+                        }
+                        break;
+                    }
+                }
+            }
         }  else if (v.getId() == R.id.enter) {
-            if (currentRow < 5 && wordleFunctionality.checkRow(letterGrid, currentRow)) {
-                String playerGuess = wordleFunctionality.getRowCharacters(letterGrid, currentRow);
+            if (currentRow < 5 && checkRow(currentRow)) {
+                String playerGuess = getRowCharacters(currentRow);
                 // Store as lowercase
                 playerGuess = playerGuess.toLowerCase();
                 char[] guess = playerGuess.toCharArray();
@@ -179,6 +197,23 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
             keyboard(v);
         }
 
+    }
+
+    private boolean checkRow(int row) {
+        for (int col = 0; col < 5; col++) {
+            if (letterGrid[row][col].getText().toString().isEmpty()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private String getRowCharacters(int row) {
+        StringBuilder rowCharacters = new StringBuilder();
+        for (int col = 0; col < 5; col++) {
+            rowCharacters.append(letterGrid[row][col].getText().toString());
+        }
+        return rowCharacters.toString();
     }
 
     private void keyboard(View v) {
