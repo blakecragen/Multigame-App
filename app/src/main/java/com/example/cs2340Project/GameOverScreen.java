@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Objects;
+
 public class GameOverScreen extends AppCompatActivity {
 
     @Override
@@ -19,6 +21,8 @@ public class GameOverScreen extends AppCompatActivity {
         Button restart = findViewById(R.id.go_restart_button);
 
         Player player = Player.getInstance();
+
+        String game = getIntent().getStringExtra("Game");
 
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +38,13 @@ public class GameOverScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GameOverScreen.this, TicTacToeInitialScreen.class);
+                if (game.equals("BJ")) {
+                    intent = new Intent(GameOverScreen.this, BlackJackInitialScreen.class);
+                } else if (game.equals("WD")) {
+                    intent = new Intent(GameOverScreen.this, WordleInitialScreen.class);
+                } else {
+                    intent = new Intent(GameOverScreen.this, TicTacToeInitialScreen.class);
+                }
                 player.setPlayerLives(3);
                 startActivity(intent);
                 finish();
