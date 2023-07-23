@@ -162,16 +162,22 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
 
     private void handleGameEnd(int winner) {
         String message;
-        if (winner == 1) {
-            message = "Player wins!";
-            player1.setScore(player1.getScore() + 1);
-        } else if (winner == 2) {
-            message = "Computer wins!";
-            player1.setPlayerLives(player1.getPlayerLives() - 1);
-            selectLives();
-        } else {
-            message = "It's a draw!";
+
+        switch (winner) {
+            case 1:
+                message = "Player wins!";
+                player1.setScore(player1.getScore() + 1);
+                break;
+            case 2:
+                message = "Computer wins!";
+                player1.setPlayerLives(player1.getPlayerLives() - 1);
+                selectLives();
+                break;
+            default:
+                message = "It's a draw!";
+                break;
         }
+
         showMessageDialog(message);
         Intent intent = new Intent(TicTacToeGame.this, TicTacToeGame.class);
         startActivity(intent);
