@@ -2,6 +2,7 @@ package com.example.cs2340Project;
 
 public class BlackJackDealer extends BlackJackPlayer {
 
+
     /**
      * Hits the dealer's hand based on casino rules.
      *
@@ -67,3 +68,4 @@ public class BlackJackDealer extends BlackJackPlayer {
         System.out.printf("Dealer card:\n%s\n",this.getShownCard());
     }
 }
+
