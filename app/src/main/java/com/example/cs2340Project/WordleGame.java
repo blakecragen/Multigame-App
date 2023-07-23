@@ -111,29 +111,8 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
 
     public void onClick(View v) {
         if (v.getId() == R.id.delete) {
-            Button del = (Button) v;
-            String delText = del.getText().toString();
-            if (delText.equals("Delete")) {
-                for (int col = 4; col >= 0; col--) {
-                    EditText letter = letterGrid[currentRow][col];
-                    if (!letter.getText().toString().isEmpty()) {
-                        letter.setText("");
-                        letter.requestFocus();
-                        break;
-                    }
-                }
-            } else {
-                for (int col = 0; col < 5; col++) {
-                    EditText letter = letterGrid[currentRow][col];
-                    if (letter.getText().toString().isEmpty()) {
-                        letter.setText(delText);
-                        if (col + 1 < 5) {
-                            letterGrid[currentRow][col + 1].requestFocus();
-                        }
-                        break;
-                    }
-                }
-            }
+            Button delButton = (Button) v;
+            wordleFunctionality.delete(delButton, letterGrid, currentRow);
         }  else if (v.getId() == R.id.enter) {
             if (currentRow < 5 && wordleFunctionality.checkRow(letterGrid, currentRow)) {
                 String playerGuess = wordleFunctionality.getRowCharacters(letterGrid, currentRow);

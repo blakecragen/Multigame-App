@@ -398,6 +398,37 @@ public class WordleGameFunctionality {
         return rowCharacters.toString();
     }
 
+    public void delete(Button deleteButton, EditText[][] letterGrid, int currentRow) {
+        String delText = deleteButton.getText().toString();
+        if (delText.equals("Delete")) {
+            deleteLetterFromRow(letterGrid, currentRow);
+        } else {
+            addLetterToRow(letterGrid, currentRow, delText);
+        }
+    }
 
+    private void deleteLetterFromRow(EditText[][] letterGrid, int row) {
+        for (int col = 4; col >= 0; col--) {
+            EditText letter = letterGrid[row][col];
+            if (!letter.getText().toString().isEmpty()) {
+                letter.setText("");
+                letter.requestFocus();
+                break;
+            }
+        }
+    }
+
+    private void addLetterToRow(EditText[][] letterGrid, int row, String letter) {
+        for (int col = 0; col < 5; col++) {
+            EditText editText = letterGrid[row][col];
+            if (editText.getText().toString().isEmpty()) {
+                editText.setText(letter);
+                if (col + 1 < 5) {
+                    letterGrid[row][col + 1].requestFocus();
+                }
+                break;
+            }
+        }
+    }
 
     }
