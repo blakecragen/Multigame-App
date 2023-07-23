@@ -42,7 +42,7 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
         wordleHeading.setEnabled(false);
 
         currentRow = 0;
-        wordle = new WordleGameFunctionality();
+        wordle = new WordleGameFunctionality(getResources().getStringArray(R.array.word_list));
         wordle.selectNewWord();
         answer = wordle.getSolution();
         player = Player.getInstance();

@@ -1,5 +1,6 @@
 package com.example.cs2340Project;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -10,76 +11,70 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class WordleFunctionalityTests {
-
-    @Test
-    public void testInitialization() {
-        WordleGameFunctionality correctWord = new WordleGameFunctionality();
-        assertNull(correctWord.getSolution());
+    private WordleGameFunctionality wordle;
+    @Before
+    public void initialize() {
+        String[] words = {"hello", "world", "valid", "false", "coded", "scrum", "array", "apply", "paste", "words"};
+        wordle = new WordleGameFunctionality(words);
     }
 
     @Test
     public void testSelectNewWord() {
-        WordleGameFunctionality correctWord = new WordleGameFunctionality();
-
-        correctWord.setNewWord("Hello");
-        assertEquals("Hello", correctWord.getSolution());
-        correctWord.selectNewWord();
-        assertNotEquals("Hello", correctWord.getSolution());
-        String temp = correctWord.getSolution();
-        correctWord.selectNewWord();
-        assertNotEquals(temp, correctWord.getSolution());
-        temp = correctWord.getSolution();
-        correctWord.selectNewWord();
-        assertNotEquals(temp, correctWord.getSolution());
-        temp = correctWord.getSolution();
-        correctWord.selectNewWord();
-        assertNotEquals(temp, correctWord.getSolution());
+        wordle.setNewWord("Hello");
+        assertEquals("Hello", wordle.getSolution());
+        wordle.selectNewWord();
+        assertNotEquals("Hello", wordle.getSolution());
+        String temp = wordle.getSolution();
+        wordle.selectNewWord();
+        assertNotEquals(temp, wordle.getSolution());
+        temp = wordle.getSolution();
+        wordle.selectNewWord();
+        assertNotEquals(temp, wordle.getSolution());
+        temp = wordle.getSolution();
+        wordle.selectNewWord();
+        assertNotEquals(temp, wordle.getSolution());
     }
 
     @Test
     public void testCheckGuessCorrectLetters() {
-        WordleGameFunctionality correctWord = new WordleGameFunctionality();
-
-        // Check if the method works if a guess is completely correct.
         String ans = "Hello";
-        correctWord.setNewWord(ans);
+        wordle.setNewWord(ans);
         int[] expected = {2,2,2,2,2};
-        correctWord.checkGuess(ans);
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess(ans);
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "Calls";
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess(ans);
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess(ans);
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "Hello";
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess(ans);
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess(ans);
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "yeeHe";
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess(ans);
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess(ans);
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "tests";
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess(ans);
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess(ans);
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "tEstS";
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("TeSTs");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("TeSTs");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
     }
 
     @Test
     public void checkGuessValid() {
-        WordleGameFunctionality wordle = new WordleGameFunctionality();
         String word = "hello";
         assertEquals(true, wordle.checkGuessValid(word) >= 0);
-        word = "horse";
+        word = "world";
         assertEquals(true, wordle.checkGuessValid(word) >= 0);
         word = "this";
         assertEquals(true, wordle.checkGuessValid(word) < 0);
         word = "mall";
         assertEquals(true, wordle.checkGuessValid(word) < 0);
-        word = "frail";
+        word = "valid";
         assertEquals(true, wordle.checkGuessValid(word) >= 0);
         word = "htrys";
         assertEquals(true, wordle.checkGuessValid(word) < 0);
@@ -87,58 +82,54 @@ public class WordleFunctionalityTests {
 
     @Test
     public void testHashcode() {
-        WordleGameFunctionality hF = new WordleGameFunctionality();
         char ascii = 'a';
-        assertEquals(2, hF.hashcode(ascii));
+        assertEquals(0, wordle.hashcode(ascii));
         ascii = 'b';
-        assertEquals(3, hF.hashcode(ascii));
+        assertEquals(1, wordle.hashcode(ascii));
         ascii = 'c';
-        assertEquals(4, hF.hashcode(ascii));
+        assertEquals(2, wordle.hashcode(ascii));
         ascii = 'd';
-        assertEquals(0, hF.hashcode(ascii));
+        assertEquals(3, wordle.hashcode(ascii));
         ascii = 'e';
-        assertEquals(1, hF.hashcode(ascii));
-        assertEquals(hF.hashcode('e'), hF.hashcode(ascii));
+        assertEquals(4, wordle.hashcode(ascii));
+        assertEquals(wordle.hashcode('e'), wordle.hashcode(ascii));
     }
 
     @Test
     public void testClear() {
-        WordleGameFunctionality game = new WordleGameFunctionality();
-        game.push(0, 'a');
-        game.push(1, 'l');
-        assertTrue(game.get(0, 'a'));
-        game.clear();
-        assertFalse(game.get(0,'a'));
+        wordle.push(0, 'a');
+        wordle.push(1, 'l');
+        assertTrue(wordle.get(0, 'a'));
+        wordle.clear();
+        assertFalse(wordle.get(0,'a'));
     }
 
     @Test
     public void testExistingLettersWrongIndex() {
-        WordleGameFunctionality correctWord = new WordleGameFunctionality();
         String ans = "candy";
         int[] expected = new int[]{1, 0, 0, 1, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("yoink");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("yoink");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "strap";
         expected = new int[]{1, 0, 0, 0, 1};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("penis");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("penis");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "hello";
         expected = new int[]{1, 0, 0, 0, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("eager");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("eager");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
     }
 
     @Test
     public void testGet() {
-        WordleGameFunctionality game = new WordleGameFunctionality();
-        game.push(0,'a');
-        game.push(1,'b');
-        game.push(2,'c');
-        assertTrue(game.get(0,'a'));
-        assertFalse(game.get(1,'g'));
+        wordle.push(0,'a');
+        wordle.push(1,'b');
+        wordle.push(2,'c');
+        assertTrue(wordle.get(0,'a'));
+        assertFalse(wordle.get(1,'g'));
     }
 
     @Test
@@ -151,8 +142,7 @@ public class WordleFunctionalityTests {
     }
 
     @Test
-    public void  testPush() {
-        WordleGameFunctionality wordle = new WordleGameFunctionality();
+    public void testPush() {
         wordle.push(new Node(0,'a'));
         wordle.push(new Node(6,'b'));
         wordle.push(new Node(11,'c'));
@@ -164,7 +154,6 @@ public class WordleFunctionalityTests {
 
     @Test
     public void testRemove() {
-        WordleGameFunctionality wordle = new WordleGameFunctionality();
         wordle.push(0, 'a');
         wordle.push(1, 'b');
         wordle.push(2, 'c');
@@ -182,8 +171,6 @@ public class WordleFunctionalityTests {
 
     @Test
     public void testCheckGuess() {
-        WordleGameFunctionality correctWord = new WordleGameFunctionality();
-
         // Check if the method works if a guess is completely correct.
         String ans = "Hello";
         int[] expected = {2,2,2,2,2};
@@ -191,146 +178,146 @@ public class WordleFunctionalityTests {
         // Test if part of word is correct and rest incorrect
         ans = "Hello";
         expected = new int[]{0, 2, 0, 0, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("TeSTs");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("TeSTs");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "yoink";
         expected = new int[]{0, 2, 2, 2, 2};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("zoink");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("zoink");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "china";
         expected = new int[]{2, 2, 2, 0, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("child");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("child");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "guess";
         expected = new int[]{0, 0, 0, 0, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("chill");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("chill");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         ans = "pairs";
         expected = new int[]{2, 2, 0, 0, 2};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("palms");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("palms");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
 
         // Test if letters are correct in wrong spot (with correct letters)
         ans = "trace";
         expected = new int[]{2, 1, 1, 0, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("tarry");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("tarry");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
 
         // A game of wordle I played and it's results:
-        correctWord.setNewWord("strap");
+        wordle.setNewWord("strap");
         expected = new int[]{2, 1, 0, 0, 0};
-        correctWord.checkGuess("spoil");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("spoil");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 0, 0, 2};
-        correctWord.checkGuess("stump");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("stump");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 2, 2, 2};
-        correctWord.checkGuess("strap");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("strap");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
 
         // Game 2:
         ans = "billy";
         expected = new int[]{0, 0, 2, 2, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("Hello");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("Hello");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{0, 0, 2, 2, 2};
-        correctWord.checkGuess("jelly");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("jelly");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 0, 2, 2, 2};
-        correctWord.checkGuess("bully");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("bully");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{0, 2, 2, 2, 2};
-        correctWord.checkGuess("silly");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("silly");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 2, 2, 2};
-        correctWord.checkGuess("billy");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("billy");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
 
         // Game 3:
         ans = "sheer";
         expected = new int[]{0, 1, 0, 0, 1};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("crane");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("crane");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{1, 0, 0, 0, 1};
-        correctWord.checkGuess("range");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("range");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{0, 0, 1, 2, 1};
-        correctWord.checkGuess("fires");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("fires");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{0, 0, 1, 2, 2};
-        correctWord.checkGuess("poser");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("poser");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 2, 2, 2};
-        correctWord.checkGuess("sheer");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("sheer");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
 
         //Game 4:
         ans = "scant";
         expected = new int[]{1, 0, 2, 2, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("crane");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("crane");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 2, 2, 2};
-        correctWord.checkGuess("scant");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("scant");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
 
         //Game 5:
         ans = "wacky";
         expected = new int[]{1, 0, 1, 0, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("crane");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("crane");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{0, 2, 0, 0, 2};
-        correctWord.checkGuess("parry");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("parry");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{1, 2, 2, 0, 0};
-        correctWord.checkGuess("yacht");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("yacht");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 2, 2, 2};
-        correctWord.checkGuess("wacky");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("wacky");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{0, 0, 0, 0, 0};
-        correctWord.checkGuess("hello");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("hello");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
 
         //Game 6:
         ans = "ranch";
         expected = new int[]{0, 0, 1, 0, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("plays");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("plays");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{0, 2, 1, 2, 2};
-        correctWord.checkGuess("march");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("march");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 0, 2, 2};
-        correctWord.checkGuess("ratch");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("ratch");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 2, 2, 2};
-        correctWord.checkGuess("ranch");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("ranch");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
 
         //Game 7:
         ans = "ranch";
         expected = new int[]{0, 0, 0, 1, 0};
-        correctWord.setNewWord(ans);
-        correctWord.checkGuess("plead");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.setNewWord(ans);
+        wordle.checkGuess("plead");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{0, 1, 1, 1, 0};
-        correctWord.checkGuess("shart");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("shart");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{1, 0, 1, 0, 1};
-        correctWord.checkGuess("abhor");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("abhor");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
         expected = new int[]{2, 2, 2, 2, 2};
-        correctWord.checkGuess("ranch");
-        assertArrayEquals(expected, correctWord.getPlayerCorrectness());
+        wordle.checkGuess("ranch");
+        assertArrayEquals(expected, wordle.getPlayerCorrectness());
     }
 }
