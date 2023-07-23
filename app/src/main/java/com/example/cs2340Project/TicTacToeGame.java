@@ -104,22 +104,6 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
 
     private void makeComputerMove() {
         if (!playerTurn) {
-            /*
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    int[] compMove = game.placeCompPiece(TicTacToeGame.this);
-                    Button button = gameButtons.get(compMove[1]);
-                    button.setText("O");
-                    button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(TicTacToeGame.this, R.color.red)));
-
-                    afterComputerMove(compMove[1], R.color.red);
-
-                    handleGameEnd(compMove[0]);
-                    playerTurn = true;
-                }
-            }, 200); // Delay in milliseconds before the computer moves
-             */
             int[] compMove = game.placeCompPiece(TicTacToeGame.this);
             Button button = gameButtons.get(compMove[1] - 1);
             button.setEnabled(false);
@@ -137,27 +121,6 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
     private void afterComputerMove(int index, int colorResource) {
         Button button = gameButtons.get(index);
         button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, colorResource)));
-    }
-
-
-    private void updateBoardUI() {
-        int[][] board = game.getBoard();
-        for (int i = 0; i < 9; i++) {
-            Button button = gameButtons.get(i);
-            int row = i / 3;
-            int col = i % 3;
-            int piece = board[row][col];
-            if (piece == 1) {
-                button.setText("X");
-                button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.yellow)));
-            } else if (piece == 2) {
-                button.setText("O");
-                button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.red)));
-            } else {
-                button.setText("");
-                button.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.green)));
-            }
-        }
     }
 
     private void handleGameEnd(int winner) {
