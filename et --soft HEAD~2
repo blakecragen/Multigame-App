@@ -1,0 +1,211 @@
+[33mcommit 890c7f1c30d13e800fa2a190d971254fef079312[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:29:23 2023 -0400
+
+    refactored previous class name to new class name
+
+[33mcommit e534e4f51dfb72b4357eb92fa01701a78896c7c5[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:27:56 2023 -0400
+
+    Delete black_jack_initial_screen.xml
+    
+    same reasons as class files
+
+[33mcommit e25904127a1b43f9bff275bec634dcdebb9d5c22[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:27:37 2023 -0400
+
+    Delete black_jack_game.xml
+    
+    same reasons as deletion of class files
+
+[33mcommit 2bf361ad6966d0e0c3882829e437df9e61ed4c6e[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:25:40 2023 -0400
+
+    Delete blackJackGame.java
+    
+    uploaded my black jack game file. didn't want to refactor Q_Q
+
+[33mcommit a98d0b5c69abbe3f19fed882e08ab5bdc81533b2[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:25:09 2023 -0400
+
+    Delete blackJackInitialScreen.java
+    
+    uploaded my black jack screens. refactoring would've been a painnnn.
+
+[33mcommit aa088728457cea13f78d15f5c49e38a47a29afc5[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:23:00 2023 -0400
+
+    Add files via upload
+    
+    my blackjack class files to go along with my xml files
+
+[33mcommit 3daca38a4cfcde75d484f19a273ab5a2a41d676e[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:22:13 2023 -0400
+
+    Add files via upload
+    
+    my xml files for black jack 2 and 3
+
+[33mcommit bb849f7380d1ada62214f783007e80e328994ccd[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:20:57 2023 -0400
+
+    Update AndroidManifest.xml
+    
+    updated names of black jack classes with my black jack classes
+
+[33mcommit 4620d1e97dff966e95e35a1baec045b5941c48c1[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:13:57 2023 -0400
+
+    Update colors.xml
+    
+    Updated the color.xml file with the colors from the GUI screens image. They are named in what they are (i.e "purple" is the purple used across all the GUIs).
+
+[33mcommit e559615b0216ea558fd4a6bb95eb9c762d012145[m
+Author: Charlie Lin <108144107+cjlin123@users.noreply.github.com>
+Date:   Fri Jun 2 13:11:55 2023 -0400
+
+    Add files via upload
+    
+    Fonts for the game. Grabbed from the GUI frames image. I think " press_start_2p.ttf " is going to be the main one to use. It is the font used in all of them.
+
+[33mcommit bbea3c8000ec05fcc9cf1e9581038b8a045c44ed[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Thu Jun 1 22:19:18 2023 -0400
+
+    Checkers screen created and finished.
+
+[33mcommit 147eb901c98c3db7afab213556a1c2ea76d85801[m
+Merge: 431d86d 7bde508
+Author: Blake Cragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Fri Jun 2 03:01:13 2023 +0100
+
+    Merge pull request #1 from blakecragen/addingFullWordle
+    
+    Adding full wordle - branch in which scenes were finished
+
+[33mcommit 7bde5085017a297dc368e139f04c53e6b8f732ef[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Thu Jun 1 21:52:08 2023 -0400
+
+    Black jack screens completed. Also worked on similar crashing bug.
+
+[33mcommit 01eadc10c8ba9235a2c4f05555103b66d540424b[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Thu Jun 1 21:37:36 2023 -0400
+
+    Wordle initialization screen and wordle game screen have been added.
+    
+    When the game completes, it returns back to game selector.
+
+[33mcommit c79ef5afa4cff74566125a091b9d5bc2becefe34[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Thu Jun 1 21:22:33 2023 -0400
+
+    Added initialization screen and game screen. Still has a crashing bug.
+
+[33mcommit 431d86d226a15798cd690f7916bed057b505adbe[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Thu Jun 1 20:47:38 2023 -0400
+
+    Deleted comments from previous versions
+
+[33mcommit cb9c54a1b7541142d46f5d6c9461984faf1c357a[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 31 14:59:23 2023 -0400
+
+    Error causing black jack home button to crash the app - Fixed
+
+[33mcommit 3f0d32f4a500a2e11dd13a9b8871da115bf8ee11[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 31 14:23:35 2023 -0400
+
+    Methods have been deleted/recreated. Home screen (MainActivity) can now switch to blackJackStartScreen or wordleStartScreen. The two activities can also go back to the home screen.
+
+[33mcommit 481206443b146e508fd5836f041451cb7e6b00b8[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 31 13:58:26 2023 -0400
+
+    Updated methods - test to see that it works
+
+[33mcommit a3bac154248185923cfb750dea32756a341e6106[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 31 12:10:50 2023 -0400
+
+    Added blackJackStartScreen and buttons to switch between. Still needs to be updated.
+    
+    Issue: Buttons reposition themselves to (0,0). Look into a fix for this.
+
+[33mcommit ba1afcdc92f71252862934ce178f410a260e5a76[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 31 11:07:17 2023 -0400
+
+    Classes and buttons have been added to transition into the "Start screen" of the wordle game. The .xml is the layout/preview of the wordle start screen. The wordleStartScreen class describes the behavior of the class.
+    
+    Note: buttons have been added to both the home screen and the wordle home screen. However, only the homescreen to wordleStartScreen has an implementation. The button still has to be created for wordleStartScreen to homescreen (MainActivity).
+
+[33mcommit b8ee0a9539516bb4ca544f6b343f5d392c7d07c0[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 12:30:52 2023 -0400
+
+    Files changed and configured to emulator(s)
+    - when running individually, check that emulator selected is correct/configured
+
+[33mcommit 71d2515e7625eb8b84a4aa696fca91447f2e817b[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 12:30:44 2023 -0400
+
+    Files changed and configured to emulator(s)
+    - when running individually, check that emulator selected is correct/configured
+
+[33mcommit e76af54b179e10020e3ac48dfc1ac6480b9c110b[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 12:08:24 2023 -0400
+
+    Setup files for Android Studio
+
+[33mcommit fa6a66b1a9c1fba18c991deaebbd070799b89484[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 11:58:58 2023 -0400
+
+    Setup files for Android Studio
+
+[33mcommit f81abcfbfd301fcbca2baf3393955afdb44c8a6a[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 11:58:48 2023 -0400
+
+    Setup files for Android Studio
+
+[33mcommit e77e7ce7f06ac1f6e4cc2def5848c5c526286962[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 11:43:02 2023 -0400
+
+    Setup files for Android Studio
+
+[33mcommit fbf31e32076bf9e2f852956979394ad9b4061a35[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 11:41:56 2023 -0400
+
+    Setup files for Android Studio
+
+[33mcommit 26e1a80f8e0b3c185b9f528be246adbe02daedd4[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 11:41:00 2023 -0400
+
+    Setup files for Android Studio
+
+[33mcommit e3f6ac337742213aab8d019790f30194fab9c00a[m
+Author: blakecragen <113573797+blakecragen@users.noreply.github.com>
+Date:   Wed May 24 11:40:05 2023 -0400
+
+    Setup files for Android Studio
+
+[33mcommit 81a80496da18c9d9a636bf9aac534f5f2d460b62[m
+Author: blakecragen <113573797+blakecrage
