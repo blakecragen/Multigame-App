@@ -11,7 +11,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class BlackJackInitialScreen extends AppCompatActivity implements SpriteSettable{
-    private Button prevButton;
+    private Button homeButton;
     private Button continueButton;
     private Player player;
     private EditText name;
@@ -35,13 +35,8 @@ public class BlackJackInitialScreen extends AppCompatActivity implements SpriteS
             }
         });
 
-        prevButton = findViewById(R.id.bj_prev_button);
-        prevButton.setOnClickListener(v -> {
-            Intent intent = new Intent(BlackJackInitialScreen.this, BlackJackStartScreen.class);
-            startActivity(intent);
-            finish();
-        });
-
+        homeButton = findViewById(R.id.bj_prev_button);
+        homeButton.setOnClickListener(v -> finish());
     }
 
     @Override

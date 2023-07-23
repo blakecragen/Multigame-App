@@ -12,7 +12,7 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 public class TicTacToeInitialScreen extends AppCompatActivity implements SpriteSettable{
-        private Button prevButton;
+        private Button homeButton;
         private Button continueButton;
         private Player player;
         private EditText name;
@@ -36,12 +36,8 @@ public class TicTacToeInitialScreen extends AppCompatActivity implements SpriteS
                 }
             });
 
-            prevButton = findViewById(R.id.t_prev_button);
-            prevButton.setOnClickListener(v -> {
-                Intent intent = new Intent(com.example.cs2340Project.TicTacToeInitialScreen.this, TicTacToeStartScreen.class);
-                startActivity(intent);
-                finish();
-            });
+            homeButton = findViewById(R.id.t_prev_button);
+            homeButton.setOnClickListener(v -> finish());
         }
 
         @Override
