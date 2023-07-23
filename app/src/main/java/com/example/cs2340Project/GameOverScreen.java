@@ -38,9 +38,9 @@ public class GameOverScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(GameOverScreen.this, TicTacToeInitialScreen.class);
-                if (Objects.equals(game, "BJ")) {
+                if (game.equals("BJ")) {
                     intent = new Intent(GameOverScreen.this, BlackJackInitialScreen.class);
-                } else if (Objects.equals(game, "WD")) {
+                } else if (game.equals("WD")) {
                     intent = new Intent(GameOverScreen.this, WordleInitialScreen.class);
                 } else {
                     intent = new Intent(GameOverScreen.this, TicTacToeInitialScreen.class);
