@@ -44,12 +44,9 @@ public class GameOverScreen extends AppCompatActivity {
         latestScore.setText("LATEST SCORE: " + player.getScore());
         if (player.getScore() > player.getHighScore()) {
             player.setHighScore(player.getScore());
-            player.setLeader();
         }
         TextView highScore = findViewById(R.id.go_game_high_score);
         highScore.setText("HIGH SCORE: " + player.getHighScore());
-        TextView leader = findViewById(R.id.go_leader);
-        leader.setText(getString(R.string.leaderboard) + player.getLeader());
         player.setScore(0);
 
     }
