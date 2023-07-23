@@ -8,49 +8,50 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class GameOverScreen extends AppCompatActivity {
+    public class GameOverScreen extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.game_over_screen);
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.game_over_screen);
 
-        Button home = findViewById(R.id.go_home_button);
-        Button restart = findViewById(R.id.go_restart_button);
+            Button home = findViewById(R.id.go_home_button);
+            Button restart = findViewById(R.id.go_restart_button);
 
-        Player player = Player.getInstance();
+            Player player = Player.getInstance();
 
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GameOverScreen.this, MainActivity.class);
-                player.setPlayerLives(3);
-                startActivity(intent);
-                finish();
+            home.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(GameOverScreen.this, MainActivity.class);
+                    player.setPlayerLives(3);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+
+            restart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(GameOverScreen.this, TicTacToeInitialScreen.class);
+                    player.setPlayerLives(3);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+
+            TextView latestScore = findViewById(R.id.go_game_score);
+            latestScore.setText("LATEST SCORE: " + player.getScore());
+            if (player.getScore() > player.getHighScore()) {
+                player.setHighScore(player.getScore());
+                player.setLeader();
             }
-        });
+            TextView highScore = findViewById(R.id.go_game_high_score);
+            highScore.setText("HIGH SCORE: " + player.getHighScore());
+            TextView leader = findViewById(R.id.go_leader);
+            leader.setText(getString(R.string.leaderboard) + player.getLeader());
+            player.setScore(0);
 
-        restart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GameOverScreen.this, TicTacToeInitialScreen.class);
-                player.setPlayerLives(3);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        TextView latestScore = findViewById(R.id.go_game_score);
-        latestScore.setText("LATEST SCORE: " + player.getScore());
-        if (player.getScore() > player.getHighScore()) {
-            player.setHighScore(player.getScore());
-            player.setLeader();
         }
-        TextView highScore = findViewById(R.id.go_game_high_score);
-        highScore.setText("HIGH SCORE: " + player.getHighScore());
-        TextView leader = findViewById(R.id.go_leader);
-        leader.setText(getString(R.string.leaderboard) + player.getLeader());
-        player.setScore(0);
-
     }
-}
+
