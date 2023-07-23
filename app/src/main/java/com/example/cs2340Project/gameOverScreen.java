@@ -1,7 +1,6 @@
 package com.example.cs2340Project;
 
 import android.content.Intent;
-import android.net.PlatformVpnProfile;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class gameOverScreen extends AppCompatActivity {
+public class GameOverScreen extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +23,7 @@ public class gameOverScreen extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(gameOverScreen.this, MainActivity.class);
+                Intent intent = new Intent(GameOverScreen.this, MainActivity.class);
                 player.setPlayerLives(3);
                 startActivity(intent);
                 finish();
@@ -34,7 +33,7 @@ public class gameOverScreen extends AppCompatActivity {
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(gameOverScreen.this, TicTacToeInitialScreen.class);
+                Intent intent = new Intent(GameOverScreen.this, TicTacToeInitialScreen.class);
                 player.setPlayerLives(3);
                 startActivity(intent);
                 finish();
