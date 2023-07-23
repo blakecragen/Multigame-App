@@ -21,8 +21,8 @@ public class WordleInitialScreen extends AppCompatActivity implements SpriteSett
         name = findViewById(R.id.wordlePLayerName);
         add = findViewById(R.id.startGame);
 
-        Button wordleStartScreen = findViewById(R.id.BackButton);
-        wordleStartScreen.setOnClickListener(v -> finish());
+        Button homeButton = findViewById(R.id.BackButton);
+        homeButton.setOnClickListener(v -> finish());
 
         Button startGame = findViewById(R.id.startGame);
         startGame.setOnClickListener(v -> {
