@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 public class TicTacToeInitialScreen extends AppCompatActivity implements SpriteSettable{
         private Button prevButton;
@@ -23,10 +24,11 @@ public class TicTacToeInitialScreen extends AppCompatActivity implements SpriteS
             name = findViewById(R.id.player_name);
 
             continueButton = findViewById(R.id.t_continue_button);
-            continueButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    player = Player.getInstance();
+            continueButton.setOnClickListener(v -> {
+                player = Player.getInstance();
+                if (name.getText().toString().isEmpty()) {
+                    Toast.makeText(this, "Please enter a name.", Toast.LENGTH_SHORT).show();
+                } else {
                     player.setPlayerName(name.getText().toString());
                     setSprite();
                     Intent intent = new Intent(com.example.cs2340Project.TicTacToeInitialScreen.this, TicTacToeGame.class);
@@ -35,16 +37,13 @@ public class TicTacToeInitialScreen extends AppCompatActivity implements SpriteS
             });
 
             prevButton = findViewById(R.id.t_prev_button);
-            prevButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(com.example.cs2340Project.TicTacToeInitialScreen.this, TicTacToeStartScreen.class);
-                    startActivity(intent);
-                    finish();
-                }
+            prevButton.setOnClickListener(v -> {
+                Intent intent = new Intent(com.example.cs2340Project.TicTacToeInitialScreen.this, TicTacToeStartScreen.class);
+                startActivity(intent);
+                finish();
             });
-
         }
+
         @Override
         public void setSprite(){
             RadioButton pandaButton = findViewById(R.id.pandaButton);

@@ -9,12 +9,12 @@
 
     <Button
         android:id="@+id/blackJackStartScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="208dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="@string/blackjack_launch"
+        android:text="@string/blackjack"
         app:backgroundTint="@color/purple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,25 +22,25 @@
 
     <Button
         android:id="@+id/checkersStartScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="318dp"
+        android:layout_height="51dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="424dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="@string/tictactoe_launch"
-        app:backgroundTint="@color/yellow"
+        android:text="@string/tic_tac_toe"
         android:textColor="@color/purple"
+        app:backgroundTint="@color/yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/wordleStartScreen2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="332dp"
+        android:layout_height="51dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="632dp"
         android:fontFamily="@font/pressstart_2p"
-        android:text="@string/wordle_launch"
+        android:text="@string/wordle"
         app:backgroundTint="@color/red"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,12 +27,15 @@ public class WordleInitialScreen extends AppCompatActivity implements SpriteSett
         Button startGame = findViewById(R.id.startGame);
         startGame.setOnClickListener(v -> {
             player = Player.getInstance();
-            player.setPlayerName(name.getText().toString());
-            setSprite();
-            Intent intent = new Intent(WordleInitialScreen.this, WordleGame.class);
-            startActivity(intent);
-            finish();
-            //startActivityForResult(intent, 1);
+            if (name.getText().toString().isEmpty()) {
+                Toast.makeText(this, "Please enter player name.", Toast.LENGTH_SHORT).show();
+            } else {
+                player.setPlayerName(name.getText().toString());
+                setSprite();
+                Intent intent = new Intent(WordleInitialScreen.this, WordleGame.class);
+                startActivity(intent);
+                finish();
+            }
         });
     }
 

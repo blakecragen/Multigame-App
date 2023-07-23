@@ -55,9 +55,11 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
         dealButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dealButtonClicked = true;
-                dealCard();
-                dealButton.setEnabled(false);
+                if (!dealButtonClicked) {
+                    dealButtonClicked = true;
+                    dealCard();
+                    dealButton.setEnabled(false);
+                }
             }
         });
         pCards = new ImageView[4];
@@ -103,13 +105,6 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
             }
         });
 
-        dealButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dealButtonClicked = true;
-                dealCard();
-            }
-        });
 
         hitButton = findViewById(R.id.hit_button);
 
@@ -242,6 +237,7 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
                 gameOver("Game Over");
                 player1.setPlayerLives(3);
                 Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+                intent.putExtra("Game","BJ");
                 startActivity(intent);
             } else {
                 gameOver("Player Busted!");
@@ -271,6 +267,7 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
             gameOver("Game Over");
             player1.setPlayerLives(3);
             Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+            intent.putExtra("Game","BJ");
             startActivity(intent);
         } else {
             selectLives();
@@ -286,13 +283,11 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
 
     private void dealerHits() {
         dealer.dealerHit(myDeck);
-        for (int i = 0; i < dealer.getHand().size(); ++i) {
+        int numVisibleCards = Math.min(dealer.getHand().size(), dCards.length);
+        for (int i = 0; i < numVisibleCards; ++i) {
             dCards[i].setImageResource(getImageSource(dealer.getHand().get(i)));
             dCards[i].setVisibility(View.VISIBLE);
             dealerScore += dealer.getHand().get(i).getValue();
-            if (i == 4) {
-                break;
-            }
         }
         dealerScoreView.setText(String.valueOf(dealerScore));
     }
@@ -306,6 +301,7 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
     public void selectLives() {
         if(player1.getPlayerLives() == 0){
             Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+            intent.putExtra("Game","BJ");
             startActivity(intent);
             finish();
         }
