@@ -48,6 +48,8 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable 
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                player1.setScore(0);
+                player1.setPlayerLives(3);
                 startNewGame();
             }
         });
