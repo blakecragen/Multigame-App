@@ -242,6 +242,7 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
                 gameOver("Game Over");
                 player1.setPlayerLives(3);
                 Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+                intent.putExtra("Game","BJ");
                 startActivity(intent);
             } else {
                 gameOver("Player Busted!");
@@ -271,6 +272,7 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
             gameOver("Game Over");
             player1.setPlayerLives(3);
             Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+            intent.putExtra("Game","BJ");
             startActivity(intent);
         } else {
             selectLives();
@@ -306,6 +308,7 @@ public class BlackJackGame extends AppCompatActivity implements LivesSelectable{
     public void selectLives() {
         if(player1.getPlayerLives() == 0){
             Intent intent = new Intent(BlackJackGame.this, GameOverScreen.class);
+            intent.putExtra("Game","BJ");
             startActivity(intent);
             finish();
         }

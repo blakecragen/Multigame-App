@@ -237,6 +237,7 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
     public void selectLives() {
         if(player.getPlayerLives() == 0){
             Intent intent = new Intent(WordleGame.this, GameOverScreen.class);
+            intent.putExtra("Game","WD");
             startActivity(intent);
             finish();
         }
