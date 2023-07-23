@@ -1,7 +1,9 @@
 package com.example.cs2340Project;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -14,7 +16,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
+public class TicTacToeGame extends AppCompatActivity implements LivesSelectable {
     private Button restartButton;
     private Button homeButton;
     private Player player1;
@@ -46,9 +48,7 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
         restartButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(TicTacToeGame.this, TicTacToeGame.class);
-                startActivity(intent);
-                finish();
+                startNewGame();
             }
         });
 
@@ -179,9 +179,7 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
         }
 
         showMessageDialog(message);
-        Intent intent = new Intent(TicTacToeGame.this, TicTacToeGame.class);
-        startActivity(intent);
-        finish();
+        startNewGame();
     }
 
     private void showMessageDialog(String message) {
@@ -197,9 +195,15 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
                 .show();
     }
 
+    private void startNewGame() {
+        Intent intent = new Intent(TicTacToeGame.this, TicTacToeGame.class);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public void selectLives() {
-        if(player1.getPlayerLives() == 0){
+        if (player1.getPlayerLives() == 0) {
             Intent intent = new Intent(TicTacToeGame.this, GameOverScreen.class);
             startActivity(intent);
             finish();
@@ -213,8 +217,6 @@ public class TicTacToeGame extends AppCompatActivity implements LivesSelectable{
         ImageView i1 = findViewById(R.id.life1);
         ImageView i2 = findViewById(R.id.life2);
         ImageView i3 = findViewById(R.id.life3);
-        player1.setLives(i1,i2,i3);
+        player1.setLives(i1, i2, i3);
     }
 }
-
-
