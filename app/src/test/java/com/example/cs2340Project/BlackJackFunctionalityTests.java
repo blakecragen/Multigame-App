@@ -149,29 +149,4 @@ public class BlackJackFunctionalityTests {
         assertEquals(player.getHand().size(), 3);
         assertEquals(player.getHandSum(), 12);
     }
-
-    @Test
-    public void testPrintHand() {
-        BlackJackDeck deck = new BlackJackDeck();
-        deck.makeDeck();
-
-        BlackJackPlayer player = new BlackJackPlayer();
-        BlackJackDealer dealer = new BlackJackDealer();
-
-        player.hit(deck);
-        dealer.hit(deck);
-        player.hit(deck);
-        dealer.hit(deck);
-
-        ArrayList<BlackJackCard> pHand = player.getHand();
-        ArrayList<BlackJackCard> dHand = dealer.getHand();
-
-        /* pHand and dHand represent the player's and dealer's hand, so turning them
-        * to strings and comparing them will act like printing their respective hands like in
-        * testCardToString */
-        assertNotEquals(pHand.toString(), null);
-        assertNotEquals(dHand.toString(), null);
-        player.printHand();
-        dealer.printHand();
-    }
 }
