@@ -87,14 +87,4 @@ public class BlackJackPlayer {
     public ArrayList<BlackJackCard> getHand() {
         return this.hand;
     }
-
-    /**
-     * Prints the player's hand.
-     */
-    public void printHand() {
-        System.out.printf("Your hand:\n");
-        for (BlackJackCard card: hand) {
-            System.out.printf("%s\n",card);
-        }
-    }
 }
