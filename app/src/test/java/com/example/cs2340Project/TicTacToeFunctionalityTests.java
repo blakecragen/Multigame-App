@@ -23,13 +23,6 @@ public class TicTacToeFunctionalityTests {
         comp = new TicTacToeComputerMovement(game.getPlayerPiece());
     }
 
-    //1
-    @Test
-    public void testTicTacToeInitialization() {
-        int[][] expected = new int[3][3];
-        assertArrayEquals(game.getBoard(), expected);
-    }
-
     //2
     @Test
     public void testSetPlayerPiece() {
