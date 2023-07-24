@@ -23,7 +23,7 @@ public class TicTacToeFunctionalityTests {
         comp = new TicTacToeComputerMovement(game.getPlayerPiece());
     }
 
-    //2
+    // 1
     @Test
     public void testSetPlayerPiece() {
         game.setPlayerPiece(1);
@@ -32,7 +32,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(game.getPlayerPiece(), 2);
     }
 
-    //3
+    //2
     @Test
     public void testGetBoard() {
         int[][] expected = new int[][]{{0,0,0},{0,0,0},{0,0,0}};
@@ -72,7 +72,7 @@ public class TicTacToeFunctionalityTests {
         assertArrayEquals(expected, game.getBoard());
     }
 
-    //4
+    //3
     @Test
     public void testGetRow() {
         assertEquals(game.getRow(1), 0);
@@ -86,7 +86,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(game.getRow(9), 2);
     }
 
-    //5
+    //4
     @Test
     public void testGetCol() {
         assertEquals(game.getCol(1), 0);
@@ -100,7 +100,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(game.getCol(9), 2);
     }
 
-    //6
+    //5
     @Test
     public void testCanPlacePiece() {
         assertEquals(true, game.canPlacePiece(1,null));
@@ -114,7 +114,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(true, game.canPlacePiece(9,null));
     }
 
-    //7
+    //6
     @Test
     public void testPlacePiece() {
         game.setPlayerPiece(1);
@@ -124,7 +124,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(2, game.getWhosTurn());
     }
 
-    //8
+    //7
     @Test
     public void testUpdateTurn() {
         assertEquals(1, game.getWhosTurn());
@@ -134,7 +134,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(1, game.getWhosTurn());
     }
 
-    //9
+    //8
     @Test
     public void checkTestForWinner() {
         game.setPlayerPiece(1);
@@ -169,7 +169,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(1, game.checkForWinner());
     }
 
-    //10
+    //9
     @Test
     public void testGetPiece() {
         game.setPlayerPiece(1);
@@ -189,7 +189,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(0, game.getPiece(9));
     }
 
-    //11
+    //10
     @Test
     public void testCheckAlmostWin() {
         // x - x
@@ -302,7 +302,7 @@ public class TicTacToeFunctionalityTests {
         assertEquals(0, comp.checkAlmostWin(game.getBoard(), 1));
     }
 
-    //12
+    //11
     @Test
     public void testGetPossibleMoves() {
         // x - -
@@ -353,7 +353,7 @@ public class TicTacToeFunctionalityTests {
         assertArrayEquals(expected, makeArrayFromList());
     }
 
-    //13
+    //12
     @Test
     public void testGetComputerMove() {
         Random rand = new Random();
