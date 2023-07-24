@@ -162,11 +162,7 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                         if (guess[i] != solution[i]) {
                             checkSolution = false;
                             if(currentRow == 4) {
-                                Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
-                                    player.setPlayerLives((player.getPlayerLives())-1);
-                                    Intent intent = new Intent(WordleGame.this, WordleGame.class);
-                                    startActivity(intent);
-                                    finish();
+                                startNewGame();
                                 }
                             }
                             break;
@@ -275,5 +271,20 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
         }
 
     }
-
+    private void startNewGame() {
+        Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
+        player.setPlayerLives((player.getPlayerLives())-1);
+        selectLives();
+        if(player.getPlayerLives() == 0){
+                Intent intent = new Intent(WordleGame.this, GameOverScreen.class);
+                startActivity(intent);
+                finish();
+            //game over screen
+        }
+        else {
+            Intent intent = new Intent(WordleGame.this, WordleGame.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 }
