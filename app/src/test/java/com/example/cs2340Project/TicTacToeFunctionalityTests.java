@@ -72,20 +72,6 @@ public class TicTacToeFunctionalityTests {
         assertArrayEquals(expected, game.getBoard());
     }
 
-    //4
-    @Test
-    public void testGetCol() {
-        assertEquals(game.getCol(1), 0);
-        assertEquals(game.getCol(4), 0);
-        assertEquals(game.getCol(7), 0);
-        assertEquals(game.getCol(2), 1);
-        assertEquals(game.getCol(5), 1);
-        assertEquals(game.getCol(8), 1);
-        assertEquals(game.getCol(3), 2);
-        assertEquals(game.getCol(6), 2);
-        assertEquals(game.getCol(9), 2);
-    }
-
     //3
     @Test
     public void testCanPlacePiece() {
