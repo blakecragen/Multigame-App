@@ -103,14 +103,11 @@ public class TicTacToeFunctionality {
      * @param game The instance of a game to work with.
      */
     public int placePiece(int where, TicTacToeGame game) {
-        if (whosTurn == playerPiece) {
-            if (canPlacePiece(where, game)) {
-                board[getRow(where)][getCol(where)] = playerPiece;
-                updateTurn();
-            }
-            return checkForWinner();
+         if (canPlacePiece(where, game)) {
+            board[getRow(where)][getCol(where)] = playerPiece;
+            updateTurn();
         }
-        return -1;
+        return checkForWinner();
     }
 
     /**
