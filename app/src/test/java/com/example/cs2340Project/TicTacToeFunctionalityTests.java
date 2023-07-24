@@ -23,7 +23,7 @@ public class TicTacToeFunctionalityTests {
         comp = new TicTacToeComputerMovement(game.getPlayerPiece());
     }
 
-    //1
+    // 1
     @Test
     public void testSetPlayerPiece() {
         game.setPlayerPiece(1);
