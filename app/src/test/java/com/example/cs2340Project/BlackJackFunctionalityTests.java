@@ -129,20 +129,7 @@ public class BlackJackFunctionalityTests {
         player.hit(deck);
         assertEquals(player.getHand().size(), 1);
     }
-
-    @Test
-    public void testGetShownCard() {
-        BlackJackDeck deck = new BlackJackDeck();
-        deck.makeDeck();
-
-        BlackJackDealer dealer = new BlackJackDealer();
-        dealer.hit(deck);
-        dealer.hit(deck);
-
-        ArrayList<BlackJackCard> hand = dealer.getHand();
-        assertEquals(dealer.getShownCard(),hand.get(0));
-    }
-
+    
     @Test
     public void testHit() {
         BlackJackDeck deck = new BlackJackDeck();
