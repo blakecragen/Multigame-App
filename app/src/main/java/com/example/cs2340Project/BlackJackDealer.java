@@ -52,7 +52,7 @@ public class BlackJackDealer extends BlackJackPlayer {
     /**
      * Prints the dealers hand.
      */
-    @Override
+    //@Override
     public void printHand() {
         System.out.printf("Dealer hand:\n");
         for (BlackJackCard card: this.getHand()) {
