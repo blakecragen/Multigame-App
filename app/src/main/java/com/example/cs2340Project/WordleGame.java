@@ -23,6 +23,8 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
     private WordleGameFunctionality wordle;
     private Player player;
 
+    private int guessCorrectness;
+
     private WordleLetters wordleLetters = new WordleLetters();
 
 
@@ -138,44 +140,36 @@ public class WordleGame extends AppCompatActivity implements View.OnClickListene
                 playerGuess = playerGuess.toLowerCase();
                 char[] guess = playerGuess.toCharArray();
                 char[] solution = answer.toCharArray();
-                int count = 0;
+                //int count = 0;
                 // Check if string playerGuess is found in guessList
                 int valid = wordle.checkGuessValid(playerGuess);
                 if (valid != -1) {
+                    guessCorrectness = 0;
                     for (int i = 0; i < guess.length; i++) {
                         if (guess[i] == solution[i]) {
                             wordleLetters.updateAccuracy(guess[i], 1);
-                            letterGrid[currentRow][count].setBackgroundResource(R.color.bright_green);
+                            letterGrid[currentRow][i].setBackgroundResource(R.color.bright_green);
+                            guessCorrectness++;
                         } else if (answer.contains(String.valueOf(guess[i]))) {
                             wordleLetters.updateAccuracy(guess[i], 0);
-                            letterGrid[currentRow][count].setBackgroundResource(R.color.purple);
+                            letterGrid[currentRow][i].setBackgroundResource(R.color.purple);
                         } else {
-                            letterGrid[currentRow][count].setBackgroundResource(R.color.gray);
+                            letterGrid[currentRow][i].setBackgroundResource(R.color.gray);
                         }
-                        count++;
+                        if(guessCorrectness == 5){
+                            Toast.makeText(this, "Congratulations! You got the right answer!", Toast.LENGTH_SHORT).show();
+
+                        }
+                        else if(currentRow == 4) {
+                            Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
+                            player.setPlayerLives((player.getPlayerLives())-1);
+                            Intent intent = new Intent(WordleGame.this, WordleGame.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        // count++;
                     }
                     setColors(guess);
-
-
-                    boolean checkSolution = true;
-                    for (int i = 0; i < guess.length; i++) {
-                        if (guess[i] != solution[i]) {
-                            checkSolution = false;
-                            if(currentRow == 4) {
-                                Toast.makeText(this, "You are out of tries, the correct answer was " + answer, Toast.LENGTH_SHORT).show();
-                                    player.setPlayerLives((player.getPlayerLives())-1);
-                                    Intent intent = new Intent(WordleGame.this, WordleGame.class);
-                                    startActivity(intent);
-                                    finish();
-                                }
-                            }
-                            break;
-                        }
-
-                    // Show toast message if the guess is correct
-                    if (checkSolution) {
-                        Toast.makeText(this, "Congratulations! You got the right answer!", Toast.LENGTH_SHORT).show();
-                    }
 
                     // Keep this code in the if statement
                     // Determines whether or not it should go to the next row
